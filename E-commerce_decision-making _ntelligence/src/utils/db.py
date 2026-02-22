@@ -15,6 +15,7 @@ DB_CONFIG = {
 }
 
 import pymysql
+from sqlalchemy import create_engine
 
 def get_connection():
     try:
@@ -31,6 +32,19 @@ def get_connection():
     except Exception as e:
         print("Database connection failed", e)
         raise
+
+def get_engine():
+    """
+    Returns a SQLAlchemy Engine for pandas.read_sql
+    """
+    user = 'root'
+    password = 'Xrwyx13795'
+    host = 'localhost'
+    port = 3306
+    db = 'ecommerce_platform'
+    url = f"mysql+pymysql://{user}:{password}@{host}:{port}/{db}?charset=utf8mb4"
+    engine = create_engine(url)
+    return engine
 
 def execute_sql(conn, sql, params=None):
     cursor = conn.cursor()
