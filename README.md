@@ -464,9 +464,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-- **Your Name** - Project Lead
-- **Contact** - your.email@example.com
-- **GitHub** - [yourusername](https://github.com/yourusername)
+- **Your Name** - Xin Wang
+- **Contact** - 17310353826@163.com
+- **GitHub** - [Xin](https://github.com/yourusername/ecommerce-intelligence-system)
 
 ---
 
