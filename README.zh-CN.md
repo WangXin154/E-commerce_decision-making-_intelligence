@@ -462,8 +462,8 @@ def recommend_items(user_id, top_n=10):
 
 ## 👨‍💻 作者
 
-- **你的名字** - 项目负责人
-- **联系方式** - your.email@example.com
+- **你的名字** - 王鑫
+- **联系方式** - 17310353826@163.com
 - **个人主页** - [GitHub](https://github.com/yourusername)
 
 ---
@@ -479,8 +479,8 @@ def recommend_items(user_id, top_n=10):
 ## 📞 联系方式
 
 如有问题或建议，请通过以下方式联系：
-- 📧 Email: your.email@example.com
-- 💬 微信: your_wechat_id
+- 📧 Email: 17310353826@163.com
+- 💬 微信: WX3119096786
 - 🐙 GitHub: [提交 Issue](https://github.com/yourusername/ecommerce-intelligence-system/issues)
 
 ---
@@ -489,6 +489,6 @@ def recommend_items(user_id, top_n=10):
 
 **如果这个项目对你有帮助，请给个 ⭐Star 支持一下！**
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [王鑫]
 
 </div>
