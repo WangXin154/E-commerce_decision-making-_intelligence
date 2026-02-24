@@ -481,8 +481,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 For questions or suggestions, please reach out via:
-- 📧 Email: your.email@example.com
-- 💬 WeChat: your_wechat_id
+- 📧 Email: 17310353826
+- 💬 WeChat: WX3119096786
 - 🐙 GitHub: [Submit an Issue](https://github.com/yourusername/ecommerce-intelligence-system/issues)
 
 ---
@@ -491,6 +491,6 @@ For questions or suggestions, please reach out via:
 
 **If this project helps you, please give it a ⭐Star to support us!**
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [Xin Wang]
 
 </div>
