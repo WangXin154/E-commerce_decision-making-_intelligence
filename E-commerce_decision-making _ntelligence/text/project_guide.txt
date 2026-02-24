@@ -1,0 +1,1830 @@
+===============================================================================
+电商智能客服+用户行为分析与精准推荐系统 - 项目实施指导文档
+===============================================================================
+
+创建时间: 2026-02-18
+指导模式: 实现思路和框架指导
+
+===============================================================================
+项目概览
+===============================================================================
+
+项目名称：电商智能客服+用户行为分析与精准推荐系统
+项目难度：中高级
+完成周期：1-2周
+核心目标：实现"数据分析+机器学习+深度学习+NLP聊天机器人+业务落地"一体化
+
+数据集：Olist巴西电商数据集（9个CSV文件）
+- olist_customers_dataset.csv - 客户信息
+- olist_orders_dataset.csv - 订单信息
+- olist_order_items_dataset.csv - 订单商品明细
+- olist_products_dataset.csv - 商品信息
+- olist_sellers_dataset.csv - 卖家信息
+- olist_order_payments_dataset.csv - 支付信息
+- olist_order_reviews_dataset.csv - 评论信息
+- olist_geolocation_dataset.csv - 地理位置信息
+- product_category_name_translation.csv - 商品类别翻译
+
+===============================================================================
+项目架构（6层结构）
+===============================================================================
+
+1. 数据层
+   - SQL搭建电商数据表
+   - 多表联查、窗口函数提取数据
+   - Pandas数据清洗、特征工程
+   - NumPy数值计算、矩阵处理
+
+2. 分析层
+   - 卡方检验、线性回归、逻辑回归
+   - K-Means聚类
+   - 完整EDA报告输出
+
+3. 机器学习层
+   - 协同过滤+分类推荐模型
+   - 用户流失预警模型
+   - 转化率预测模型
+   - 数据集划分、训练、验证、调参、评估全流程
+
+4. 深度学习层
+   - CNN商品图片分类
+   - 商品标签提取
+   - 增强推荐系统准确度
+
+5. 智能交互层
+   - 电商智能客服机器人
+   - 查物流、问订单功能
+   - 商品推荐、售后问题解答
+   - 联动机器学习模型实现个性化推荐
+
+6. 输出层
+   - 项目源码（Python+SQL）
+   - 数据分析报告
+   - 机器学习模型文件
+   - 可运行聊天机器人
+   - 可视化图表/大屏
+
+===============================================================================
+实施计划（11个主要任务）
+===============================================================================
+
+阶段1 - 数据层：
+□ 任务1: 搭建SQLite数据库并导入Olist数据集
+□ 任务2: 编写SQL查询脚本进行多表联查和数据提取
+□ 任务3: 使用Pandas进行数据清洗和特征工程
+
+阶段2 - 分析层：
+□ 任务4: 完成探索性数据分析(EDA)报告
+□ 任务5: 用户行为分析和统计检验(卡方、回归等)
+
+阶段3 - 机器学习层：
+□ 任务6: 构建协同过滤推荐模型
+□ 任务7: 训练用户流失预警模型
+□ 任务8: 构建转化率预测模型
+
+阶段4 - 深度学习层：
+□ 任务9: 使用CNN实现商品图片分类
+
+阶段5 - 智能交互层：
+□ 任务10: 开发电商智能客服机器人
+
+阶段6 - 输出层：
+□ 任务11: 整理项目文档和可视化报告
+
+===============================================================================
+第一阶段：数据层 - 任务1详细指导
+===============================================================================
+
+【任务目标】
+将Olist电商数据集的9个CSV文件导入SQLite数据库，建立数据表和索引，为后续分析做准备。
+
+-------------------------------------------------------------------------------
+一、数据集结构分析
+-------------------------------------------------------------------------------
+
+数据表关系：
+1. customers (客户表)
+   - customer_id (PK)
+   - customer_zip_code_prefix
+   - customer_city
+   - customer_state
+
+2. orders (订单表)
+   - order_id (PK)
+   - customer_id (FK -> customers)
+   - order_status
+   - order_purchase_timestamp
+   - order_approved_at
+   - order_delivered_carrier_date
+   - order_delivered_customer_date
+   - order_estimated_delivery_date
+
+3. order_items (订单商品明细表)
+   - order_id (FK -> orders)
+   - order_item_id
+   - product_id (FK -> products)
+   - seller_id (FK -> sellers)
+   - shipping_limit_date
+   - price
+   - freight_value
+
+4. products (商品表)
+   - product_id (PK)
+   - product_category_name
+   - product_name_length
+   - product_description_length
+   - product_photos_qty
+   - product_weight_g
+   - product_length_cm
+   - product_height_cm
+   - product_width_cm
+
+5. sellers (卖家表)
+   - seller_id (PK)
+   - seller_zip_code_prefix
+   - seller_city
+   - seller_state
+
+6. order_payments (支付表)
+   - order_id (FK -> orders)
+   - payment_sequential
+   - payment_type
+   - payment_installments
+   - payment_value
+
+7. order_reviews (评论表)
+   - review_id (PK)
+   - order_id (FK -> orders)
+   - review_score
+   - review_comment_title
+   - review_comment_message
+   - review_creation_date
+   - review_answer_timestamp
+
+8. geolocation (地理位置表)
+   - geolocation_zip_code_prefix
+   - geolocation_lat
+   - geolocation_lng
+   - geolocation_city
+   - geolocation_state
+
+9. product_category_name_translation (类别翻译表)
+   - product_category_name (葡萄牙语)
+   - product_category_name_english (英语)
+
+-------------------------------------------------------------------------------
+二、实现思路框架
+-------------------------------------------------------------------------------
+
+【步骤1：完善工具模块】
+
+1. src/utils/db.py - 数据库连接工具
+
+核心功能：
+- 创建SQLite数据库连接
+- 执行SQL语句（支持单条和批量）
+- 读取SQL文件并执行
+- 关闭连接
+
+需要实现的函数：
+
+def get_db_path():
+    """返回数据库文件的绝对路径"""
+    思路：
+    - 使用pathlib.Path获取项目根目录
+    - 拼接路径：根目录/data/ecommerce.db
+    - 确保data目录存在
+
+def connect():
+    """创建并返回SQLite数据库连接"""
+    思路：
+    - 导入sqlite3模块
+    - 使用sqlite3.connect()连接数据库
+    - 返回connection对象
+    - 可选：设置row_factory为sqlite3.Row以支持字典式访问
+
+def exec_sql(conn, sql, params=None):
+    """执行单条SQL语句"""
+    思路：
+    - 获取cursor对象
+    - 使用cursor.execute()执行SQL
+    - 如果有params参数，使用参数化查询防止SQL注入
+    - 调用conn.commit()提交事务
+    - 处理异常
+
+def exec_sql_file(conn, file_path):
+    """读取并执行SQL文件"""
+    思路：
+    - 读取.sql文件内容
+    - 使用executescript()执行多条SQL语句
+    - 处理异常
+
+def close_connection(conn):
+    """关闭数据库连接"""
+    思路：
+    - 检查连接是否存在
+    - 调用conn.close()
+
+---
+
+2. src/utils/log.py - 日志工具
+
+核心功能：
+- 提供统一的日志输出函数
+- 支持不同级别（INFO, WARNING, ERROR）
+- 带时间戳和颜色标识
+
+需要实现的函数：
+
+def log(message, level="INFO"):
+    """打印带时间戳的日志"""
+    思路：
+    - 导入datetime模块
+    - 获取当前时间：datetime.now()
+    - 格式化时间戳：strftime("%Y-%m-%d %H:%M:%S")
+    - 根据level选择不同的颜色或标记
+    - 输出格式：[2026-02-18 10:30:45] [INFO] 消息内容
+    - 使用print()输出
+
+可选增强：
+- 添加颜色支持（使用colorama库）
+- 支持写入日志文件
+- 支持不同级别的过滤
+
+---
+
+【步骤2：实现数据导入脚本】
+
+src/etl/load_olist_to_sqlite.py - 数据导入主脚本
+
+实现思路：
+
+1. 读取CSV文件
+   技术要点：
+   - 使用pandas.read_csv()读取CSV
+   - 指定encoding='utf-8'或'latin-1'处理编码
+   - 使用parse_dates参数自动解析日期时间列
+   - 示例：pd.read_csv('file.csv', encoding='utf-8', parse_dates=['date_column'])
+
+2. 数据类型优化
+   优化策略：
+   - 检查每列的数据类型（df.dtypes）
+   - 将字符串列转换为category类型（节省内存）
+   - 处理缺失值（df.fillna()或df.dropna()）
+   - 确保数值列是正确的数据类型
+
+3. 写入SQLite数据库
+   技术要点：
+   - 使用DataFrame.to_sql()方法
+   - 参数：
+     * name: 表名
+     * con: 数据库连接对象
+     * if_exists: 'replace'（覆盖）或'append'（追加）
+     * index: False（不导入pandas索引）
+     * chunksize: 批量写入大小（可选，处理大文件）
+   - 示例：df.to_sql('table_name', conn, if_exists='replace', index=False)
+
+4. 创建索引
+   为什么需要索引：
+   - 加速JOIN操作
+   - 加速WHERE查询
+   - 加速ORDER BY排序
+
+   需要创建的索引：
+   - customers表: customer_id
+   - orders表: order_id, customer_id
+   - order_items表: order_id, product_id, seller_id
+   - products表: product_id
+   - sellers表: seller_id
+   - order_payments表: order_id
+   - order_reviews表: review_id, order_id
+   - geolocation表: geolocation_zip_code_prefix
+
+   SQL语法：
+   CREATE INDEX IF NOT EXISTS idx_table_column ON table_name(column_name);
+
+---
+
+代码框架结构：
+
+def load_csv_to_db(csv_path, table_name, conn, parse_dates=None):
+    """将单个CSV文件加载到数据库"""
+
+    实现步骤：
+    1. 检查CSV文件是否存在
+       - 使用Path(csv_path).exists()
+
+    2. 读取CSV
+       - df = pd.read_csv(csv_path, encoding='utf-8', parse_dates=parse_dates)
+       - 如果encoding报错，尝试'latin-1'
+
+    3. 检查数据
+       - 打印行数：len(df)
+       - 打印列名：df.columns.tolist()
+       - 打印前5行：df.head()
+
+    4. 数据类型优化
+       - 将object类型的小基数列转换为category
+       - 例如：df['status'] = df['status'].astype('category')
+
+    5. 写入数据库
+       - df.to_sql(table_name, conn, if_exists='replace', index=False)
+
+    6. 打印日志
+       - log(f"✓ 成功导入 {table_name}: {len(df)} 行")
+
+def create_indexes(conn):
+    """创建必要的索引"""
+
+    索引列表：
+    indexes = [
+        ('idx_customers_customer_id', 'customers', 'customer_id'),
+        ('idx_orders_order_id', 'orders', 'order_id'),
+        ('idx_orders_customer_id', 'orders', 'customer_id'),
+        ('idx_order_items_order_id', 'order_items', 'order_id'),
+        ('idx_order_items_product_id', 'order_items', 'product_id'),
+        ('idx_order_items_seller_id', 'order_items', 'seller_id'),
+        ('idx_products_product_id', 'products', 'product_id'),
+        ('idx_sellers_seller_id', 'sellers', 'seller_id'),
+        ('idx_order_payments_order_id', 'order_payments', 'order_id'),
+        ('idx_order_reviews_order_id', 'order_reviews', 'order_id'),
+    ]
+
+    实现步骤：
+    1. 循环遍历indexes列表
+    2. 为每个索引执行CREATE INDEX语句
+    3. 使用exec_sql()函数执行
+    4. 打印日志
+
+def verify_data(conn):
+    """验证导入的数据"""
+
+    验证内容：
+    1. 查询每个表的行数
+       - SQL: SELECT COUNT(*) FROM table_name
+    2. 打印行数统计
+    3. 检查关键字段的缺失值
+       - SQL: SELECT COUNT(*) FROM table_name WHERE key_column IS NULL
+
+def main():
+    """主函数"""
+
+    实现流程：
+
+    1. 连接数据库
+       conn = connect()
+       log("数据库连接成功")
+
+    2. 定义CSV文件路径和表名的映射
+       csv_files = {
+           'customers': ('data/olist_customers_dataset.csv', None),
+           'orders': ('data/olist_orders_dataset.csv',
+                     ['order_purchase_timestamp', 'order_approved_at',
+                      'order_delivered_carrier_date', 'order_delivered_customer_date',
+                      'order_estimated_delivery_date']),
+           'order_items': ('data/olist_order_items_dataset.csv',
+                          ['shipping_limit_date']),
+           'products': ('data/olist_products_dataset.csv', None),
+           'sellers': ('data/olist_sellers_dataset.csv', None),
+           'order_payments': ('data/olist_order_payments_dataset.csv', None),
+           'order_reviews': ('data/olist_order_reviews_dataset.csv',
+                            ['review_creation_date', 'review_answer_timestamp']),
+           'geolocation': ('data/olist_geolocation_dataset.csv', None),
+           'product_category_translation': ('data/product_category_name_translation.csv', None),
+       }
+
+    3. 循环导入每个CSV
+       for table_name, (csv_path, date_columns) in csv_files.items():
+           log(f"开始导入 {table_name}...")
+           load_csv_to_db(csv_path, table_name, conn, date_columns)
+
+    4. 创建索引
+       log("开始创建索引...")
+       create_indexes(conn)
+
+    5. 验证数据
+       log("开始验证数据...")
+       verify_data(conn)
+
+    6. 关闭连接
+       close_connection(conn)
+       log("数据导入完成！")
+
+if __name__ == '__main__':
+    main()
+
+-------------------------------------------------------------------------------
+三、关键技术点
+-------------------------------------------------------------------------------
+
+1. Pandas读取CSV的重要参数
+
+必须掌握的参数：
+- encoding: 字符编码，常用'utf-8'或'latin-1'
+- parse_dates: 自动解析日期列，传入列名列表
+- dtype: 指定列的数据类型，如{'column': 'category'}
+- na_values: 指定哪些值应该被视为NaN
+- chunksize: 分块读取大文件，返回迭代器
+
+示例：
+df = pd.read_csv(
+    'file.csv',
+    encoding='utf-8',
+    parse_dates=['date_column1', 'date_column2'],
+    dtype={'category_column': 'category'},
+    na_values=['NA', 'null', ''],
+    chunksize=10000  # 每次读取1万行
+)
+
+2. SQLite数据类型映射
+
+Pandas类型 -> SQLite类型：
+- object (字符串) -> TEXT
+- int64 -> INTEGER
+- float64 -> REAL
+- bool -> INTEGER (0/1)
+- datetime64 -> TEXT (ISO 8601格式: YYYY-MM-DD HH:MM:SS)
+- category -> TEXT
+
+3. 性能优化技巧
+
+内存优化：
+- 使用category类型存储重复值多的字符串列
+- 使用合适的整数类型（int8, int16, int32而不是int64）
+- 删除不需要的列
+
+写入优化：
+- 使用chunksize参数分批写入大文件
+- 先导入数据，再创建索引（不要边导入边建索引）
+- 使用事务批量提交
+
+查询优化：
+- 为经常查询的列创建索引
+- 为外键列创建索引
+- 为JOIN操作的列创建索引
+
+4. 异常处理
+
+常见异常：
+- FileNotFoundError: CSV文件不存在
+- UnicodeDecodeError: 编码问题
+- sqlite3.OperationalError: SQL语法错误或表已存在
+- pd.errors.ParserError: CSV格式错误
+
+处理方式：
+try:
+    # 执行操作
+except FileNotFoundError:
+    log(f"错误：文件不存在 {file_path}", "ERROR")
+except Exception as e:
+    log(f"错误：{str(e)}", "ERROR")
+    raise
+
+-------------------------------------------------------------------------------
+四、数据验证清单
+-------------------------------------------------------------------------------
+
+导入完成后，必须验证以下内容：
+
+1. 数据完整性检查
+   □ 每个表的行数是否与CSV文件一致
+   □ 没有重复导入
+   □ 关键列没有意外的NULL值
+
+2. 数据关系检查
+   □ orders.customer_id 都能在 customers.customer_id 中找到
+   □ order_items.order_id 都能在 orders.order_id 中找到
+   □ order_items.product_id 都能在 products.product_id 中找到
+   □ order_items.seller_id 都能在 sellers.seller_id 中找到
+
+3. 数据质量检查
+   □ 日期时间列格式正确
+   □ 数值列没有异常值（负数、超大值）
+   □ 类别列的唯一值数量合理
+
+4. 索引检查
+   □ 所有索引都已创建
+   □ 可以使用EXPLAIN QUERY PLAN查看查询是否使用索引
+
+验证SQL示例：
+
+-- 检查行数
+SELECT 'customers' as table_name, COUNT(*) as row_count FROM customers
+UNION ALL
+SELECT 'orders', COUNT(*) FROM orders
+UNION ALL
+SELECT 'order_items', COUNT(*) FROM order_items;
+
+-- 检查外键完整性
+SELECT COUNT(*) as orphan_orders
+FROM orders o
+LEFT JOIN customers c ON o.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+
+-- 检查日期范围
+SELECT
+    MIN(order_purchase_timestamp) as earliest_order,
+    MAX(order_purchase_timestamp) as latest_order
+FROM orders;
+
+-- 检查索引
+SELECT name, sql FROM sqlite_master WHERE type='index';
+
+-------------------------------------------------------------------------------
+五、预期输出
+-------------------------------------------------------------------------------
+
+完成任务1后，你应该得到：
+
+1. 文件结构
+   data/
+   └── ecommerce.db (SQLite数据库文件，约100-200MB)
+
+2. 控制台输出示例
+   [2026-02-18 10:30:45] [INFO] 数据库连接成功
+   [2026-02-18 10:30:46] [INFO] 开始导入 customers...
+   [2026-02-18 10:30:48] [INFO] ✓ 成功导入 customers: 99441 行
+   [2026-02-18 10:30:48] [INFO] 开始导入 orders...
+   [2026-02-18 10:30:52] [INFO] ✓ 成功导入 orders: 99441 行
+   ...
+   [2026-02-18 10:31:30] [INFO] 开始创建索引...
+   [2026-02-18 10:31:35] [INFO] ✓ 所有索引创建完成
+   [2026-02-18 10:31:35] [INFO] 开始验证数据...
+   [2026-02-18 10:31:36] [INFO] ✓ 数据验证通过
+   [2026-02-18 10:31:36] [INFO] 数据导入完成！
+
+3. 数据库内容
+   - 9个数据表
+   - 约10个索引
+   - 总行数：约50万行
+
+-------------------------------------------------------------------------------
+六、常见问题和解决方案
+-------------------------------------------------------------------------------
+
+问题1：UnicodeDecodeError编码错误
+解决方案：
+- 尝试不同的编码：'utf-8', 'latin-1', 'iso-8859-1', 'cp1252'
+- 使用encoding_errors='ignore'忽略错误字符
+
+问题2：日期解析失败
+解决方案：
+- 检查日期格式
+- 使用pd.to_datetime()手动转换
+- 使用format参数指定日期格式
+
+问题3：内存不足
+解决方案：
+- 使用chunksize参数分块读取
+- 优化数据类型
+- 逐个文件导入
+
+问题4：索引创建失败
+解决方案：
+- 检查列名是否正确
+- 检查表是否已存在
+- 使用IF NOT EXISTS避免重复创建
+
+问题5：数据验证失败（行数不一致）
+解决方案：
+- 检查CSV文件是否完整
+- 检查是否有重复导入
+- 检查是否有数据被过滤
+
+-------------------------------------------------------------------------------
+七、下一步预告
+-------------------------------------------------------------------------------
+
+完成任务1后，我们将进入任务2：编写SQL查询脚本
+
+任务2将涉及：
+- 多表JOIN查询
+- 窗口函数应用
+- 聚合分析
+- 数据提取和导出
+
+为任务2做准备：
+- 熟悉MySQL的SQL语法
+- 了解JOIN的不同类型（INNER, LEFT, RIGHT, FULL）
+- 学习窗口函数（ROW_NUMBER, RANK, LAG, LEAD等）
+
+===============================================================================
+第一阶段：数据层 - 任务2详细指导
+===============================================================================
+
+【任务目标】
+编写SQL查询脚本进行多表联查和数据提取，为数据分析和机器学习准备数据集。
+
+-------------------------------------------------------------------------------
+一、前置条件检查
+-------------------------------------------------------------------------------
+
+在开始任务2之前，确保已完成：
+
+□ 1. MySQL数据库已创建（ecommerce_platform）
+□ 2. 所有raw表已创建并导入数据
+   - customers_raw
+   - orders_raw
+   - products_raw
+   - order_items_raw
+   - sellers_raw
+   - payments_raw
+   - reviews_raw
+
+□ 3. 已执行SQL脚本完成ETL转换（raw → dim/fact）
+   - dim_user
+   - dim_product
+   - fact_order
+   - fact_order_item
+   - fact_payment
+   - fact_review
+
+验证方法：
+```sql
+-- 检查所有表是否存在且有数据
+SELECT table_name, table_rows
+FROM information_schema.tables
+WHERE table_schema = 'ecommerce_platform'
+ORDER BY table_name;
+```
+
+-------------------------------------------------------------------------------
+二、任务2的核心目标
+-------------------------------------------------------------------------------
+
+通过SQL查询实现以下分析目标：
+
+1. 用户行为分析
+   - 用户购买频次、总消费金额
+   - 用户生命周期价值（LTV）
+   - 用户流失分析（最后购买时间）
+
+2. 商品销售分析
+   - 商品销量排行
+   - 商品类别销售分布
+   - 商品价格带分析
+
+3. 订单配送分析
+   - 平均配送时长
+   - 延迟订单比例
+   - 各地区配送效率
+
+4. 用户满意度分析
+   - 评分分布
+   - 差评订单分析
+   - 评分与配送时长的关系
+
+5. 支付方式分析
+   - 各支付方式使用频率
+   - 支付方式与订单金额的关系
+
+-------------------------------------------------------------------------------
+三、SQL查询实现思路
+-------------------------------------------------------------------------------
+
+【查询1：用户购买行为分析（RFM模型基础）】
+
+目标：计算每个用户的购买次数、总消费、最近购买时间
+
+思路框架：
+
+-- 创建用户行为分析视图
+CREATE OR REPLACE VIEW view_user_behavior AS
+SELECT
+    u.user_id,
+    u.city,
+    u.state,
+
+    -- Frequency: 购买次数
+    COUNT(DISTINCT o.order_id) as order_count,
+
+    -- Monetary: 总消费金额
+    SUM(oi.gmv) as total_spent,
+    AVG(oi.gmv) as avg_order_value,
+
+    -- Recency: 最近购买时间
+    MAX(o.purchase_ts) as last_purchase_date,
+    DATEDIFF(NOW(), MAX(o.purchase_ts)) as days_since_last_purchase,
+
+    -- 首次购买时间
+    MIN(o.purchase_ts) as first_purchase_date,
+
+    -- 用户生命周期（天）
+    DATEDIFF(MAX(o.purchase_ts), MIN(o.purchase_ts)) as customer_lifetime_days
+
+FROM dim_user u
+LEFT JOIN fact_order o ON u.user_id = o.user_id
+LEFT JOIN fact_order_item oi ON o.order_id = oi.order_id
+GROUP BY u.user_id, u.city, u.state;
+
+使用场景：
+- 识别高价值客户
+- 流失用户预警
+- 用户分层（RFM分析）
+
+---
+
+【查询2：商品销售分析】
+
+目标：分析各商品和类别的销售情况
+
+思路框架：
+
+-- 商品销售排行
+CREATE OR REPLACE VIEW view_product_sales AS
+SELECT
+    p.product_id,
+    p.category,
+
+    -- 销售指标
+    COUNT(oi.order_id) as sales_count,
+    SUM(oi.price) as total_revenue,
+    SUM(oi.gmv) as total_gmv,
+    AVG(oi.price) as avg_price,
+
+    -- 评分指标
+    AVG(r.review_score) as avg_review_score,
+    COUNT(r.review_id) as review_count,
+
+    -- 首次和最后销售时间
+    MIN(o.purchase_ts) as first_sale_date,
+    MAX(o.purchase_ts) as last_sale_date
+
+FROM dim_product p
+LEFT JOIN fact_order_item oi ON p.product_id = oi.product_id
+LEFT JOIN fact_order o ON oi.order_id = o.order_id
+LEFT JOIN fact_review r ON o.order_id = r.order_id
+GROUP BY p.product_id, p.category
+ORDER BY total_revenue DESC;
+
+-- 商品类别销售汇总
+CREATE OR REPLACE VIEW view_category_sales AS
+SELECT
+    category,
+    COUNT(DISTINCT product_id) as product_count,
+    SUM(sales_count) as total_sales,
+    SUM(total_revenue) as total_revenue,
+    AVG(avg_price) as avg_product_price
+FROM view_product_sales
+GROUP BY category
+ORDER BY total_revenue DESC;
+
+---
+
+【查询3：订单配送效率分析】
+
+目标：分析配送时长和延迟情况
+
+思路框架：
+
+-- 配送效率分析
+CREATE OR REPLACE VIEW view_delivery_analysis AS
+SELECT
+    o.order_id,
+    u.state as customer_state,
+    o.order_status,
+
+    -- 配送时长
+    o.delivered_days,
+
+    -- 预计配送时长
+    DATEDIFF(o.estimated_delivery_ts, o.purchase_ts) as estimated_days,
+
+    -- 是否延迟
+    CASE
+        WHEN o.delivered_days IS NULL THEN NULL
+        WHEN o.delivered_days > DATEDIFF(o.estimated_delivery_ts, o.purchase_ts)
+            THEN 1
+        ELSE 0
+    END as is_delayed,
+
+    -- 延迟天数
+    CASE
+        WHEN o.delivered_days IS NULL THEN NULL
+        ELSE o.delivered_days - DATEDIFF(o.estimated_delivery_ts, o.purchase_ts)
+    END as delay_days,
+
+    -- 订单价值
+    (SELECT SUM(gmv) FROM fact_order_item WHERE order_id = o.order_id) as order_value,
+
+    -- 评分
+    r.review_score
+
+FROM fact_order o
+JOIN dim_user u ON o.user_id = u.user_id
+LEFT JOIN fact_review r ON o.order_id = r.order_id
+WHERE o.delivered_ts IS NOT NULL;  -- 只看已送达的订单
+
+-- 各州配送效率汇总
+SELECT
+    customer_state,
+    COUNT(*) as order_count,
+    AVG(delivered_days) as avg_delivery_days,
+    SUM(is_delayed) * 100.0 / COUNT(*) as delay_rate,
+    AVG(review_score) as avg_review_score
+FROM view_delivery_analysis
+GROUP BY customer_state
+ORDER BY avg_delivery_days DESC;
+
+---
+
+【查询4：用户满意度分析】
+
+目标：分析用户评分和满意度
+
+思路框架：
+
+-- 订单满意度分析
+CREATE OR REPLACE VIEW view_order_satisfaction AS
+SELECT
+    o.order_id,
+    u.user_id,
+    u.state,
+
+    -- 订单信息
+    o.purchase_ts,
+    o.delivered_days,
+    (SELECT SUM(gmv) FROM fact_order_item WHERE order_id = o.order_id) as order_value,
+
+    -- 评分信息
+    r.review_score,
+    r.review_comment_len,
+
+    -- 满意度分类
+    CASE
+        WHEN r.review_score >= 4 THEN '满意'
+        WHEN r.review_score = 3 THEN '一般'
+        WHEN r.review_score <= 2 THEN '不满意'
+        ELSE '未评价'
+    END as satisfaction_level,
+
+    -- 配送时长分段
+    CASE
+        WHEN o.delivered_days <= 7 THEN '1周内'
+        WHEN o.delivered_days <= 14 THEN '1-2周'
+        WHEN o.delivered_days <= 21 THEN '2-3周'
+        WHEN o.delivered_days > 21 THEN '3周以上'
+        ELSE '未送达'
+    END as delivery_period
+
+FROM fact_order o
+JOIN dim_user u ON o.user_id = u.user_id
+LEFT JOIN fact_review r ON o.order_id = r.order_id;
+
+-- 配送时长与满意度关系
+SELECT
+    delivery_period,
+    COUNT(*) as order_count,
+    AVG(review_score) as avg_score,
+    SUM(CASE WHEN review_score >= 4 THEN 1 ELSE 0 END) * 100.0 / COUNT(*) as satisfaction_rate
+FROM view_order_satisfaction
+WHERE review_score IS NOT NULL
+GROUP BY delivery_period
+ORDER BY
+    CASE delivery_period
+        WHEN '1周内' THEN 1
+        WHEN '1-2周' THEN 2
+        WHEN '2-3周' THEN 3
+        WHEN '3周以上' THEN 4
+        ELSE 5
+    END;
+
+---
+
+【查询5：支付方式分析】
+
+目标：分析各种支付方式的使用情况
+
+思路框架：
+
+-- 支付方式分析
+CREATE OR REPLACE VIEW view_payment_analysis AS
+SELECT
+    p.payment_type,
+    p.payment_installments,
+
+    COUNT(DISTINCT p.order_id) as order_count,
+    SUM(p.payment_value) as total_amount,
+    AVG(p.payment_value) as avg_amount,
+
+    -- 关联订单信息
+    AVG(o.delivered_days) as avg_delivery_days,
+    AVG(r.review_score) as avg_review_score
+
+FROM fact_payment p
+LEFT JOIN fact_order o ON p.order_id = o.order_id
+LEFT JOIN fact_review r ON p.order_id = r.order_id
+GROUP BY p.payment_type, p.payment_installments;
+
+-- 各支付方式汇总
+SELECT
+    payment_type,
+    COUNT(*) as order_count,
+    SUM(total_amount) as total_revenue,
+    AVG(avg_amount) as avg_order_value,
+    SUM(order_count) * 100.0 / (SELECT SUM(order_count) FROM view_payment_analysis) as usage_rate
+FROM view_payment_analysis
+GROUP BY payment_type
+ORDER BY total_revenue DESC;
+
+---
+
+【查询6：窗口函数应用 - 用户购买行为时间序列】
+
+目标：分析用户的购买行为模式
+
+思路框架：
+
+-- 用户购买时间序列分析
+SELECT
+    o.user_id,
+    o.order_id,
+    o.purchase_ts,
+
+    -- 购买次数排序
+    ROW_NUMBER() OVER (PARTITION BY o.user_id ORDER BY o.purchase_ts) as purchase_sequence,
+
+    -- 上一次购买时间
+    LAG(o.purchase_ts) OVER (PARTITION BY o.user_id ORDER BY o.purchase_ts) as prev_purchase_ts,
+
+    -- 购买间隔（天）
+    DATEDIFF(
+        o.purchase_ts,
+        LAG(o.purchase_ts) OVER (PARTITION BY o.user_id ORDER BY o.purchase_ts)
+    ) as days_since_last_purchase,
+
+    -- 订单金额
+    (SELECT SUM(gmv) FROM fact_order_item WHERE order_id = o.order_id) as order_value,
+
+    -- 累计消费
+    SUM((SELECT SUM(gmv) FROM fact_order_item WHERE order_id = o.order_id))
+        OVER (PARTITION BY o.user_id ORDER BY o.purchase_ts) as cumulative_spent
+
+FROM fact_order o
+ORDER BY o.user_id, o.purchase_ts;
+
+---
+
+【查询7：复杂的多表联查 - 完整订单视图】
+
+目标：创建一个包含订单所有信息的宽表
+
+思路框架：
+
+-- 完整订单视图（宽表）
+CREATE OR REPLACE VIEW view_order_complete AS
+SELECT
+    -- 订单基本信息
+    o.order_id,
+    o.order_status,
+    o.purchase_ts,
+    o.delivered_ts,
+    o.delivered_days,
+
+    -- 用户信息
+    u.user_id,
+    u.city as user_city,
+    u.state as user_state,
+
+    -- 商品信息
+    oi.product_id,
+    p.category as product_category,
+    oi.price,
+    oi.freight_value,
+    oi.gmv,
+
+    -- 卖家信息
+    oi.seller_id,
+    s.seller_city,
+    s.seller_state,
+
+    -- 支付信息
+    pay.payment_type,
+    pay.payment_installments,
+    pay.payment_value,
+
+    -- 评价信息
+    r.review_score,
+    r.review_comment_len,
+
+    -- 计算字段
+    CASE
+        WHEN o.delivered_days > DATEDIFF(o.estimated_delivery_ts, o.purchase_ts)
+            THEN 1 ELSE 0
+    END as is_delayed,
+
+    CASE
+        WHEN r.review_score >= 4 THEN 1 ELSE 0
+    END as is_satisfied
+
+FROM fact_order o
+JOIN dim_user u ON o.user_id = u.user_id
+LEFT JOIN fact_order_item oi ON o.order_id = oi.order_id
+LEFT JOIN dim_product p ON oi.product_id = p.product_id
+LEFT JOIN sellers_raw s ON oi.seller_id = s.seller_id
+LEFT JOIN fact_payment pay ON o.order_id = pay.order_id
+LEFT JOIN fact_review r ON o.order_id = r.order_id;
+
+使用场景：
+- 导出到Pandas进行机器学习
+- 快速的即席查询
+- 数据可视化
+
+-------------------------------------------------------------------------------
+四、创建SQL查询文件
+-------------------------------------------------------------------------------
+
+建议创建以下SQL文件来组织查询：
+
+sql/
+├── 03_create_views.sql          # 创建所有视图
+├── 04_user_analysis.sql         # 用户分析查询
+├── 05_product_analysis.sql      # 商品分析查询
+├── 06_delivery_analysis.sql     # 配送分析查询
+└── 07_export_ml_data.sql        # 导出机器学习数据集
+
+示例：sql/03_create_views.sql
+
+-- ============================================================================
+-- 创建分析视图
+-- ============================================================================
+
+USE ecommerce_platform;
+
+-- 1. 用户行为分析视图
+DROP VIEW IF EXISTS view_user_behavior;
+CREATE VIEW view_user_behavior AS
+-- [上面的查询1的SQL]
+
+-- 2. 商品销售分析视图
+DROP VIEW IF EXISTS view_product_sales;
+CREATE VIEW view_product_sales AS
+-- [上面的查询2的SQL]
+
+-- 3. 配送分析视图
+DROP VIEW IF EXISTS view_delivery_analysis;
+CREATE VIEW view_delivery_analysis AS
+-- [上面的查询3的SQL]
+
+-- 4. 订单满意度视图
+DROP VIEW IF EXISTS view_order_satisfaction;
+CREATE VIEW view_order_satisfaction AS
+-- [上面的查询4的SQL]
+
+-- 5. 支付分析视图
+DROP VIEW IF EXISTS view_payment_analysis;
+CREATE VIEW view_payment_analysis AS
+-- [上面的查询5的SQL]
+
+-- 6. 完整订单视图
+DROP VIEW IF EXISTS view_order_complete;
+CREATE VIEW view_order_complete AS
+-- [上面的查询7的SQL]
+
+-------------------------------------------------------------------------------
+五、数据导出到Python/Pandas
+-------------------------------------------------------------------------------
+
+创建Python脚本从MySQL导出数据供后续分析使用：
+
+思路框架：
+
+创建 src/analysis/export_data.py
+
+from src.utils.db import get_connection, close_connection
+from src.utils.log import log
+import pandas as pd
+
+def export_view_to_csv(view_name, output_path):
+    """
+    将视图数据导出到CSV
+
+    Args:
+        view_name: 视图名称
+        output_path: 输出CSV路径
+    """
+    log(f"开始导出视图: {view_name}", "INFO")
+
+    conn = get_connection()
+    try:
+        # 读取视图数据
+        sql = f"SELECT * FROM {view_name}"
+        df = pd.read_sql(sql, conn)
+
+        # 导出到CSV
+        df.to_csv(output_path, index=False, encoding='utf-8')
+
+        log(f"导出完成: {len(df)} 行 -> {output_path}", "SUCCESS")
+
+        return df
+
+    finally:
+        close_connection(conn)
+
+def export_all_views():
+    """导出所有分析视图"""
+
+    from pathlib import Path
+    output_dir = Path(__file__).parent.parent.parent / 'data' / 'processed'
+    output_dir.mkdir(exist_ok=True)
+
+    views = [
+        'view_user_behavior',
+        'view_product_sales',
+        'view_delivery_analysis',
+        'view_order_satisfaction',
+        'view_order_complete'
+    ]
+
+    for view in views:
+        output_path = output_dir / f"{view}.csv"
+        export_view_to_csv(view, output_path)
+
+if __name__ == '__main__':
+    export_all_views()
+
+---
+
+直接在Python中执行查询：
+
+import pandas as pd
+from src.utils.db import get_connection, close_connection
+
+conn = get_connection()
+
+# 执行查询并读取到DataFrame
+sql = """
+SELECT
+    u.state,
+    COUNT(DISTINCT o.order_id) as order_count,
+    SUM(oi.gmv) as total_revenue
+FROM dim_user u
+JOIN fact_order o ON u.user_id = o.user_id
+JOIN fact_order_item oi ON o.order_id = oi.order_id
+GROUP BY u.state
+ORDER BY total_revenue DESC
+"""
+
+df = pd.read_sql(sql, conn)
+close_connection(conn)
+
+print(df.head())
+
+-------------------------------------------------------------------------------
+六、实施步骤
+-------------------------------------------------------------------------------
+
+步骤1：编写查询视图（1-2小时）
+1. 创建 sql/03_create_views.sql
+2. 将上面的7个查询写入文件
+3. 在MySQL中执行：SOURCE /path/to/03_create_views.sql
+
+步骤2：验证视图（30分钟）
+1. 查询每个视图确保有数据
+2. 检查计算字段是否正确
+3. 检查JOIN是否有遗漏
+
+步骤3：编写分析查询（1-2小时）
+1. 创建 sql/04_user_analysis.sql
+2. 创建 sql/05_product_analysis.sql
+3. 创建 sql/06_delivery_analysis.sql
+4. 基于视图编写业务分析查询
+
+步骤4：数据导出（30分钟）
+1. 创建 src/analysis/export_data.py
+2. 导出视图到CSV文件
+3. 验证导出的数据
+
+步骤5：在Jupyter中探索（可选）
+1. 创建 notebooks/01_data_exploration.ipynb
+2. 读取导出的CSV或直接连接数据库
+3. 初步的数据探索和可视化
+
+-------------------------------------------------------------------------------
+七、关键技术点
+-------------------------------------------------------------------------------
+
+1. MySQL窗口函数
+   - ROW_NUMBER(): 行号
+   - RANK(): 排名（有并列）
+   - DENSE_RANK(): 密集排名
+   - LAG(): 获取前一行的值
+   - LEAD(): 获取后一行的值
+   - SUM() OVER(): 累计求和
+
+2. JOIN类型选择
+   - INNER JOIN: 只返回匹配的行
+   - LEFT JOIN: 保留左表所有行
+   - RIGHT JOIN: 保留右表所有行
+   - FULL OUTER JOIN: 保留两表所有行（MySQL不直接支持，需要UNION）
+
+3. 子查询优化
+   - 使用JOIN代替WHERE IN子查询
+   - 使用CTE（WITH子句）提高可读性
+   - 避免相关子查询，使用窗口函数
+
+4. 视图vs临时表
+   - 视图：虚拟表，不占存储，查询时实时计算
+   - 临时表：实际存储数据，查询快但需要维护
+
+-------------------------------------------------------------------------------
+八、预期输出
+-------------------------------------------------------------------------------
+
+完成任务2后，你应该得到：
+
+1. SQL查询文件
+   sql/03_create_views.sql
+   sql/04_user_analysis.sql
+   sql/05_product_analysis.sql
+   sql/06_delivery_analysis.sql
+
+2. MySQL视图
+   - view_user_behavior
+   - view_product_sales
+   - view_delivery_analysis
+   - view_order_satisfaction
+   - view_payment_analysis
+   - view_order_complete
+
+3. 导出的数据集
+   data/processed/view_user_behavior.csv
+   data/processed/view_product_sales.csv
+   data/processed/view_order_complete.csv
+
+4. 分析洞察
+   - 用户购买行为特征
+   - 商品销售趋势
+   - 配送效率瓶颈
+   - 用户满意度影响因素
+
+-------------------------------------------------------------------------------
+九、常见查询示例
+-------------------------------------------------------------------------------
+
+示例1：找出高价值用户Top10
+```sql
+SELECT user_id, total_spent, order_count
+FROM view_user_behavior
+ORDER BY total_spent DESC
+LIMIT 10;
+```
+
+示例2：找出延迟率最高的州
+```sql
+SELECT
+    customer_state,
+    COUNT(*) as total_orders,
+    SUM(is_delayed) as delayed_orders,
+    SUM(is_delayed) * 100.0 / COUNT(*) as delay_rate
+FROM view_delivery_analysis
+GROUP BY customer_state
+HAVING COUNT(*) >= 100  -- 至少100个订单
+ORDER BY delay_rate DESC
+LIMIT 10;
+```
+
+示例3：商品类别销售趋势（按月）
+```sql
+SELECT
+    DATE_FORMAT(o.purchase_ts, '%Y-%m') as month,
+    p.category,
+    COUNT(DISTINCT oi.order_id) as sales_count,
+    SUM(oi.gmv) as revenue
+FROM fact_order o
+JOIN fact_order_item oi ON o.order_id = oi.order_id
+JOIN dim_product p ON oi.product_id = p.product_id
+GROUP BY month, p.category
+ORDER BY month, revenue DESC;
+```
+
+示例4：用户复购分析
+```sql
+SELECT
+    CASE
+        WHEN order_count = 1 THEN '单次购买'
+        WHEN order_count = 2 THEN '2次购买'
+        WHEN order_count <= 5 THEN '3-5次购买'
+        ELSE '5次以上购买'
+    END as purchase_frequency_group,
+    COUNT(*) as user_count,
+    AVG(total_spent) as avg_total_spent
+FROM view_user_behavior
+GROUP BY purchase_frequency_group;
+```
+
+===============================================================================
+实施建议
+===============================================================================
+
+1. 时间分配
+   - 任务1（数据导入）：1-2天
+   - 任务2（SQL查询）：1-2天
+   - 任务3（数据清洗）：1-2天
+   - 后续任务将逐步展开
+
+2. 学习资源
+   - Pandas官方文档：https://pandas.pydata.org/docs/
+   - SQLite官方文档：https://www.sqlite.org/docs.html
+   - Python sqlite3模块：https://docs.python.org/3/library/sqlite3.html
+
+3. 开发建议
+   - 使用版本控制（Git）提交每个阶段的代码
+   - 写注释解释关键逻辑
+   - 测试每个函数的功能
+   - 保持代码整洁和可读性
+
+4. 调试技巧
+   - 使用print()或log()输出中间结果
+   - 使用try-except捕获异常
+   - 使用IDE的调试功能断点调试
+   - 小数据集先测试，确保逻辑正确
+
+===============================================================================
+总结
+===============================================================================
+
+任务1是整个项目的基础，完成后你将拥有：
+✓ 一个结构完整的SQLite电商数据库
+✓ 可复用的数据库工具模块
+✓ 可复用的ETL脚本框架
+✓ 数据导入和验证的最佳实践
+
+这些都将为后续的数据分析、机器学习和深度学习奠定坚实的基础。
+
+现在开始动手实现吧！遇到问题随时反馈，我会继续指导你。
+
+===============================================================================
+
+【2026-02-18 更新】现有SQL脚本分析与适配建议
+===============================================================================
+
+你已经在 sql/ecommerce_platform.sql 中编写了一个MySQL数据仓库脚本。
+这是一个非常专业的设计！现在让我分析它并提供SQLite适配方案。
+
+-------------------------------------------------------------------------------
+一、现有SQL脚本分析
+-------------------------------------------------------------------------------
+
+【架构设计】★★★★★ 非常优秀！
+
+你采用了标准的数据仓库三层架构：
+
+第1层：原始数据层（Raw Layer）
+- customers_raw - 原始客户数据
+- orders_raw - 原始订单数据
+- products_raw - 原始商品数据
+- payments_raw - 原始支付数据
+- reviews_raw - 原始评论数据
+
+第2层：维度表层（Dimension Layer）
+- dim_user - 用户维度表（去重、清洗后）
+- dim_product - 商品维度表
+
+第3层：事实表层（Fact Layer）
+- fact_order - 订单事实表
+  * 包含计算字段：delivered_days（配送天数）
+- fact_order_item - 订单明细事实表
+  * 包含计算字段：gmv（商品销售总额 = price + freight_value）
+- fact_payment - 支付事实表
+- fact_review - 评论事实表
+
+【设计亮点】
+
+1. 星型模式（Star Schema）
+   - 维度表存储描述性信息
+   - 事实表存储交易和度量值
+   - 便于多维分析和OLAP查询
+
+2. 数据清洗和转换
+   - 使用NULLIF处理空字符串
+   - STR_TO_DATE转换日期格式
+   - DATEDIFF计算配送天数
+   - 计算GMV等业务指标
+
+3. 性能优化
+   - 为主键和外键创建索引
+   - idx_order_user_purchase: 复合索引优化用户订单查询
+   - idx_item_product: 商品查询优化
+   - idx_review_order: 评论关联查询优化
+
+4. 数据完整性
+   - 定义主键约束
+   - 定义外键约束
+   - 确保数据引用完整性
+
+【业务价值】
+
+这个设计支持以下分析场景：
+✓ 用户行为分析（通过dim_user和fact_order）
+✓ 商品分析（通过dim_product和fact_order_item）
+✓ 销售分析（通过GMV、price、freight_value）
+✓ 配送效率分析（通过delivered_days）
+✓ 用户满意度分析（通过fact_review）
+
+-------------------------------------------------------------------------------
+二、MySQL vs SQLite 关键差异
+-------------------------------------------------------------------------------
+
+你的SQL脚本是为MySQL设计的，以下是需要适配的关键点：
+
+差异对比表：
+
+| 特性 | MySQL语法 | SQLite适配 |
+|------|-----------|-----------|
+| 1. 数据库创建 | CREATE DATABASE | 不需要，直接创建.db文件 |
+| 2. USE语句 | USE database_name | 不支持，移除 |
+| 3. 存储引擎 | ENGINE=InnoDB | 移除，SQLite不需要 |
+| 4. 字符集 | CHARSET=utf8mb4 | 移除，SQLite默认UTF-8 |
+| 5. 日期转换 | STR_TO_DATE() | datetime()或strftime() |
+| 6. 日期计算 | DATEDIFF() | julianday()计算差值 |
+| 7. IFNULL | IFNULL(value, 0) | COALESCE(value, 0) |
+| 8. 外键约束 | 默认启用 | 需要PRAGMA foreign_keys=ON |
+| 9. AUTO_INCREMENT | AUTO_INCREMENT | AUTOINCREMENT |
+| 10. 数据类型 | DECIMAL(10,2) | REAL（SQLite只有5种类型）|
+
+SQLite的5种数据类型：
+- NULL
+- INTEGER
+- REAL（浮点数）
+- TEXT（文本）
+- BLOB（二进制）
+
+-------------------------------------------------------------------------------
+三、实现建议与行动计划
+-------------------------------------------------------------------------------
+
+【推荐实现路径】
+
+我建议采用混合方案：
+
+阶段1：快速启动（使用Pandas方案）
+1. 使用Pandas导入CSV到SQLite（原始表）
+2. 创建基础索引
+3. 开始数据分析和建模工作
+
+阶段2：架构升级（使用SQLite数据仓库）
+1. 在完成核心分析后
+2. 将数据仓库架构实现到SQLite
+3. 展示完整的SQL ETL能力
+
+理由：
+- 先快速推进项目，避免在SQL转换上卡太久
+- 有了数据基础后，更容易理解数据仓库设计的价值
+- 最终作品集中可以展示Python数据处理能力+SQL数据仓库能力
+
+【具体行动计划】
+
+当前任务（第1周）：
+□ 完成src/utils/db.py和log.py
+□ 完成load_olist_to_sqlite.py（直接导入CSV）
+□ 开始数据分析和建模
+
+后续任务（第2周）：
+□ 创建SQLite版本的数据仓库脚本（可选）
+□ 实现ETL转换
+□ 优化查询性能
+
+【我的建议】
+
+考虑到项目时间（1-2周）和整体目标，我建议：
+
+第1周：
+- 使用Pandas导入方案快速建立数据基础
+- 完成任务1-3（数据层）
+- 开始任务4-5（分析层）
+
+第2周：
+- 完成任务6-8（机器学习层）
+- 根据进度决定是否实现完整的SQL数据仓库
+- 完成任务9-11（深度学习、智能交互、输出层）
+
+【技术加分项】
+
+在简历和作品集中，你可以这样描述：
+
+"项目采用了星型模式（Star Schema）数据仓库架构设计，
+包含维度表（dim_user, dim_product）和事实表（fact_order, fact_order_item等），
+支持高效的多维分析和OLAP查询。
+
+实现了完整的ETL流程，从原始数据（Raw Layer）清洗转换到
+分析就绪的维度模型（Dimensional Model），
+计算了关键业务指标如GMV、配送天数、客户满意度等。"
+
+这种描述会让面试官眼前一亮！
+
+===============================================================================
+【2026-02-23 项目进度更新】当前完成情况与下一步计划
+===============================================================================
+
+-------------------------------------------------------------------------------
+一、已完成工作总结 ✓
+-------------------------------------------------------------------------------
+
+【✓ 第1阶段：数据层 - 已完成】
+
+1. MySQL数据库环境配置完成
+   ✓ 数据库名称：ecommerce_platform
+   ✓ 数据仓库三层架构（Raw → Dim → Fact）
+   ✓ 所有表已创建并导入数据
+
+2. Python数据库连接工具完成
+   ✓ src/utils/db.py - MySQL连接和查询工具
+   ✓ 支持pymysql和SQLAlchemy双引擎
+
+3. SQL视图创建完成
+   ✓ sql/create_views.sql - 6个分析视图
+   ✓ view_user_behavior - 用户行为分析视图
+   ✓ view_product_sales - 商品销售分析视图
+   ✓ view_category_sales - 类别销售分析视图
+   ✓ view_delivery_analysis - 配送效率分析视图
+   ✓ view_order_satisfaction - 订单满意度视图
+   ✓ view_order_complete - 完整订单宽表视图
+
+【✓ 第2阶段：分析层 - 部分完成】
+
+✓ 分析报告 #1：订单满意度与配送延迟关系分析
+   文件：Statistical_analysis_report/01_satisfaction_vs_delivery.ipynb
+
+   完成度：★★★★★ (5/5) - 非常完整的分析！
+
+   分析内容：
+   ✓ 数据样本：95,602个订单
+   ✓ 完整的探索性数据分析(EDA)
+     - 变量分布分析
+     - 相关性分析和相关矩阵
+     - VIF多重共线性检验
+     - 箱线图异常值检测
+     - 条形图可视化分析
+
+   ✓ 统计检验
+     - 卡方检验：χ² = 11,131.07, p < 0.001（极显著）
+     - 单变量逻辑回归：OR = 0.089（延迟订单满意度下降89%）
+
+   ✓ 核心发现
+     - 准时订单满意度：79.4%
+     - 延迟订单满意度：25.6%
+     - 满意度下降：54个百分点（-68%）
+
+   ✓ 多变量建模与特征工程
+     - 对数转换：log_value = np.log1p(order_value)
+     - 多项式特征：delay_squared = delivered_days²
+     - 交互特征：value_delay_interaction = order_value × delivered_days
+     - 模型评估：逻辑回归 + 随机森林 + XGBoost
+
+   ✓ 模型性能
+     - 逻辑回归：AUC = 0.660
+     - 随机森林：AUC = 0.600
+     - XGBoost：AUC = 0.658
+
+   ✓ 业务成本优化
+     - 定义业务成本函数（误判成本不对称）
+     - 找到最优阈值：0.353
+     - 成本效益分析和业务决策建议
+
+   ✓ 完整的模型评估
+     - ROC曲线和AUC
+     - Precision-Recall曲线
+     - 混淆矩阵
+     - 分类报告
+
+   评价：这是一份非常专业的统计分析报告！从EDA到假设检验，
+   从单变量到多变量建模，从统计显著性到业务实际意义，
+   逻辑严密，分析完整。对于后续机器学习建模打下了良好基础。
+
+-------------------------------------------------------------------------------
+二、下一步工作计划 - 继续完成分析层
+-------------------------------------------------------------------------------
+
+根据项目整体目标和现有数据，建议按以下优先级继续完成数据分析：
+
+【HIGH PRIORITY】分析报告 #2：用户分层分析（RFM模型）
+
+目标：
+- 使用RFM模型对用户进行分层
+- 识别高价值客户、流失风险客户
+- 为精准营销和用户挽留提供数据支持
+
+实现思路：
+
+步骤1：从MySQL提取用户RFM数据
+```python
+from src.utils.db import get_engine
+import pandas as pd
+
+engine = get_engine()
+sql = "SELECT * FROM view_user_behavior"
+df = pd.read_sql(sql, engine)
+```
+
+步骤2：计算RFM分数
+- Recency (R)：days_since_last_purchase（越小越好）
+- Frequency (F)：order_count（越大越好）
+- Monetary (M)：total_spent（越大越好）
+
+步骤3：使用K-Means聚类
+- 标准化RFM特征
+- 确定最优K值（肘部法则 + 轮廓系数）
+- 执行聚类（建议4-6个客户群）
+
+步骤4：客户群画像分析
+- 每个群的RFM特征描述
+- 每个群的用户数量和占比
+- 每个群的满意度和延迟率
+- 命名客户群（如：VIP客户、沉睡客户、新客户等）
+
+步骤5：业务建议
+- 针对每个客户群的营销策略
+- 流失预警客户识别
+- 高价值客户挽留方案
+
+预期文件：Statistical_analysis_report/02_user_segmentation_rfm.ipynb
+
+---
+
+【HIGH PRIORITY】分析报告 #3：商品类别销售与满意度分析
+
+目标：
+- 识别表现最好和最差的商品类别
+- 分析类别的销售额和满意度关系
+- 发现问题类别和机会类别
+
+实现思路：
+
+步骤1：从MySQL提取类别数据
+```python
+# 从view_category_sales获取类别销售数据
+# 从view_product_sales获取单品数据
+# 关联订单满意度数据
+```
+
+步骤2：类别维度分析
+- 销售额Top10类别
+- 销量Top10类别
+- 平均评分Top10类别
+- 差评率最高的类别
+
+步骤3：波士顿矩阵分析法
+将类别分为四个象限：
+- 明星类别（高销售、高满意度）→ 重点推广
+- 问题类别（高销售、低满意度）→ 质量改进
+- 机会类别（低销售、高满意度）→ 加大推广
+- 瘦狗类别（低销售、低满意度）→ 考虑下架
+
+步骤4：深入分析问题类别
+- 为什么销售高但满意度低？
+- 是配送问题还是产品问题？
+- 分析差评原因（review_comment_len）
+
+步骤5：可视化
+- 类别销售漏斗图
+- 散点图：销售额 vs 满意度
+- 热力图：类别 × 州 的销售分布
+
+预期文件：Statistical_analysis_report/03_category_analysis.ipynb
+
+---
+
+【MEDIUM PRIORITY】分析报告 #4：地理区域分析
+
+目标：
+- 分析不同州的销售和配送表现
+- 识别配送效率低的区域
+- 为物流优化提供数据支持
+
+实现思路：
+- 使用view_delivery_analysis按state分组
+- 分析各州的：订单量、延迟率、平均配送天数、满意度
+- 地理可视化（如果有地图库）
+- 识别问题州和优秀州
+
+预期文件：Statistical_analysis_report/04_geographic_analysis.ipynb
+
+---
+
+【MEDIUM PRIORITY】分析报告 #5：支付方式分析
+
+目标：
+- 分析不同支付方式的使用情况
+- 支付方式与订单金额、满意度的关系
+- 分期付款用户特征分析
+
+实现思路：
+- 使用view_payment_analysis和fact_payment
+- 分析payment_type分布
+- 分析payment_installments与order_value的关系
+- 不同支付方式的满意度对比
+
+预期文件：Statistical_analysis_report/05_payment_analysis.ipynb
+
+---
+
+【LOW PRIORITY】分析报告 #6：时间序列分析
+
+目标：
+- 分析订单的时间趋势
+- 识别季节性模式
+- 预测未来订单趋势
+
+实现思路：
+- 按月/周统计订单量和销售额
+- 趋势分解（Trend + Seasonality + Residual）
+- 时间序列预测（ARIMA或Prophet）
+
+预期文件：Statistical_analysis_report/06_time_series_analysis.ipynb
+
+---
+
+【分析层完成后】分析报告 #7：综合分析仪表盘（Executive Summary）
+
+目标：
+- 整合所有分析结果
+- 创建关键指标仪表盘
+- 总结业务洞察和建议
+
+内容：
+- 整体业务健康度评分
+- 关键指标KPI卡片
+- Top 5业务洞察
+- Top 5优化建议
+- 可视化仪表盘
+
+预期文件：Statistical_analysis_report/00_executive_dashboard.ipynb
+
+-------------------------------------------------------------------------------
+三、完成分析层后的下一阶段规划
+-------------------------------------------------------------------------------
+
+【第3阶段：机器学习层】
+
+在完成上述数据分析后，将进入机器学习建模阶段：
+
+任务6：构建协同过滤推荐模型
+- 基于用户购买历史的商品推荐
+- 使用Surprise库或实现矩阵分解
+- 评估推荐效果（RMSE, MAE, Precision@K）
+
+任务7：训练用户流失预警模型
+- 定义流失（如60天未购买）
+- 使用RFM特征 + 订单历史特征
+- 二分类模型：逻辑回归/随机森林/XGBoost
+- 识别高风险流失用户
+
+任务8：构建转化率预测模型
+- 预测用户下次购买的可能性
+- 特征工程：用户特征 + 行为特征 + 商品特征
+- 为营销活动提供目标用户列表
+
+【第4阶段：深度学习层】
+任务9：使用CNN实现商品图片分类（如果有图片数据）
+
+【第5阶段：智能交互层】
+任务10：开发电商智能客服机器人
+
+【第6阶段：输出层】
+任务11：整理项目文档和可视化报告
+
+-------------------------------------------------------------------------------
+四、当前优先级建议
+-------------------------------------------------------------------------------
+
+立即开始：
+1. 分析报告 #2：用户分层分析（RFM模型）
+   → 这是理解用户的关键，为后续流失预测和推荐系统打基础
+
+2. 分析报告 #3：商品类别销售与满意度分析
+   → 识别问题商品类别，结合报告#1的配送分析，形成完整的业务洞察
+
+建议顺序：
+02_user_segmentation_rfm.ipynb
+ ↓
+03_category_analysis.ipynb
+ ↓
+04_geographic_analysis.ipynb
+ ↓
+05_payment_analysis.ipynb
+ ↓
+00_executive_dashboard.ipynb（整合所有分析）
+ ↓
+进入第3阶段：机器学习建模
+
+-------------------------------------------------------------------------------
+五、技术栈回顾
+-------------------------------------------------------------------------------
+
+已使用的技术：
+✓ MySQL数据库 + 星型模式数据仓库
+✓ Python + Pandas数据处理
+✓ Scipy统计检验（卡方检验）
+✓ Statsmodels逻辑回归
+✓ Sklearn机器学习（Random Forest, XGBoost, VIF, StandardScaler）
+✓ Matplotlib + Seaborn可视化
+
+接下来将使用：
+□ Sklearn K-Means聚类（RFM分析）
+□ Sklearn Pipeline + GridSearchCV（模型调优）
+□ Collaborative Filtering（推荐系统）
+□ Prophet/ARIMA（时间序列）
+□ 可能：Plotly交互式可视化
+
+===============================================================================
