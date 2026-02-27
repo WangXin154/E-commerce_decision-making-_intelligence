@@ -4,7 +4,7 @@ USE ecommerce_platform;
 DROP VIEW IF EXISTS view_user_behavior;
 CREATE VIEW view_user_behavior AS
 SELECT 
-	u.user_id,
+	u.unique_user_id,
     u.city,
     u.state,
     -- frequency number of purchases
@@ -21,7 +21,7 @@ SELECT
 FROM dim_user u
 LEFT JOIN fact_order o ON u.user_id = o.user_id
 LEFT JOIN fact_order_item oi ON o.order_id = oi.order_id
-GROUP BY u.user_id, u.city, u.state;
+GROUP BY u.unique_user_id, u.city, u.state;
 
 -- 1)See the distribution of totalspent(A small number of users contribute a lot of revenue)
 SELECT
