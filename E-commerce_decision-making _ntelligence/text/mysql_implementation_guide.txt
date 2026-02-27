@@ -1,0 +1,889 @@
+===============================================================================
+MySQL数据仓库实施指导 - 电商智能客服项目
+===============================================================================
+
+创建时间: 2026-02-18
+实施方案: 使用MySQL数据库 + Python ETL
+
+===============================================================================
+一、MySQL环境配置
+===============================================================================
+
+【任务1.1：安装和配置MySQL】
+
+步骤1：安装MySQL Server
+- 下载MySQL Community Server（推荐8.0+版本）
+- 下载地址：https://dev.mysql.com/downloads/mysql/
+- 安装时记住root密码（建议设置为：root123456，开发环境使用）
+
+步骤2：验证MySQL安装
+打开命令行，执行：
+```bash
+mysql --version
+```
+应该看到类似：mysql  Ver 8.0.xx
+
+步骤3：登录MySQL
+```bash
+mysql -u root -p
+```
+输入密码后，应该看到MySQL提示符：mysql>
+
+步骤4：测试基本命令
+```sql
+SHOW DATABASES;
+SELECT VERSION();
+```
+
+【任务1.2：安装Python MySQL驱动】
+
+有两个选择：
+
+方案A：使用pymysql（推荐，纯Python实现）
+```bash
+pip install pymysql
+```
+
+方案B：使用mysql-connector-python（MySQL官方驱动）
+```bash
+pip install mysql-connector-python
+```
+
+本指导使用pymysql。
+
+验证安装：
+```python
+import pymysql
+print(pymysql.__version__)
+```
+
+===============================================================================
+二、项目文件结构
+===============================================================================
+
+调整后的项目结构：
+
+E-commerce_decision-making_intelligence/
+├── data/
+│   ├── olist_customers_dataset.csv
+│   ├── olist_orders_dataset.csv
+│   ├── olist_order_items_dataset.csv
+│   ├── olist_products_dataset.csv
+│   ├── olist_sellers_dataset.csv
+│   ├── olist_order_payments_dataset.csv
+│   ├── olist_order_reviews_dataset.csv
+│   ├── olist_geolocation_dataset.csv
+│   └── product_category_name_translation.csv
+├── sql/
+│   ├── 01_create_tables.sql          # 建表脚本（raw表）
+│   ├── 02_create_dim_fact.sql        # 建表脚本（dim/fact表）
+│   ├── 03_etl_transform.sql          # ETL转换脚本
+│   └── 04_analysis_queries.sql       # 分析查询脚本
+├── src/
+│   ├── __init__.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── db.py                     # 数据库连接工具（MySQL版本）
+│   │   └── log.py                    # 日志工具
+│   └── etl/
+│       ├── __init__.py
+│       ├── load_csv_to_mysql.py      # CSV导入脚本
+│       └── run_etl.py                # 执行ETL转换
+├── notebooks/                         # Jupyter notebooks
+│   ├── 01_eda.ipynb
+│   ├── 02_user_analysis.ipynb
+│   └── 03_recommendation.ipynb
+└── text/
+    ├── project_guide.txt
+    └── mysql_implementation_guide.txt
+
+===============================================================================
+三、Python代码实现框架
+===============================================================================
+
+【文件1：src/utils/db.py - MySQL数据库连接工具】
+
+实现思路：
+
+import pymysql
+from pathlib import Path
+
+# 数据库配置
+DB_CONFIG = {
+    'host': 'localhost',
+    'port': 3306,
+    'user': 'root',
+    'password': 'root123456',        # 修改为你的MySQL密码
+    'database': 'ecommerce_platform',
+    'charset': 'utf8mb4'
+}
+
+def get_connection():
+    """创建MySQL数据库连接"""
+
+    实现步骤：
+    1. 使用pymysql.connect()创建连接
+    2. 传入DB_CONFIG参数
+    3. 设置autocommit=False（手动控制事务）
+    4. 返回connection对象
+
+    示例框架：
+    try:
+        conn = pymysql.connect(
+            host=DB_CONFIG['host'],
+            port=DB_CONFIG['port'],
+            user=DB_CONFIG['user'],
+            password=DB_CONFIG['password'],
+            database=DB_CONFIG['database'],
+            charset=DB_CONFIG['charset']
+        )
+        return conn
+    except pymysql.Error as e:
+        # 打印错误并抛出异常
+        pass
+
+def create_database_if_not_exists():
+    """创建数据库（如果不存在）"""
+
+    实现步骤：
+    1. 连接MySQL但不指定database
+    2. 执行CREATE DATABASE IF NOT EXISTS语句
+    3. 关闭连接
+
+    示例框架：
+    conn = pymysql.connect(
+        host=DB_CONFIG['host'],
+        user=DB_CONFIG['user'],
+        password=DB_CONFIG['password'],
+        charset='utf8mb4'
+    )
+    cursor = conn.cursor()
+    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_CONFIG['database']}
+                    DEFAULT CHARACTER SET utf8mb4
+                    DEFAULT COLLATE utf8mb4_0900_ai_ci")
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+def execute_sql(conn, sql, params=None):
+    """执行单条SQL语句"""
+
+    实现步骤：
+    1. 创建cursor
+    2. 执行SQL（使用参数化查询）
+    3. 提交事务
+    4. 返回受影响的行数
+
+    示例框架：
+    cursor = conn.cursor()
+    if params:
+        result = cursor.execute(sql, params)
+    else:
+        result = cursor.execute(sql)
+    conn.commit()
+    cursor.close()
+    return result
+
+def execute_sql_file(conn, file_path):
+    """读取并执行SQL文件"""
+
+    实现步骤：
+    1. 读取SQL文件内容
+    2. 按分号分割多条SQL语句
+    3. 逐条执行SQL
+    4. 提交事务
+
+    注意事项：
+    - 处理SQL注释（--和/**/）
+    - 处理空行
+    - 错误处理和日志记录
+
+    示例框架：
+    with open(file_path, 'r', encoding='utf-8') as f:
+        sql_content = f.read()
+
+    # 简单分割（实际可能需要更复杂的解析）
+    statements = sql_content.split(';')
+
+    cursor = conn.cursor()
+    for statement in statements:
+        statement = statement.strip()
+        if statement and not statement.startswith('--'):
+            cursor.execute(statement)
+    conn.commit()
+    cursor.close()
+
+def fetch_query(conn, sql, params=None):
+    """执行查询并返回结果"""
+
+    实现步骤：
+    1. 创建cursor（使用DictCursor返回字典格式）
+    2. 执行查询
+    3. 获取所有结果
+    4. 返回结果列表
+
+    示例框架：
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+    if params:
+        cursor.execute(sql, params)
+    else:
+        cursor.execute(sql)
+    results = cursor.fetchall()
+    cursor.close()
+    return results
+
+def close_connection(conn):
+    """关闭数据库连接"""
+
+    if conn:
+        conn.close()
+
+---
+
+【文件2：src/utils/log.py - 日志工具】
+
+实现思路：
+
+from datetime import datetime
+
+def log(message, level="INFO"):
+    """打印带时间戳的日志"""
+
+    实现步骤：
+    1. 获取当前时间
+    2. 格式化时间戳
+    3. 根据级别选择前缀
+    4. 打印日志
+
+    示例框架：
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # 级别标记
+    level_symbols = {
+        "INFO": "ℹ",
+        "SUCCESS": "✓",
+        "WARNING": "⚠",
+        "ERROR": "✗"
+    }
+
+    symbol = level_symbols.get(level, "•")
+    print(f"[{timestamp}] [{level}] {symbol} {message}")
+
+---
+
+【文件3：src/etl/load_csv_to_mysql.py - CSV导入脚本】
+
+这是核心脚本，负责将CSV文件导入到MySQL的raw表。
+
+实现思路：
+
+from pathlib import Path
+import pandas as pd
+import pymysql
+from src.utils.db import get_connection, create_database_if_not_exists
+from src.utils.log import log
+
+# CSV文件映射到表名
+CSV_TABLE_MAPPING = {
+    'customers_raw': {
+        'file': 'olist_customers_dataset.csv',
+        'parse_dates': None
+    },
+    'orders_raw': {
+        'file': 'olist_orders_dataset.csv',
+        'parse_dates': None  # 注意：先以字符串导入，后续用SQL转换
+    },
+    'products_raw': {
+        'file': 'olist_products_dataset.csv',
+        'parse_dates': None
+    },
+    'payments_raw': {
+        'file': 'olist_order_payments_dataset.csv',
+        'parse_dates': None
+    },
+    'reviews_raw': {
+        'file': 'olist_order_reviews_dataset.csv',
+        'parse_dates': None
+    }
+}
+
+def get_data_path():
+    """获取data目录的绝对路径"""
+
+    实现步骤：
+    1. 使用Path(__file__)获取当前文件路径
+    2. 向上导航到项目根目录
+    3. 拼接data路径
+    4. 返回绝对路径
+
+    示例：
+    current_file = Path(__file__)
+    project_root = current_file.parent.parent.parent
+    data_path = project_root / 'data'
+    return data_path
+
+def load_csv_to_table(csv_path, table_name, conn):
+    """将CSV文件导入到MySQL表"""
+
+    实现步骤：
+
+    1. 读取CSV文件
+       df = pd.read_csv(csv_path, encoding='utf-8')
+
+       如果编码错误，尝试：
+       df = pd.read_csv(csv_path, encoding='latin-1')
+
+    2. 数据预处理
+       - 检查列名（确保与表结构匹配）
+       - 处理缺失值（根据需要）
+       - 检查数据类型
+
+    3. 使用Pandas的to_sql导入
+       df.to_sql(
+           name=table_name,
+           con=conn,
+           if_exists='replace',  # 或'append'
+           index=False,
+           chunksize=1000        # 分批插入
+       )
+
+       注意：pymysql需要使用SQLAlchemy引擎
+
+    4. 或者使用批量INSERT（推荐，性能更好）
+
+       方法：使用executemany()
+
+       步骤：
+       a. 准备INSERT SQL语句
+       b. 将DataFrame转换为元组列表
+       c. 使用executemany批量插入
+
+       示例框架：
+       cursor = conn.cursor()
+
+       # 构建INSERT语句
+       columns = ', '.join(df.columns)
+       placeholders = ', '.join(['%s'] * len(df.columns))
+       sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
+
+       # 转换数据
+       data = [tuple(row) for row in df.values]
+
+       # 批量插入
+       cursor.executemany(sql, data)
+       conn.commit()
+       cursor.close()
+
+    5. 打印日志
+       log(f"成功导入 {table_name}: {len(df)} 行", "SUCCESS")
+
+def main():
+    """主函数：导入所有CSV文件"""
+
+    实现流程：
+
+    1. 创建数据库
+       log("开始创建数据库...")
+       create_database_if_not_exists()
+       log("数据库创建成功", "SUCCESS")
+
+    2. 获取数据路径
+       data_path = get_data_path()
+
+    3. 连接数据库
+       conn = get_connection()
+       log("数据库连接成功", "SUCCESS")
+
+    4. 循环导入每个CSV文件
+       for table_name, config in CSV_TABLE_MAPPING.items():
+           csv_file = config['file']
+           csv_path = data_path / csv_file
+
+           log(f"开始导入 {table_name} from {csv_file}...")
+
+           try:
+               load_csv_to_table(csv_path, table_name, conn)
+           except Exception as e:
+               log(f"导入 {table_name} 失败: {str(e)}", "ERROR")
+               # 根据需要决定是继续还是中断
+
+    5. 关闭连接
+       close_connection(conn)
+       log("所有数据导入完成！", "SUCCESS")
+
+if __name__ == '__main__':
+    main()
+
+---
+
+【文件4：src/etl/run_etl.py - 执行ETL转换】
+
+这个脚本执行你的SQL ETL转换（从raw表到dim/fact表）。
+
+实现思路：
+
+from pathlib import Path
+from src.utils.db import get_connection, execute_sql_file
+from src.utils.log import log
+
+def get_sql_path():
+    """获取sql目录路径"""
+    current_file = Path(__file__)
+    project_root = current_file.parent.parent.parent
+    sql_path = project_root / 'sql'
+    return sql_path
+
+def run_etl():
+    """执行ETL转换"""
+
+    实现流程：
+
+    1. 获取SQL文件路径
+       sql_path = get_sql_path()
+
+    2. 连接数据库
+       conn = get_connection()
+       log("数据库连接成功", "SUCCESS")
+
+    3. 执行ETL SQL脚本
+       log("开始执行ETL转换...")
+
+       # 如果你将SQL拆分成多个文件
+       sql_files = [
+           '02_create_dim_fact.sql',
+           '03_etl_transform.sql'
+       ]
+
+       for sql_file in sql_files:
+           file_path = sql_path / sql_file
+           log(f"执行 {sql_file}...")
+           execute_sql_file(conn, file_path)
+           log(f"{sql_file} 执行完成", "SUCCESS")
+
+    4. 验证数据
+       log("验证数据...")
+
+       验证SQL：
+       tables = ['dim_user', 'dim_product', 'fact_order',
+                 'fact_order_item', 'fact_payment', 'fact_review']
+
+       for table in tables:
+           result = fetch_query(conn, f"SELECT COUNT(*) as cnt FROM {table}")
+           count = result[0]['cnt']
+           log(f"{table}: {count} 行")
+
+    5. 关闭连接
+       close_connection(conn)
+       log("ETL转换完成！", "SUCCESS")
+
+if __name__ == '__main__':
+    run_etl()
+
+===============================================================================
+四、SQL脚本优化建议
+===============================================================================
+
+你的SQL脚本已经很好了，以下是一些增强建议：
+
+【建议1：拆分SQL脚本】
+
+将一个大SQL文件拆分为多个小文件，便于管理和调试：
+
+sql/01_create_tables.sql - 创建raw表和dim/fact表
+sql/02_etl_transform.sql - ETL数据转换
+sql/03_indexes.sql - 创建额外索引（可选）
+sql/04_analysis_queries.sql - 分析查询示例
+
+【建议2：添加缺失的raw表】
+
+你的SQL脚本缺少以下raw表的创建：
+
+-- 订单商品明细原始表
+CREATE TABLE order_items_raw (
+  order_id VARCHAR(50),
+  order_item_id INT,
+  product_id VARCHAR(50),
+  seller_id VARCHAR(50),
+  shipping_limit_date VARCHAR(32),
+  price DECIMAL(10,2),
+  freight_value DECIMAL(10,2)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 卖家原始表
+CREATE TABLE sellers_raw (
+  seller_id VARCHAR(50),
+  seller_zip_code_prefix INT,
+  seller_city VARCHAR(100),
+  seller_state VARCHAR(10)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 地理位置原始表
+CREATE TABLE geolocation_raw (
+  geolocation_zip_code_prefix INT,
+  geolocation_lat DECIMAL(10,6),
+  geolocation_lng DECIMAL(10,6),
+  geolocation_city VARCHAR(100),
+  geolocation_state VARCHAR(10)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 商品类别翻译表
+CREATE TABLE category_translation_raw (
+  product_category_name VARCHAR(100),
+  product_category_name_english VARCHAR(100)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+【建议3：完善fact_payment和fact_review的INSERT语句】
+
+你的SQL脚本缺少这两个表的INSERT语句：
+
+-- 填充支付事实表
+INSERT INTO fact_payment (order_id, payment_sequential, payment_type,
+                          payment_installments, payment_value)
+SELECT
+  order_id,
+  payment_sequential,
+  payment_type,
+  payment_installments,
+  payment_value
+FROM payments_raw;
+
+-- 填充评论事实表
+INSERT INTO fact_review (review_id, order_id, review_score, review_comment_len,
+                         review_creation_ts, review_answer_ts)
+SELECT
+  review_id,
+  order_id,
+  review_score,
+  CASE
+    WHEN review_comment_message IS NULL THEN 0
+    ELSE LENGTH(review_comment_message)
+  END AS review_comment_len,
+  review_creation_date AS review_creation_ts,
+  review_answer_timestamp AS review_answer_ts
+FROM reviews_raw;
+
+【建议4：添加数据验证查询】
+
+在ETL后执行验证：
+
+-- 验证数据完整性
+SELECT 'dim_user' as table_name, COUNT(*) as row_count FROM dim_user
+UNION ALL
+SELECT 'dim_product', COUNT(*) FROM dim_product
+UNION ALL
+SELECT 'fact_order', COUNT(*) FROM fact_order
+UNION ALL
+SELECT 'fact_order_item', COUNT(*) FROM fact_order_item
+UNION ALL
+SELECT 'fact_payment', COUNT(*) FROM fact_payment
+UNION ALL
+SELECT 'fact_review', COUNT(*) FROM fact_review;
+
+-- 检查外键完整性
+SELECT COUNT(*) as orphan_orders
+FROM fact_order o
+LEFT JOIN dim_user u ON o.user_id = u.user_id
+WHERE u.user_id IS NULL;
+
+-- 检查GMV计算
+SELECT
+  MIN(gmv) as min_gmv,
+  MAX(gmv) as max_gmv,
+  AVG(gmv) as avg_gmv,
+  SUM(gmv) as total_gmv
+FROM fact_order_item;
+
+【建议5：添加额外的维度表】
+
+增强数据仓库能力：
+
+-- 卖家维度表
+CREATE TABLE dim_seller (
+  seller_id VARCHAR(50) PRIMARY KEY,
+  seller_city VARCHAR(100),
+  seller_state VARCHAR(10),
+  seller_zip_code_prefix INT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO dim_seller (seller_id, seller_city, seller_state, seller_zip_code_prefix)
+SELECT DISTINCT
+  seller_id,
+  seller_city,
+  seller_state,
+  seller_zip_code_prefix
+FROM sellers_raw;
+
+-- 然后在fact_order_item中添加外键
+ALTER TABLE fact_order_item
+ADD FOREIGN KEY (seller_id) REFERENCES dim_seller(seller_id);
+
+===============================================================================
+五、完整实施步骤
+===============================================================================
+
+【第1步：环境准备】（30分钟）
+
+1. 安装MySQL Server
+2. 安装Python MySQL驱动：pip install pymysql pandas
+3. 验证MySQL可以正常连接
+
+【第2步：准备SQL脚本】（1小时）
+
+1. 完善sql/ecommerce_platform.sql
+   - 添加缺失的raw表（order_items_raw, sellers_raw等）
+   - 添加缺失的INSERT语句
+   - 可选：拆分为多个SQL文件
+
+2. 创建sql/01_create_tables.sql
+   包含所有CREATE TABLE语句（raw + dim/fact）
+
+3. 创建sql/02_etl_transform.sql
+   包含所有INSERT语句（raw -> dim/fact）
+
+【第3步：实现Python工具模块】（2小时）
+
+1. 实现src/utils/db.py
+   - get_connection()
+   - create_database_if_not_exists()
+   - execute_sql()
+   - execute_sql_file()
+   - fetch_query()
+
+2. 实现src/utils/log.py
+   - log()函数
+
+3. 测试工具模块
+   - 测试数据库连接
+   - 测试SQL执行
+
+【第4步：实现CSV导入脚本】（2-3小时）
+
+1. 实现src/etl/load_csv_to_mysql.py
+   - load_csv_to_table()
+   - main()
+
+2. 运行脚本导入数据
+   ```bash
+   python -m src.etl.load_csv_to_mysql
+   ```
+
+3. 验证raw表数据
+   ```sql
+   USE ecommerce_platform;
+   SELECT COUNT(*) FROM customers_raw;
+   SELECT COUNT(*) FROM orders_raw;
+   -- ... 检查其他表
+   ```
+
+【第5步：执行ETL转换】（1小时）
+
+1. 实现src/etl/run_etl.py
+   - run_etl()函数
+
+2. 运行ETL脚本
+   ```bash
+   python -m src.etl.run_etl
+   ```
+
+3. 验证dim/fact表数据
+   ```sql
+   SELECT COUNT(*) FROM dim_user;
+   SELECT COUNT(*) FROM fact_order;
+   -- ... 检查其他表
+   ```
+
+【第6步：数据质量检查】（30分钟）
+
+1. 执行验证SQL查询
+2. 检查数据完整性
+3. 检查业务指标计算是否正确
+
+【第7步：编写分析查询】（根据需要）
+
+创建sql/04_analysis_queries.sql，包含常用的分析查询。
+
+===============================================================================
+六、常见问题和解决方案
+===============================================================================
+
+【问题1：连接MySQL失败】
+
+错误信息：Can't connect to MySQL server
+
+解决方案：
+1. 检查MySQL服务是否启动
+   Windows: services.msc -> MySQL服务
+   Linux: sudo systemctl status mysql
+2. 检查host和port是否正确
+3. 检查用户名和密码
+4. 检查防火墙设置
+
+【问题2：pymysql导入to_sql失败】
+
+错误信息：AttributeError: 'Connection' object has no attribute 'cursor'
+
+原因：Pandas的to_sql需要SQLAlchemy引擎
+
+解决方案：
+方案A：安装SQLAlchemy
+```bash
+pip install sqlalchemy
+```
+
+然后创建引擎：
+```python
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}?charset=utf8mb4"
+)
+
+df.to_sql('table_name', con=engine, if_exists='replace', index=False)
+```
+
+方案B：使用executemany（推荐）
+参见前面load_csv_to_table函数的实现
+
+【问题3：日期格式导入错误】
+
+错误信息：Incorrect datetime value
+
+解决方案：
+1. 将日期列先以VARCHAR导入raw表
+2. 在ETL阶段使用STR_TO_DATE转换
+3. 你的SQL脚本已经这样做了，很正确！
+
+【问题4：外键约束错误】
+
+错误信息：Cannot add foreign key constraint
+
+解决方案：
+1. 确保被引用的表和列已存在
+2. 确保数据类型完全匹配
+3. 确保被引用的列有索引（最好是主键）
+4. 检查是否有孤儿数据（引用不存在的ID）
+
+解决孤儿数据：
+```sql
+-- 查找孤儿订单
+SELECT o.order_id
+FROM orders_raw o
+LEFT JOIN customers_raw c ON o.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+
+-- 删除或修复孤儿数据
+DELETE FROM orders_raw WHERE customer_id NOT IN (SELECT customer_id FROM customers_raw);
+```
+
+【问题5：中文乱码】
+
+解决方案：
+1. 确保数据库字符集是utf8mb4
+2. 确保表字符集是utf8mb4
+3. 确保连接字符集是utf8mb4
+4. CSV读取时使用正确的encoding
+
+【问题6：导入大文件内存溢出】
+
+解决方案：
+1. 使用chunksize分批读取
+```python
+for chunk in pd.read_csv(file, chunksize=10000):
+    # 处理每个chunk
+    pass
+```
+
+2. 使用executemany批量插入
+3. 关闭不必要的索引，导入后再创建
+
+===============================================================================
+七、性能优化建议
+===============================================================================
+
+【优化1：批量插入】
+
+使用executemany代替逐行插入，性能提升10-100倍。
+
+【优化2：禁用索引】
+
+导入数据前：
+```sql
+ALTER TABLE table_name DISABLE KEYS;
+```
+
+导入数据后：
+```sql
+ALTER TABLE table_name ENABLE KEYS;
+```
+
+【优化3：调整MySQL配置】
+
+临时调整（导入期间）：
+```sql
+SET GLOBAL innodb_buffer_pool_size = 2G;
+SET GLOBAL innodb_log_file_size = 512M;
+SET GLOBAL innodb_flush_log_at_trx_commit = 2;
+```
+
+【优化4：使用LOAD DATA INFILE】
+
+这是MySQL最快的导入方式：
+
+```sql
+LOAD DATA LOCAL INFILE '/path/to/file.csv'
+INTO TABLE table_name
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;  -- 跳过header
+```
+
+注意：需要启用local_infile选项。
+
+===============================================================================
+八、下一步：任务2-3
+===============================================================================
+
+完成数据导入和ETL后，你就可以开始：
+
+任务2：编写SQL查询脚本进行多表联查和数据提取
+- 用户行为分析查询
+- 商品销售分析查询
+- 配送效率分析查询
+- 使用窗口函数进行高级分析
+
+任务3：使用Pandas进行数据清洗和特征工程
+- 从MySQL读取数据到Pandas
+- 创建用户特征（RFM模型等）
+- 创建商品特征
+- 准备机器学习数据集
+
+===============================================================================
+总结
+===============================================================================
+
+实施路径：
+
+Day 1:
+□ 安装MySQL和Python驱动
+□ 完善SQL脚本
+□ 实现Python工具模块
+
+Day 2:
+□ 实现CSV导入脚本
+□ 运行导入，验证数据
+
+Day 3:
+□ 执行ETL转换
+□ 数据质量检查
+□ 开始分析查询
+
+这个方案使用MySQL完整实现了数据仓库架构，展示了：
+✓ SQL数据建模能力
+✓ ETL开发能力
+✓ Python数据工程能力
+✓ 数据质量管理能力
+
+在简历中可以重点强调星型模式设计和完整的ETL流程！
+
+===============================================================================
