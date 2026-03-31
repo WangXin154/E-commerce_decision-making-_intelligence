@@ -258,3 +258,159 @@ LEFT JOIN fact_review r 	ON o.order_id = r.order_id;
 SELECT *
 FROM view_order_complete
 LIMIT 10;
+
+USE ecommerce_platform;
+
+DROP VIEW IF EXISTS view_category_analysis;
+CREATE VIEW view_category_analysis AS
+SELECT
+    p.category,
+
+    COUNT(DISTINCT oi.order_id) AS order_count,
+    COUNT(DISTINCT o.user_id) AS customer_count,
+    SUM(oi.price) AS total_revenue,
+    SUM(oi.gmv) AS total_gmv,
+    AVG(oi.price) AS avg_price,
+    AVG(oi.freight_value) AS avg_freight,
+
+    AVG(r.review_score) AS avg_review_score,
+    SUM(CASE WHEN r.review_score <= 2 THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(r.review_id), 0) AS bad_review_rate,
+    AVG(r.review_comment_len) AS avg_comment_len,
+
+    COUNT(DISTINCT oi.order_id) * 1.0 / NULLIF(COUNT(DISTINCT o.user_id), 0) AS repeat_rate,
+
+    MIN(o.purchase_ts) AS first_sale_date,
+    MAX(o.purchase_ts) AS last_sale_date,
+    DATEDIFF(MAX(o.purchase_ts), MIN(o.purchase_ts)) AS category_lifetime_days
+
+FROM dim_product p
+LEFT JOIN fact_order_item oi
+    ON p.product_id = oi.product_id
+LEFT JOIN fact_order o
+    ON oi.order_id = o.order_id
+LEFT JOIN fact_review r
+    ON o.order_id = r.order_id
+WHERE p.category IS NOT NULL
+GROUP BY p.category;
+
+
+--  Create State-level summary view
+CREATE OR REPLACE VIEW view_geographic_state_summary AS
+SELECT
+    u.state AS customer_state,
+
+    -- Number of users and order volume
+    COUNT(DISTINCT o.order_id) AS order_count,
+    COUNT(DISTINCT o.user_id) AS customer_count,
+
+    -- Sales indicators
+    SUM(order_item_summary.order_gmv) AS total_gmv,
+    SUM(order_item_summary.order_revenue) AS total_revenue,
+    SUM(order_item_summary.order_gmv) / NULLIF(COUNT(DISTINCT o.order_id), 0) AS avg_order_value,
+
+    -- Logistics metrics (at the order level)
+    AVG(o.delivered_days) AS avg_delivery_days,
+    AVG(order_item_summary.order_freight) AS avg_freight_cost,
+    SUM(
+        CASE
+            WHEN o.delivered_days > DATEDIFF(o.estimated_delivery_ts, o.purchase_ts)
+            THEN 1 ELSE 0
+        END
+    ) * 100.0 / NULLIF(COUNT(DISTINCT o.order_id), 0) AS delay_rate,
+
+    -- Satisfaction Metrics (Order Level)
+    AVG(r.review_score) AS avg_review_score,
+    SUM(CASE WHEN r.review_score <= 2 THEN 1 ELSE 0 END) * 100.0 /
+        NULLIF(COUNT(r.review_id), 0) AS bad_review_rate,
+
+    -- Re-purchase metrics
+    COUNT(DISTINCT o.order_id) * 1.0 /
+        NULLIF(COUNT(DISTINCT o.user_id), 0) AS repeat_rate
+
+FROM dim_user u
+JOIN fact_order o
+    ON u.user_id = o.user_id
+LEFT JOIN (
+    SELECT
+        order_id,
+        SUM(gmv) AS order_gmv,
+        SUM(price) AS order_revenue,
+        SUM(freight_value) AS order_freight
+    FROM fact_order_item
+    GROUP BY order_id
+) AS order_item_summary
+    ON o.order_id = order_item_summary.order_id
+LEFT JOIN fact_review r
+    ON o.order_id = r.order_id
+WHERE u.state IS NOT NULL
+GROUP BY u.state;
+
+
+
+-- Create City-level summary view
+CREATE OR REPLACE VIEW view_geographic_city_summary AS
+SELECT
+    u.state AS customer_state,
+    u.city AS customer_city,
+
+    COUNT(DISTINCT o.order_id) AS order_count,
+    COUNT(DISTINCT o.user_id) AS customer_count,
+
+    SUM(order_item_summary.order_gmv) AS total_gmv,
+    SUM(order_item_summary.order_revenue) AS total_revenue,
+    SUM(order_item_summary.order_gmv) / NULLIF(COUNT(DISTINCT o.order_id), 0) AS avg_order_value,
+
+    AVG(o.delivered_days) AS avg_delivery_days,
+    AVG(order_item_summary.order_freight) AS avg_freight_cost,
+
+    AVG(r.review_score) AS avg_review_score,
+    SUM(CASE WHEN r.review_score <= 2 THEN 1 ELSE 0 END) * 100.0 /
+        NULLIF(COUNT(r.review_id), 0) AS bad_review_rate
+
+FROM dim_user u
+JOIN fact_order o
+    ON u.user_id = o.user_id
+LEFT JOIN (
+    SELECT
+        order_id,
+        SUM(gmv) AS order_gmv,
+        SUM(price) AS order_revenue,
+        SUM(freight_value) AS order_freight
+    FROM fact_order_item
+    GROUP BY order_id
+) AS order_item_summary
+    ON o.order_id = order_item_summary.order_id
+LEFT JOIN fact_review r
+    ON o.order_id = r.order_id
+WHERE u.state IS NOT NULL
+  AND u.city IS NOT NULL
+GROUP BY u.state, u.city;
+
+
+DROP VIEW IF EXISTS view_buyer_seller_distance;
+CREATE VIEW view_buyer_seller_distance AS
+SELECT
+    o.order_id,
+    u.state AS buyer_state,
+    u.city AS buyer_city,
+    s.seller_state,
+    s.seller_city,
+    CASE
+        WHEN u.state = s.seller_state THEN 'Same State'
+        ELSE 'Cross State'
+    END AS trade_type,
+    o.delivered_days,
+    oi.freight_value,
+    oi.gmv,
+    r.review_score
+FROM fact_order o
+JOIN dim_user u
+    ON o.user_id = u.user_id
+JOIN fact_order_item oi
+    ON o.order_id = oi.order_id
+LEFT JOIN sellers_raw s
+    ON oi.seller_id = s.seller_id
+LEFT JOIN fact_review r
+    ON o.order_id = r.order_id
+WHERE u.state IS NOT NULL
+  AND s.seller_state IS NOT NULL;
