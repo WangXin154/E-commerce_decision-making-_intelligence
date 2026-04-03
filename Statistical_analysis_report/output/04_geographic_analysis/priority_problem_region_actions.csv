@@ -1,0 +1,8 @@
+﻿customer_state,order_count,avg_review_score,bad_review_rate,avg_delivery_days,delay_rate,priority_action,urgency_level
+RJ,12852,3.8806,20.58986,15.244,11.6869,High-impact recovery: protect volume and reduce delay,Tier 1
+BA,3380,3.8622,18.90756,19.2929,11.77515,Operational repair: improve route reliability and delivery control,Tier 2
+ES,2033,4.0394,14.90528,15.7266,10.52632,Operational repair: improve route reliability and delivery control,Tier 2
+GO,2020,4.0435,14.78521,15.548,6.43564,Early-warning management: monitor service decline and stabilise experience,Tier 2
+PE,1652,4.0086,16.74817,18.3794,9.2615,Operational repair: improve route reliability and delivery control,Tier 3
+CE,1336,3.858,19.63746,21.2061,13.2485,Operational repair: improve route reliability and delivery control,Tier 3
+PA,975,3.8527,19.54023,23.7242,10.87179,Operational repair: improve route reliability and delivery control,Tier 3
