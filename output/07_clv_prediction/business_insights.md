@@ -9,10 +9,8 @@
 - RMSE on raw target: 35.4938
 
 ## 2. Customer Value Distribution
-- Top 10% positive-customer contribution: 37.13% of total future GMV
+- Top 10% customer contribution: 100.00% of total future GMV
 - Platinum average predicted CLV: 146.29
-- Gold average predicted CLV: 15.56
-- Silver average predicted CLV: 0.20
 - Bronze average predicted CLV: 0.00
 
 ## 3. Top 5 Predictive Factors

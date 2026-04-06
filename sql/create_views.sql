@@ -14,7 +14,7 @@ SELECT
     AVG(oi.gmv) AS avg_order_value,
     -- Recency Last purchase time and days since today
     MAX(o.purchase_ts) AS last_purchase_date,
-    DATEDIFF(NOW(), MAX(o.purchase_ts)) AS days_since_last_purchase,
+    DATEDIFF('2018-09-01', MAX(o.purchase_ts)) AS days_since_last_purchase,
     -- Time to first purchase and lifecycle
     MIN(o.purchase_ts) AS first_purchase_date,
     DATEDIFF(MAX(o.purchase_ts), MIN(o.purchase_ts)) AS customer_lifetime_days
@@ -414,3 +414,184 @@ LEFT JOIN fact_review r
     ON o.order_id = r.order_id
 WHERE u.state IS NOT NULL
   AND s.seller_state IS NOT NULL;
+  
+  
+  -- Create view_user_clv_features for 07_Customer_Lifetime_Value_Prediction
+DROP VIEW IF EXISTS view_user_clv_features;
+  CREATE OR REPLACE VIEW view_user_clv_features AS
+WITH delivered_orders AS (
+    SELECT
+        c.customer_unique_id,
+        o.order_id,
+        o.order_purchase_timestamp,
+        o.order_delivered_customer_date,
+        o.order_estimated_delivery_date
+    FROM customers_raw c
+    JOIN orders_raw o
+        ON c.customer_id = o.customer_id
+    WHERE o.order_status = 'delivered'
+     AND o.order_purchase_timestamp < '2017-07-01'
+),
+
+order_value AS (
+    SELECT
+        oi.order_id,
+        SUM(oi.price + oi.freight_value) AS order_gmv
+    FROM order_items_raw oi
+    GROUP BY oi.order_id
+),
+
+payment_agg AS (
+    SELECT
+        p.order_id,
+        SUM(p.payment_value) AS order_payment_value,
+        MAX(p.payment_installments) AS max_installments_used
+    FROM payments_raw p
+    GROUP BY p.order_id
+),
+
+review_agg AS (
+    SELECT
+        r.order_id,
+        AVG(r.review_score) AS review_score
+    FROM reviews_raw r
+    GROUP BY r.order_id
+),
+
+product_diversity AS (
+    SELECT
+        c.customer_unique_id,
+        COUNT(DISTINCT oi.product_id) AS unique_products_purchased,
+        COUNT(DISTINCT pr.product_category_name) AS unique_categories_purchased
+    FROM customers_raw c
+    JOIN orders_raw o
+        ON c.customer_id = o.customer_id
+    JOIN order_items_raw oi
+        ON o.order_id = oi.order_id
+    LEFT JOIN products_raw pr
+        ON oi.product_id = pr.product_id
+    WHERE o.order_status = 'delivered'
+    GROUP BY c.customer_unique_id
+),
+
+user_order_base AS (
+    SELECT
+        d.customer_unique_id,
+        d.order_id,
+        d.order_purchase_timestamp,
+        d.order_delivered_customer_date,
+        d.order_estimated_delivery_date,
+        ov.order_gmv,
+        pa.order_payment_value,
+        pa.max_installments_used,
+        ra.review_score
+    FROM delivered_orders d
+    LEFT JOIN order_value ov
+        ON d.order_id = ov.order_id
+    LEFT JOIN payment_agg pa
+        ON d.order_id = pa.order_id
+    LEFT JOIN review_agg ra
+        ON d.order_id = ra.order_id
+)
+
+SELECT
+    u.customer_unique_id,
+
+    COUNT(DISTINCT u.order_id) AS total_orders,
+    SUM(u.order_gmv) AS total_gmv,
+    AVG(u.order_gmv) AS avg_order_value,
+
+    MIN(u.order_purchase_timestamp) AS first_order_date,
+    MAX(u.order_purchase_timestamp) AS last_order_date,
+    DATEDIFF(MAX(u.order_purchase_timestamp), MIN(u.order_purchase_timestamp)) AS customer_lifetime_days,
+    DATEDIFF('2017-07-01', MAX(u.order_purchase_timestamp)) AS days_since_last_order,
+
+    COUNT(DISTINCT u.order_id) * 30.0 /
+        NULLIF(GREATEST(DATEDIFF(MAX(u.order_purchase_timestamp), MIN(u.order_purchase_timestamp)), 1), 0)
+        AS monthly_frequency,
+
+    pd.unique_products_purchased,
+    pd.unique_categories_purchased,
+
+    AVG(u.order_payment_value) AS avg_payment_value,
+    MAX(u.max_installments_used) AS max_installments_used,
+
+    AVG(u.review_score) AS avg_review_score,
+    AVG(CASE WHEN u.review_score >= 4 THEN 1 ELSE 0 END) AS satisfaction_rate,
+    SUM(CASE WHEN u.review_score <= 2 THEN 1 ELSE 0 END) AS bad_review_count,
+
+    AVG(
+        DATEDIFF(
+            u.order_delivered_customer_date,
+            u.order_estimated_delivery_date
+        )
+    ) AS avg_delivery_delay,
+
+    AVG(
+        CASE
+            WHEN u.order_delivered_customer_date > u.order_estimated_delivery_date THEN 1
+            ELSE 0
+        END
+    ) AS delay_rate
+
+FROM user_order_base u
+LEFT JOIN product_diversity pd
+    ON u.customer_unique_id = pd.customer_unique_id
+GROUP BY
+    u.customer_unique_id,
+    pd.unique_products_purchased,
+    pd.unique_categories_purchased;
+
+-- Validate the repaired view
+SELECT
+    MIN(days_since_last_order) AS min_dslo,
+    MAX(days_since_last_order) AS max_dslo,
+    AVG(days_since_last_order) AS avg_dslo,
+    COUNT(*) AS total_customers
+FROM view_user_clv_features;
+    
+-- view_user_future_gmv for 07_Customer_Lifetime_Value_Prediction
+CREATE OR REPLACE VIEW view_user_future_gmv AS
+SELECT
+    c.customer_unique_id,
+
+    SUM(
+        CASE
+            WHEN o.order_purchase_timestamp >= '2017-07-01'
+             AND o.order_purchase_timestamp < '2018-01-01'
+            THEN oi.price + oi.freight_value
+            ELSE 0
+        END
+    ) AS future_6m_gmv,
+
+    COUNT(
+        DISTINCT CASE
+            WHEN o.order_purchase_timestamp >= '2017-07-01'
+             AND o.order_purchase_timestamp < '2018-01-01'
+            THEN o.order_id
+            ELSE NULL
+        END
+    ) AS future_6m_orders,
+
+    CASE
+        WHEN COUNT(
+            DISTINCT CASE
+                WHEN o.order_purchase_timestamp >= '2017-07-01'
+                 AND o.order_purchase_timestamp < '2018-01-01'
+                THEN o.order_id
+                ELSE NULL
+            END
+        ) > 0 THEN 1
+        ELSE 0
+    END AS is_active_future
+
+FROM customers_raw c
+LEFT JOIN orders_raw o
+    ON c.customer_id = o.customer_id
+LEFT JOIN order_items_raw oi
+    ON o.order_id = oi.order_id
+WHERE o.order_status = 'delivered'
+GROUP BY c.customer_unique_id;
+
+SELECT * FROM view_user_clv_features LIMIT 5;
+SELECT * FROM view_user_future_gmv LIMIT 5;
