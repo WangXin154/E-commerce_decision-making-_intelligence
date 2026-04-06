@@ -1,0 +1,11 @@
+metric,value
+best_model,Random Forest
+rmse_log,0.2637249443389016
+r2_log,0.8111716658780064
+mae_raw,2.0837246685969064
+rmse_raw,35.4937793927465
+top_customer_precision,0.35384615384615387
+top_customer_recall,1.0
+top_customer_f1,0.5227272727272727
+high_value_customer_count,312
+top_5_features,"R_score, total_orders, F_score, exploration_rate, unique_products_purchased"

@@ -1,0 +1,9 @@
+metric,value
+total_customers,13763.0
+customers_clv_positive,623.0
+customers_clv_zero,13140.0
+customers_inactive_365d,0.0
+customers_inactive_180d,262.0
+customers_inactive_90d,4996.0
+avg_days_since_last_order,74.23875608515586
+median_days_since_last_order,65.0

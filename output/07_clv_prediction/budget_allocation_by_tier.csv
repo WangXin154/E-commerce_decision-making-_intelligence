@@ -1,0 +1,5 @@
+value_tier,customer_count,budget_sum,budget_mean,predicted_clv_sum,predicted_clv_mean
+Platinum,125,861535.3,6892.28,18286.61,146.29
+Gold,187,136882.59,731.99,2909.35,15.56
+Silver,311,1582.11,5.09,62.88,0.2
+Bronze,13140,0.0,0.0,0.0,0.0
