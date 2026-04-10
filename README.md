@@ -431,7 +431,7 @@ def recommend_items(user_id, top_n=10):
 - [API Reference](docs/api_reference.md) - API documentation
 
 ### Notebook List
-1. [Satisfaction vs. Delivery Analysis](Statistical_analysis_report/01_satisfaction_vs_delivery.ipynb)
+1. [Satisfaction vs. Delivery Analysis](Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb)
 2. [User Segmentation & Value Analysis](Statistical_analysis_report/User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb)
 3. [Data Import Workflow](Import_data_into_sql.ipynb)
 

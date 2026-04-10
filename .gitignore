@@ -118,3 +118,7 @@ config.json
 secrets.yaml
 *.key
 *.pem
+
+output/08_recommendation_system/recommendations/recommendations_personalized.csv
+output/08_recommendation_system/recommendations/personalized_batches*
+output/08_recommendation_system/recommendations/personalized_batches_newlogic*
