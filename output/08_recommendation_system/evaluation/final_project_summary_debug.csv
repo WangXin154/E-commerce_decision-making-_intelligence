@@ -1,11 +1,11 @@
 item,value
 Personalized recommendation rows,"960,960"
 Unique users in debug batch,"96,096"
-Unique recommended products,"32,687"
-Unique recommendation categories,71
+Unique recommended products,"32,640"
+Unique recommendation categories,74
 Top category share,0.1131
 Shannon entropy,nan
-Gini coefficient,0.7598
+Gini coefficient,0.7729
 Estimated monthly GMV increase,"180,000"
 Estimated annual GMV increase,"2,160,000"
 Estimated ROI,1170.59%
