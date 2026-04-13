@@ -41,6 +41,8 @@
 - ✅ 客户生命周期价值（CLV）预测
 - ✅ 推荐系统（协同过滤与混合策略）
 
+**展示与交互层：**
+- ✅ 基于 Streamlit 的交互式 Dashboard（5 个页面）
 ---
 
 ## ✨ 功能特性
@@ -72,9 +74,10 @@
 
 ### 4️⃣ 输出层
 - 📊 交互式数据分析报告
-- 📈 可视化图表与数据大屏
+- 📈 基于 Streamlit 的 5 页交互式 Dashboard
+- 🧭 包含业务总览、用户洞察、产品表现、推荐系统、地理分析
 - 🎓 完整的项目文档与代码注释
-- 💾 可复用的模型文件
+- 💾 可复用的模型文件与 CSV 输出结果
 
 ---
 
@@ -125,7 +128,18 @@
 │   ├── 06_Customer_Churn_Prediction.ipynb     # 流失预测模型
 │   ├── 07_Customer_Lifetime_Value_Prediction.ipynb  # CLV预测模型
 │   └── 08_Recommendation_System.ipynb         # 推荐系统
+├── 📁 dashboard/                     # Streamlit Dashboard 应用
+│   ├── Home.py                       # 业务总览首页
+│   ├── pages/
+│   │   ├── 1_User_Insights.py        # RFM + 流失 + CLV 仪表板
+│   │   ├── 2_Recommendation_System.py # 推荐系统仪表板
+│   │   ├── 3_Product_Performance.py   # 品类与 BCG 仪表板
+│   │   └── 4_Geographic_Analysis.py   # 区域表现仪表板
+│   └── utils/
+│       └── data_loader.py            # Dashboard 公共数据加载器
 │
+├── 📁 output/
+│   └── 📁 dashboard/                 # Dashboard 专用 CSV 输出
 ├── 📁 text/                          # 文档资源
 │   └── prompt.txt                    # 项目需求文档
 │
@@ -290,6 +304,13 @@ jupyter notebook
 7. `Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb`
 8. `Statistical_analysis_report/08_Recommendation_System.ipynb`
 
+
+#### 7. 启动 Dashboard
+
+在生成所需输出文件后，可运行 Streamlit Dashboard：
+
+```bash
+python -m streamlit run dashboard/Home.py
 ---
 
 ## 📊 使用示例
@@ -417,6 +438,22 @@ print(df.groupby('delay_days')['review_score'].mean())
 ### 关键特征重要性
 ![关键特征重要性](docs/images/feature_importance.png)
 
+## 🖥️ 交互式 Dashboard
+
+项目已经增加基于 Streamlit 的展示层，用于集中呈现关键分析结果。
+
+### 包含页面
+- **Home**：KPI 总览、月度趋势监控、预测结果、异常检测
+- **User Insights**：RFM 分群、流失风险、CLV 分层、价值-风险矩阵
+- **Recommendation System**：用户级推荐查询、离线评估结果、业务影响总结
+- **Product Performance**：BCG 分类、帕累托核心品类、品类策略分组
+- **Geographic Analysis**：州级聚类、满意度画像、区域策略输出
+
+### 本地运行方式
+```bash
+python -m streamlit run dashboard/Home.py
+```
+
 ## 🎯 项目亮点
 
 ### 技术亮点
@@ -438,7 +475,7 @@ print(df.groupby('delay_days')['review_score'].mean())
 ## 📚 项目文档
 
 ### 详细文档索引
-- [数据字典](docs/data_dictionary.md) - 数据表结构说明
+- [数据字典](docs/modules/data_dictionary.md) - 数据表结构说明
 - [ETL 流程](docs/etl_pipeline.md) - 数据加载流程
 - [分析报告](docs/analysis_report.md) - 统计分析结果
 - [模型文档](docs/model_docs.md) - ML/DL 模型说明
@@ -456,6 +493,29 @@ print(df.groupby('delay_days')['review_score'].mean())
 9. [数据导入流程](Import_data_into_sql.ipynb) - ETL管道
 
 ---
+## 模块文档索引
+
+你可以在下面查看每个模块的详细文档：
+
+1. [模块 01 —— 满意度与配送分析](docs/modules/01_satisfaction_vs_delivery.zh-CN.md)
+2. [模块 02 —— 用户分群与价值分析（RFM 模型）](docs/modules/02_rfm_segmentation.zh-CN.md)
+3. [模块 03 —— 产品类别分析](docs/modules/03_product_category_analysis.zh-CN.md)
+4. [模块 04 —— 地理区域分析](docs/modules/04_geographic_analysis.zh-CN.md)
+5. [模块 05 —— 时间序列分析](docs/modules/05_time_series_analysis.zh-CN.md)
+6. [模块 06 —— 客户流失预测](docs/modules/06_churn_prediction.zh-CN.md)
+7. [模块 07 —— 客户生命周期价值（CLV）预测](docs/modules/07_clv_prediction.zh-CN.md)
+8. [模块 08 —— 推荐系统](docs/modules/08_recommendation_system.zh-CN.md)
+
+### English Versions
+
+1. [Module 01 — Satisfaction vs Delivery](docs/modules/01_satisfaction_vs_delivery.md)
+2. [Module 02 — User Segmentation & Value Analysis (RFM)](docs/modules/02_rfm_segmentation.md)
+3. [Module 03 — Product Category Analysis](docs/modules/03_product_category_analysis.md)
+4. [Module 04 — Geographic Analysis](docs/modules/04_geographic_analysis.md)
+5. [Module 05 — Time Series Analysis](docs/modules/05_time_series_analysis.md)
+6. [Module 06 — Customer Churn Prediction](docs/modules/06_churn_prediction.md)
+7. [Module 07 — Customer Lifetime Value (CLV) Prediction](docs/modules/07_clv_prediction.md)
+8. [Module 08 — Recommendation System](docs/modules/08_recommendation_system.md)
 
 ## 🤝 贡献指南
 

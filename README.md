@@ -41,6 +41,8 @@ This is an **intermediate-to-advanced data science comprehensive project** that 
 - ✅ Customer Lifetime Value (CLV) Prediction
 - ✅ Recommendation System (Collaborative Filtering & Hybrid)
 
+**Deployment & Presentation Layer:**
+- ✅ Interactive Streamlit Dashboard (5 pages)
 ---
 
 ## ✨ Features
@@ -72,9 +74,10 @@ This is an **intermediate-to-advanced data science comprehensive project** that 
 
 ### 4️⃣ Output Layer
 - 📊 Interactive data analysis reports
-- 📈 Visualizations and dashboards
+- 📈 Streamlit dashboard with 5 interactive pages
+- 🧭 Business overview, user insights, product performance, recommendation system, and geographic analysis
 - 🎓 Complete project documentation and code comments
-- 💾 Reusable model files
+- 💾 Reusable model files and CSV outputs
 
 ---
 
@@ -125,7 +128,18 @@ E-Commerce Intelligence System
 │   ├── 06_Customer_Churn_Prediction.ipynb     # Churn Prediction Model
 │   ├── 07_Customer_Lifetime_Value_Prediction.ipynb  # CLV Prediction Model
 │   └── 08_Recommendation_System.ipynb         # Recommendation System
+├── 📁 dashboard/                     # Streamlit Dashboard App
+│   ├── Home.py                       # Business overview homepage
+│   ├── pages/
+│   │   ├── 1_User_Insights.py        # RFM + Churn + CLV dashboard
+│   │   ├── 2_Recommendation_System.py # Recommendation dashboard
+│   │   ├── 3_Product_Performance.py   # Category & BCG dashboard
+│   │   └── 4_Geographic_Analysis.py   # Regional performance dashboard
+│   └── utils/
+│       └── data_loader.py            # Shared dashboard data loader
 │
+├── 📁 output/
+│   └── 📁 dashboard/                 # Dashboard-ready CSV outputs
 ├── 📁 text/                          # Documentation Resources
 │   └── prompt.txt                    # Project requirements document
 │
@@ -290,6 +304,13 @@ Open and run the analysis notebooks in order:
 7. `Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb`
 8. `Statistical_analysis_report/08_Recommendation_System.ipynb`
 
+#### 7. Launch the Dashboard
+
+After generating the required outputs, run the Streamlit dashboard:
+
+```bash
+python -m streamlit run dashboard/Home.py
+```
 ---
 
 ## 📊 Usage Examples
@@ -417,6 +438,24 @@ Multi-algorithm hybrid recommendation system:
 ![Feature Importance](docs/images/feature_importance.png)
 
 
+---
+
+## 🖥️ Interactive Dashboard
+
+A Streamlit dashboard has been added as the presentation layer of the project.
+
+### Included Pages
+- **Home**: KPI overview, monthly trend monitoring, forecast tracking, anomaly detection
+- **User Insights**: RFM segmentation, churn risk, CLV tiers, value-risk matrix
+- **Recommendation System**: user-level recommendation lookup, offline evaluation, business impact summary
+- **Product Performance**: BCG classification, Pareto concentration, category strategy groups
+- **Geographic Analysis**: state clusters, satisfaction profiles, regional strategy outputs
+
+### Run Locally
+```bash
+python -m streamlit run dashboard/Home.py
+```
+
 ## 🎯 Project Highlights
 
 ### Technical Highlights
@@ -438,7 +477,7 @@ Multi-algorithm hybrid recommendation system:
 ## 📚 Documentation
 
 ### Detailed Documentation Index
-- [Data Dictionary](docs/data_dictionary.md) - Data table structure description
+- [Data Dictionary](docs/modules/data_dictionary.md) - Data table structure description
 - [ETL Pipeline](docs/etl_pipeline.md) - Data loading workflow
 - [Analysis Report](docs/analysis_report.md) - Statistical analysis results
 - [Model Documentation](docs/model_docs.md) - ML/DL model specifications
@@ -456,6 +495,30 @@ Multi-algorithm hybrid recommendation system:
 9. [Data Import Workflow](Import_data_into_sql.ipynb) - ETL pipeline
 
 ---
+
+## Module Documentation
+
+Detailed module documentation is available below:
+
+1. [Module 01 — Satisfaction vs Delivery](docs/modules/01_satisfaction_vs_delivery.md)
+2. [Module 02 — User Segmentation & Value Analysis (RFM)](docs/modules/02_rfm_segmentation.md)
+3. [Module 03 — Product Category Analysis](docs/modules/03_product_category_analysis.md)
+4. [Module 04 — Geographic Analysis](docs/modules/04_geographic_analysis.md)
+5. [Module 05 — Time Series Analysis](docs/modules/05_time_series_analysis.md)
+6. [Module 06 — Customer Churn Prediction](docs/modules/06_churn_prediction.md)
+7. [Module 07 — Customer Lifetime Value (CLV) Prediction](docs/modules/07_clv_prediction.md)
+8. [Module 08 — Recommendation System](docs/modules/08_recommendation_system.md)
+
+### Chinese Versions
+
+1. [模块 01 —— 满意度与配送分析](docs/modules/01_satisfaction_vs_delivery.zh-CN.md)
+2. [模块 02 —— 用户分群与价值分析（RFM 模型）](docs/modules/02_rfm_segmentation.zh-CN.md)
+3. [模块 03 —— 产品类别分析](docs/modules/03_product_category_analysis.zh-CN.md)
+4. [模块 04 —— 地理区域分析](docs/modules/04_geographic_analysis.zh-CN.md)
+5. [模块 05 —— 时间序列分析](docs/modules/05_time_series_analysis.zh-CN.md)
+6. [模块 06 —— 客户流失预测](docs/modules/06_churn_prediction.zh-CN.md)
+7. [模块 07 —— 客户生命周期价值（CLV）预测](docs/modules/07_clv_prediction.zh-CN.md)
+8. [模块 08 —— 推荐系统](docs/modules/08_recommendation_system.zh-CN.md)
 
 ## 🤝 Contributing
 

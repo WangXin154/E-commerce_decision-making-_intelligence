@@ -116,7 +116,7 @@ data/olist_geolocation_dataset.csv
 # ============================================================
 
 # Large output CSV files (>10MB)
-output/user_segments_rfm.csv
+output/dashboard/user_segments_rfm.csv
 output/08_recommendation_system/data/*.csv
 output/08_recommendation_system/recommendations/*.csv
 
@@ -282,6 +282,11 @@ package-lock.json
 *.o
 *.so
 
+# Large generated outputs
+output/dashboard/recommendations_personalized.csv
+
+# Optional: ignore all dashboard csv outputs
+output/dashboard/*.csv
 # ============================================================
 # Miscellaneous
 # ============================================================
