@@ -5,9 +5,10 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Completion](https://img.shields.io/badge/Completion-80%25-blue)
 
-**A Full-Stack Data Science Platform for E-Commerce Analytics and Intelligent Decision-Making**
+**A Comprehensive Data Science Platform for E-Commerce Analytics and Intelligent Decision-Making**
 
 [Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Tech Stack](#-️-tech-stack) • [Contributing](#-contributing)
 
@@ -19,14 +20,26 @@
 
 ## 📖 Overview
 
-This is an **intermediate-to-advanced full-stack data science comprehensive project** that implements an integrated solution combining "data analysis + machine learning + deep learning + NLP chatbot + business deployment". The project is suitable for **portfolio showcases, graduation projects, and job applications**, covering the complete workflow from data collection to business output.
+This is an **intermediate-to-advanced data science comprehensive project** that implements an integrated solution combining "data analysis + machine learning + business intelligence". The project is suitable for **portfolio showcases, graduation projects, and job applications**, covering the complete workflow from data collection to business insights.
 
 ### Core Value
 
 - 🎯 **End-to-End Coverage**: Complete pipeline from data ETL to intelligent decision-making
-- 🤖 **Multi-Technology Fusion**: Statistical testing + ML + DL + NLP
+- 🤖 **Multi-Technology Integration**: Statistical testing + Machine Learning + Advanced Analytics
 - 📊 **Business-Oriented**: All models and analyses tightly aligned with e-commerce scenarios
-- 🚀 **Production-Ready**: Modular design, easy to extend and deploy
+- 🚀 **Production-Ready**: Modular design with 8 completed analysis modules
+
+### Project Status
+
+**Completed Modules (8/8):**
+- ✅ Satisfaction & Delivery Analysis
+- ✅ User Segmentation (RFM Model)
+- ✅ Product Category Analysis
+- ✅ Geographic Analysis
+- ✅ Time Series Analysis & Forecasting
+- ✅ Customer Churn Prediction
+- ✅ Customer Lifetime Value (CLV) Prediction
+- ✅ Recommendation System (Collaborative Filtering & Hybrid)
 
 ---
 
@@ -46,31 +59,18 @@ This is an **intermediate-to-advanced full-stack data science comprehensive proj
 - ✅ Delivery timeliness vs. satisfaction correlation analysis
 
 ### 3️⃣ Machine Learning Layer
-- 🔥 **Personalized Recommendation System**
-  - Collaborative filtering algorithms
+- ✅ **Personalized Recommendation System**
+  - User-based collaborative filtering
+  - Item-based collaborative filtering
   - Content-based filtering
   - Hybrid recommendation strategies
-- 🔥 **Prediction Models**
-  - User churn prediction
-  - Conversion rate prediction
-  - Customer Lifetime Value (CLV) prediction
+- ✅ **Prediction Models**
+  - Customer churn prediction (Classification models)
+  - Customer Lifetime Value (CLV) prediction (Regression models)
+  - Time series forecasting
 - ✅ Complete model training, validation, tuning, and evaluation pipeline
 
-### 4️⃣ Deep Learning Layer
-- 🔥 **CNN Product Image Classification**
-  - Automatic product feature extraction
-  - Intelligent product tag recognition
-  - Enhanced recommendation system accuracy
-- ✅ Support for custom CNN architectures
-
-### 5️⃣ Intelligent Interaction Layer
-- 🔥 **Intelligent Customer Service Bot**
-  - Track logistics, check orders
-  - Product recommendation inquiries
-  - After-sales Q&A support
-  - Integrated with ML models for personalized recommendations
-
-### 6️⃣ Output Layer
+### 4️⃣ Output Layer
 - 📊 Interactive data analysis reports
 - 📈 Visualizations and dashboards
 - 🎓 Complete project documentation and code comments
@@ -116,9 +116,15 @@ E-Commerce Intelligence System
 │   ├── ecommerce_platform.sql        # Database creation script
 │   └── create_views.sql              # View creation script
 │
-├── 📁 Statistical_analysis_report/   # Statistical Analysis Reports
-│   ├── 01_satisfaction_vs_delivery.ipynb      # Satisfaction vs. Delivery Analysis
-│   └── User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb  # User Segmentation & Value Analysis
+├── 📁 Statistical_analysis_report/   # Statistical Analysis Reports (8 Modules)
+│   ├── 01_Satisfaction_vs_Delivery.ipynb      # Satisfaction vs. Delivery Analysis
+│   ├── 02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb  # User Segmentation (RFM)
+│   ├── 03_Product_Category_Analysis.ipynb     # Product Category Analysis
+│   ├── 04_Geographic_Analysis.ipynb           # Geographic Distribution Analysis
+│   ├── 05_Time_Series_Analysis.ipynb          # Time Series Forecasting
+│   ├── 06_Customer_Churn_Prediction.ipynb     # Churn Prediction Model
+│   ├── 07_Customer_Lifetime_Value_Prediction.ipynb  # CLV Prediction Model
+│   └── 08_Recommendation_System.ipynb         # Recommendation System
 │
 ├── 📁 text/                          # Documentation Resources
 │   └── prompt.txt                    # Project requirements document
@@ -132,39 +138,28 @@ E-Commerce Intelligence System
 ┌─────────────────────────────────────────────────────────────┐
 │                      Output Layer                            │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ Reports  │  │ Visuals  │  │ Models   │  │   API    │   │
+│  │ Reports  │  │ Visuals  │  │ Models   │  │   CSV    │   │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                               ▲
-┌─────────────────────────────────────────────────────────────┐
-│                   Intelligent Interaction Layer              │
-│  ┌────────────────────────────────────────────────────┐    │
-│  │     Intelligent Customer Service Bot (NLP + Recs)   │    │
-│  └────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────┘
-                               ▲
-┌─────────────────────────────────────────────────────────────┐
-│                      Deep Learning Layer                     │
-│  ┌──────────────────┐         ┌──────────────────┐         │
-│  │   CNN Product    │────────▶│  Feature Extract │         │
-│  │  Classification  │         │                  │         │
-│  └──────────────────┘         └──────────────────┘         │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
 │                     Machine Learning Layer                   │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ Recommend│  │  Churn   │  │Conversion│  │   CLV    │   │
-│  │  System  │  │ Predict  │  │ Predict  │  │ Predict  │   │
+│  │ Recommend│  │  Churn   │  │Time Series│  │   CLV    │   │
+│  │  System  │  │ Predict  │  │ Forecast │  │ Predict  │   │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
 │                       Analysis Layer                         │
 │  ┌────────────┐  ┌────────────┐  ┌────────────┐           │
-│  │  Behavior  │  │   RFM      │  │ Statistical│           │
-│  │  Analysis  │  │ Segmentation││    Tests   │           │
+│  │ Satisfaction│  │   RFM      │  │ Geographic │           │
+│  │  Analysis  │  │ Segmentation│  │  Analysis  │           │
 │  └────────────┘  └────────────┘  └────────────┘           │
+│  ┌────────────┐  ┌────────────┐                            │
+│  │  Product   │  │ Statistical│                            │
+│  │  Category  │  │   Tests    │                            │
+│  └────────────┘  └────────────┘                            │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
@@ -186,11 +181,11 @@ E-Commerce Intelligence System
 | **Language** | Python 3.8+ | Main development language |
 | **Database** | MySQL 8.0+ | Data storage and querying |
 | **Data Processing** | Pandas, NumPy | Data cleaning and analysis |
-| **Visualization** | Matplotlib, Seaborn | Data visualization |
-| **Machine Learning** | Scikit-learn | ML model training |
-| **Deep Learning** | TensorFlow/PyTorch | CNN product recognition |
-| **NLP** | Transformers, NLTK | Intelligent customer service |
-| **ORM** | SQLAlchemy | Database operations |
+| **Visualization** | Matplotlib, Seaborn, Plotly | Data visualization |
+| **Machine Learning** | Scikit-learn, XGBoost, LightGBM | ML model training |
+| **Statistics** | SciPy, Statsmodels | Statistical testing |
+| **ORM** | SQLAlchemy, PyMySQL | Database operations |
+| **Notebook** | Jupyter | Interactive development |
 
 ### Key Dependencies
 ```txt
@@ -285,9 +280,15 @@ jupyter notebook Import_data_into_sql.ipynb
 jupyter notebook
 ```
 
-Open and run the following notebooks:
-- `Statistical_analysis_report/01_satisfaction_vs_delivery.ipynb`
-- `Statistical_analysis_report/User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb`
+Open and run the analysis notebooks in order:
+1. `Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb`
+2. `Statistical_analysis_report/02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb`
+3. `Statistical_analysis_report/03_Product_Category_Analysis.ipynb`
+4. `Statistical_analysis_report/04_Geographic_Analysis.ipynb`
+5. `Statistical_analysis_report/05_Time_Series_Analysis.ipynb`
+6. `Statistical_analysis_report/06_Customer_Churn_Prediction.ipynb`
+7. `Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb`
+8. `Statistical_analysis_report/08_Recommendation_System.ipynb`
 
 ---
 
@@ -389,29 +390,42 @@ Statistical analysis of delivery delay impact on customer satisfaction:
 
 **Business Insight**: Optimize logistics delivery timeliness to directly improve customer satisfaction and repurchase rates.
 
-### 3. Personalized Recommendations
+### 3. Recommendation System
 
-Combine user behavior history and product features for accurate recommendations:
+Multi-algorithm hybrid recommendation system:
+- **User-based Collaborative Filtering**: Find similar users and recommend their preferred items
+- **Item-based Collaborative Filtering**: Recommend items similar to user's purchase history
+- **Content-based Filtering**: Recommend based on product features and categories
+- **Hybrid Strategy**: Weighted combination of multiple algorithms
 
-```python
-# Collaborative filtering recommendation example
-def recommend_items(user_id, top_n=10):
-    """
-    Recommend Top-N products for a user
-    """
-    # TODO: Implement collaborative filtering algorithm
-    pass
-```
+**Key Features:**
+- Handles sparse data effectively
+- Personalized recommendations for 93,000+ users
+- 32,000+ products coverage
+- Multiple recommendation strategies for different user segments
 
 ---
+## Selected Visual Highlights
+
+### CLV Tier Overview
+![CLV Overview](docs/images/clv_overview.png)
+
+### Value-Risk Matrix
+![Value Risk Matrix](docs/images/value_risk_matrix.png)
+
+### Feature Importance
+![Feature Importance](docs/images/feature_importance.png)
+
 
 ## 🎯 Project Highlights
 
 ### Technical Highlights
 1. **Modular Architecture**: Decoupled ETL, analysis, and modeling layers, easy to maintain and extend
 2. **Complete Data Governance**: Standardized workflow from raw data to feature engineering
-3. **Multi-Algorithm Fusion**: Comprehensive application of statistical learning + ML + DL
-4. **Production-Ready Code**: Comprehensive error handling, logging, and documentation
+3. **Multi-Algorithm Application**: Statistical testing, machine learning, and advanced analytics
+4. **8 Complete Analysis Modules**: From data exploration to predictive modeling
+5. **Production-Ready Code**: Comprehensive error handling, logging, and documentation
+6. **Scalable Recommendation Engine**: Handles 93K+ users and 32K+ products efficiently
 
 ### Business Highlights
 1. **Closed-Loop Business Value**: End-to-end business deployment from data analysis to intelligent recommendations
@@ -430,10 +444,16 @@ def recommend_items(user_id, top_n=10):
 - [Model Documentation](docs/model_docs.md) - ML/DL model specifications
 - [API Reference](docs/api_reference.md) - API documentation
 
-### Notebook List
-1. [Satisfaction vs. Delivery Analysis](Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb)
-2. [User Segmentation & Value Analysis](Statistical_analysis_report/User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb)
-3. [Data Import Workflow](Import_data_into_sql.ipynb)
+### Analysis Modules
+1. [Satisfaction vs. Delivery Analysis](Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb) - Statistical correlation analysis
+2. [User Segmentation (RFM Model)](Statistical_analysis_report/02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb) - Customer clustering
+3. [Product Category Analysis](Statistical_analysis_report/03_Product_Category_Analysis.ipynb) - BCG matrix & Pareto analysis
+4. [Geographic Analysis](Statistical_analysis_report/04_Geographic_Analysis.ipynb) - Regional insights
+5. [Time Series Analysis](Statistical_analysis_report/05_Time_Series_Analysis.ipynb) - Trend forecasting
+6. [Customer Churn Prediction](Statistical_analysis_report/06_Customer_Churn_Prediction.ipynb) - Classification models
+7. [CLV Prediction](Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb) - Regression models
+8. [Recommendation System](Statistical_analysis_report/08_Recommendation_System.ipynb) - Collaborative & hybrid filtering
+9. [Data Import Workflow](Import_data_into_sql.ipynb) - ETL pipeline
 
 ---
 
