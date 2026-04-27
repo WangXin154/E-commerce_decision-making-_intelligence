@@ -5,9 +5,10 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Completion](https://img.shields.io/badge/完成度-80%25-blue)
 
-**一个基于全栈数据科学的电商智能分析与决策平台**
+**一个全面的电商数据科学分析与智能决策平台**
 
 [功能特性](#-功能特性) • [快速开始](#-快速开始) • [项目架构](#-项目架构) • [技术栈](#-️-技术栈) • [贡献指南](#-贡献指南)
 
@@ -19,15 +20,29 @@
 
 ## 📖 项目简介
 
-本项目是一个**中高级难度的全栈数据科学综合项目**，实现了"数据分析 + 机器学习 + 深度学习 + NLP聊天机器人 + 业务落地"的一体化解决方案。项目可用于**简历展示、毕业设计、求职作品集**，涵盖了从数据采集到业务输出的全流程。
+本项目是一个**中高级难度的数据科学综合项目**，实现了"数据分析 + 机器学习 + 商业智能"的一体化解决方案。项目可用于**简历展示、毕业设计、求职作品集**，涵盖了从数据采集到业务洞察的全流程。
 
 ### 核心价值
 
 - 🎯 **全流程覆盖**：从数据ETL到智能决策的完整链路
-- 🤖 **多技术融合**：统计检验 + 机器学习 + 深度学习 + NLP
+- 🤖 **多技术整合**：统计检验 + 机器学习 + 高级分析
 - 📊 **业务导向**：所有模型和分析都紧密围绕电商业务场景
-- 🚀 **生产就绪**：模块化设计，易于扩展和部署
+- 🚀 **生产就绪**：模块化设计，8个完整分析模块
 
+### 项目完成情况
+
+**已完成模块 (8/8):**
+- ✅ 满意度与配送关系分析
+- ✅ 用户分群分析（RFM模型）
+- ✅ 产品类别分析
+- ✅ 地理区域分析
+- ✅ 时间序列分析与预测
+- ✅ 客户流失预测
+- ✅ 客户生命周期价值（CLV）预测
+- ✅ 推荐系统（协同过滤与混合策略）
+
+**展示与交互层：**
+- ✅ 基于 Streamlit 的交互式 Dashboard（5 个页面）
 ---
 
 ## ✨ 功能特性
@@ -46,35 +61,23 @@
 - ✅ 配送时效与满意度关联分析
 
 ### 3️⃣ 机器学习层
-- 🔥 **个性化推荐系统**
-  - 协同过滤算法
+- ✅ **个性化推荐系统**
+  - 基于用户的协同过滤
+  - 基于物品的协同过滤
   - 基于内容的推荐
   - 混合推荐策略
-- 🔥 **预测模型**
-  - 用户流失预警
-  - 转化率预测
-  - 用户生命周期价值（CLV）预测
+- ✅ **预测模型**
+  - 客户流失预测（分类模型）
+  - 客户生命周期价值（CLV）预测（回归模型）
+  - 时间序列预测
 - ✅ 完整的模型训练、验证、调参、评估流程
 
-### 4️⃣ 深度学习层
-- 🔥 **CNN 商品图片分类**
-  - 自动提取商品特征
-  - 商品标签智能识别
-  - 增强推荐系统准确度
-- ✅ 支持自定义卷积神经网络架构
-
-### 5️⃣ 智能交互层
-- 🔥 **智能客服机器人**
-  - 查物流、问订单
-  - 商品推荐咨询
-  - 售后问题解答
-  - 联动机器学习模型实现个性化推荐
-
-### 6️⃣ 输出层
+### 4️⃣ 输出层
 - 📊 交互式数据分析报告
-- 📈 可视化图表与数据大屏
+- 📈 基于 Streamlit 的 5 页交互式 Dashboard
+- 🧭 包含业务总览、用户洞察、产品表现、推荐系统、地理分析
 - 🎓 完整的项目文档与代码注释
-- 💾 可复用的模型文件
+- 💾 可复用的模型文件与 CSV 输出结果
 
 ---
 
@@ -116,10 +119,27 @@
 │   ├── ecommerce_platform.sql        # 数据库建表脚本
 │   └── create_views.sql              # 视图创建脚本
 │
-├── 📁 Statistical_analysis_report/   # 统计分析报告
-│   ├── 01_satisfaction_vs_delivery.ipynb      # 满意度与配送关系分析
-│   └── User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb  # 用户分群与价值分析
+├── 📁 Statistical_analysis_report/   # 统计分析报告（8个模块）
+│   ├── 01_Satisfaction_vs_Delivery.ipynb      # 满意度与配送关系分析
+│   ├── 02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb  # 用户分群（RFM）
+│   ├── 03_Product_Category_Analysis.ipynb     # 产品类别分析
+│   ├── 04_Geographic_Analysis.ipynb           # 地理分布分析
+│   ├── 05_Time_Series_Analysis.ipynb          # 时间序列预测
+│   ├── 06_Customer_Churn_Prediction.ipynb     # 流失预测模型
+│   ├── 07_Customer_Lifetime_Value_Prediction.ipynb  # CLV预测模型
+│   └── 08_Recommendation_System.ipynb         # 推荐系统
+├── 📁 dashboard/                     # Streamlit Dashboard 应用
+│   ├── Home.py                       # 业务总览首页
+│   ├── pages/
+│   │   ├── 1_User_Insights.py        # RFM + 流失 + CLV 仪表板
+│   │   ├── 2_Recommendation_System.py # 推荐系统仪表板
+│   │   ├── 3_Product_Performance.py   # 品类与 BCG 仪表板
+│   │   └── 4_Geographic_Analysis.py   # 区域表现仪表板
+│   └── utils/
+│       └── data_loader.py            # Dashboard 公共数据加载器
 │
+├── 📁 output/
+│   └── 📁 dashboard/                 # Dashboard 专用 CSV 输出
 ├── 📁 text/                          # 文档资源
 │   └── prompt.txt                    # 项目需求文档
 │
@@ -132,37 +152,28 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                        输出层                                 │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ 数据报告 │  │ 可视化   │  │ 模型文件 │  │ API接口  │   │
+│  │ 数据报告 │  │ 可视化   │  │ 模型文件 │  │   CSV    │   │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                               ▲
-┌─────────────────────────────────────────────────────────────┐
-│                     智能交互层                                │
-│  ┌────────────────────────────────────────────────────┐    │
-│  │            智能客服机器人（NLP + 推荐）              │    │
-│  └────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────┘
-                               ▲
-┌─────────────────────────────────────────────────────────────┐
-│                     深度学习层                                │
-│  ┌──────────────────┐         ┌──────────────────┐         │
-│  │  CNN商品分类     │────────▶│  特征提取        │         │
-│  └──────────────────┘         └──────────────────┘         │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
 │                     机器学习层                                │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │推荐系统  │  │流失预测  │  │转化预测  │  │ CLV预测  │   │
+│  │推荐系统  │  │流失预测  │  │时间序列  │  │ CLV预测  │   │
+│  │          │  │          │  │  预测    │  │          │   │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
 │                       分析层                                  │
 │  ┌────────────┐  ┌────────────┐  ┌────────────┐           │
-│  │ 用户行为   │  │  RFM分群   │  │ 统计检验   │           │
-│  │   分析     │  │            │  │            │           │
+│  │ 满意度分析 │  │  RFM分群   │  │ 地理分析   │           │
+│  │            │  │            │  │            │           │
 │  └────────────┘  └────────────┘  └────────────┘           │
+│  ┌────────────┐  ┌────────────┐                            │
+│  │ 产品类别   │  │ 统计检验   │                            │
+│  │   分析     │  │            │                            │
+│  └────────────┘  └────────────┘                            │
 └─────────────────────────────────────────────────────────────┘
                                ▲
 ┌─────────────────────────────────────────────────────────────┐
@@ -184,11 +195,11 @@
 | **编程语言** | Python 3.8+ | 主要开发语言 |
 | **数据库** | MySQL 8.0+ | 数据存储与查询 |
 | **数据处理** | Pandas, NumPy | 数据清洗与分析 |
-| **可视化** | Matplotlib, Seaborn | 数据可视化 |
-| **机器学习** | Scikit-learn | ML模型训练 |
-| **深度学习** | TensorFlow/PyTorch | CNN商品识别 |
-| **NLP** | Transformers, NLTK | 智能客服 |
-| **ORM** | SQLAlchemy | 数据库操作 |
+| **可视化** | Matplotlib, Seaborn, Plotly | 数据可视化 |
+| **机器学习** | Scikit-learn, XGBoost, LightGBM | ML模型训练 |
+| **统计分析** | SciPy, Statsmodels | 统计检验 |
+| **ORM** | SQLAlchemy, PyMySQL | 数据库操作 |
+| **Notebook** | Jupyter | 交互式开发 |
 
 ### 主要依赖
 ```txt
@@ -283,10 +294,23 @@ jupyter notebook Import_data_into_sql.ipynb
 jupyter notebook
 ```
 
-打开并运行以下 Notebook：
-- `Statistical_analysis_report/01_satisfaction_vs_delivery.ipynb`
-- `Statistical_analysis_report/User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb`
+按顺序打开并运行分析 Notebook：
+1. `Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb`
+2. `Statistical_analysis_report/02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb`
+3. `Statistical_analysis_report/03_Product_Category_Analysis.ipynb`
+4. `Statistical_analysis_report/04_Geographic_Analysis.ipynb`
+5. `Statistical_analysis_report/05_Time_Series_Analysis.ipynb`
+6. `Statistical_analysis_report/06_Customer_Churn_Prediction.ipynb`
+7. `Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb`
+8. `Statistical_analysis_report/08_Recommendation_System.ipynb`
 
+
+#### 7. 启动 Dashboard
+
+在生成所需输出文件后，可运行 Streamlit Dashboard：
+
+```bash
+python -m streamlit run dashboard/Home.py
 ---
 
 ## 📊 使用示例
@@ -387,29 +411,58 @@ print(df.groupby('delay_days')['review_score'].mean())
 
 **业务建议**：优化物流配送时效，可直接提升客户满意度和复购率。
 
-### 3. 个性化推荐
+### 3. 推荐系统
 
-结合用户历史行为和商品特征，实现精准推荐：
+多算法混合推荐系统：
+- **基于用户的协同过滤**：找到相似用户并推荐他们喜欢的商品
+- **基于物品的协同过滤**：推荐与用户购买历史相似的商品
+- **基于内容的推荐**：根据商品特征和类别进行推荐
+- **混合策略**：多种算法的加权组合
 
-```python
-# 协同过滤推荐示例
-def recommend_items(user_id, top_n=10):
-    """
-    为用户推荐 Top-N 商品
-    """
-    # TODO: 实现协同过滤算法
-    pass
-```
+**核心特性：**
+- 有效处理稀疏数据
+- 为93,000+用户提供个性化推荐
+- 覆盖32,000+商品
+- 针对不同用户群体的多种推荐策略
 
 ---
+
+## 可视化结果展示
+
+### CLV 分层概览
+![CLV 分层概览](docs/images/clv_overview.png)
+
+### 价值-风险矩阵
+![价值-风险矩阵](docs/images/value_risk_matrix.png)
+
+### 关键特征重要性
+![关键特征重要性](docs/images/feature_importance.png)
+
+## 🖥️ 交互式 Dashboard
+
+项目已经增加基于 Streamlit 的展示层，用于集中呈现关键分析结果。
+
+### 包含页面
+- **Home**：KPI 总览、月度趋势监控、预测结果、异常检测
+- **User Insights**：RFM 分群、流失风险、CLV 分层、价值-风险矩阵
+- **Recommendation System**：用户级推荐查询、离线评估结果、业务影响总结
+- **Product Performance**：BCG 分类、帕累托核心品类、品类策略分组
+- **Geographic Analysis**：州级聚类、满意度画像、区域策略输出
+
+### 本地运行方式
+```bash
+python -m streamlit run dashboard/Home.py
+```
 
 ## 🎯 项目亮点
 
 ### 技术亮点
 1. **模块化架构设计**：ETL、分析、建模各层解耦，易于维护和扩展
 2. **完整的数据治理**：从原始数据到特征工程的标准化流程
-3. **多算法融合**：统计学习 + 机器学习 + 深度学习的综合应用
-4. **生产级代码规范**：完善的错误处理、日志记录、文档注释
+3. **多算法应用**：统计检验、机器学习和高级分析的综合运用
+4. **8个完整分析模块**：从数据探索到预测建模的全覆盖
+5. **生产级代码规范**：完善的错误处理、日志记录、文档注释
+6. **可扩展推荐引擎**：高效处理93K+用户和32K+商品
 
 ### 业务亮点
 1. **闭环业务价值**：从数据分析到智能推荐的业务落地
@@ -422,18 +475,47 @@ def recommend_items(user_id, top_n=10):
 ## 📚 项目文档
 
 ### 详细文档索引
-- [数据字典](docs/data_dictionary.md) - 数据表结构说明
+- [数据字典](docs/modules/data_dictionary.md) - 数据表结构说明
 - [ETL 流程](docs/etl_pipeline.md) - 数据加载流程
 - [分析报告](docs/analysis_report.md) - 统计分析结果
 - [模型文档](docs/model_docs.md) - ML/DL 模型说明
 - [API 文档](docs/api_reference.md) - 接口文档
 
-### Notebook 列表
-1. [满意度与配送分析](Statistical_analysis_report/01_satisfaction_vs_delivery.ipynb)
-2. [用户分群与价值分析](Statistical_analysis_report/User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb)
-3. [数据导入流程](Import_data_into_sql.ipynb)
+### 分析模块列表
+1. [满意度与配送分析](Statistical_analysis_report/01_Satisfaction_vs_Delivery.ipynb) - 统计相关性分析
+2. [用户分群（RFM模型）](Statistical_analysis_report/02_User_Segmentation_vs_Value_Analysis_(RFM_Model).ipynb) - 客户聚类
+3. [产品类别分析](Statistical_analysis_report/03_Product_Category_Analysis.ipynb) - BCG矩阵与帕累托分析
+4. [地理分析](Statistical_analysis_report/04_Geographic_Analysis.ipynb) - 区域洞察
+5. [时间序列分析](Statistical_analysis_report/05_Time_Series_Analysis.ipynb) - 趋势预测
+6. [客户流失预测](Statistical_analysis_report/06_Customer_Churn_Prediction.ipynb) - 分类模型
+7. [CLV预测](Statistical_analysis_report/07_Customer_Lifetime_Value_Prediction.ipynb) - 回归模型
+8. [推荐系统](Statistical_analysis_report/08_Recommendation_System.ipynb) - 协同过滤与混合策略
+9. [数据导入流程](Import_data_into_sql.ipynb) - ETL管道
 
 ---
+## 模块文档索引
+
+你可以在下面查看每个模块的详细文档：
+
+1. [模块 01 —— 满意度与配送分析](docs/modules/01_satisfaction_vs_delivery.zh-CN.md)
+2. [模块 02 —— 用户分群与价值分析（RFM 模型）](docs/modules/02_rfm_segmentation.zh-CN.md)
+3. [模块 03 —— 产品类别分析](docs/modules/03_product_category_analysis.zh-CN.md)
+4. [模块 04 —— 地理区域分析](docs/modules/04_geographic_analysis.zh-CN.md)
+5. [模块 05 —— 时间序列分析](docs/modules/05_time_series_analysis.zh-CN.md)
+6. [模块 06 —— 客户流失预测](docs/modules/06_churn_prediction.zh-CN.md)
+7. [模块 07 —— 客户生命周期价值（CLV）预测](docs/modules/07_clv_prediction.zh-CN.md)
+8. [模块 08 —— 推荐系统](docs/modules/08_recommendation_system.zh-CN.md)
+
+### English Versions
+
+1. [Module 01 — Satisfaction vs Delivery](docs/modules/01_satisfaction_vs_delivery.md)
+2. [Module 02 — User Segmentation & Value Analysis (RFM)](docs/modules/02_rfm_segmentation.md)
+3. [Module 03 — Product Category Analysis](docs/modules/03_product_category_analysis.md)
+4. [Module 04 — Geographic Analysis](docs/modules/04_geographic_analysis.md)
+5. [Module 05 — Time Series Analysis](docs/modules/05_time_series_analysis.md)
+6. [Module 06 — Customer Churn Prediction](docs/modules/06_churn_prediction.md)
+7. [Module 07 — Customer Lifetime Value (CLV) Prediction](docs/modules/07_clv_prediction.md)
+8. [Module 08 — Recommendation System](docs/modules/08_recommendation_system.md)
 
 ## 🤝 贡献指南
 
@@ -462,8 +544,8 @@ def recommend_items(user_id, top_n=10):
 
 ## 👨‍💻 作者
 
-- **你的名字** - 项目负责人
-- **联系方式** - your.email@example.com
+- **你的名字** - 王鑫
+- **联系方式** - 17310353826@163.com
 - **个人主页** - [GitHub](https://github.com/yourusername)
 
 ---
@@ -479,8 +561,8 @@ def recommend_items(user_id, top_n=10):
 ## 📞 联系方式
 
 如有问题或建议，请通过以下方式联系：
-- 📧 Email: your.email@example.com
-- 💬 微信: your_wechat_id
+- 📧 Email: 17310353826@163.com
+- 💬 微信: WX3119096786
 - 🐙 GitHub: [提交 Issue](https://github.com/yourusername/ecommerce-intelligence-system/issues)
 
 ---
@@ -489,6 +571,6 @@ def recommend_items(user_id, top_n=10):
 
 **如果这个项目对你有帮助，请给个 ⭐Star 支持一下！**
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [王鑫]
 
 </div>

@@ -1,8 +1,11 @@
 # ============================================================
 # E-Commerce Intelligence System - .gitignore
+# Updated: 2026-04-13
 # ============================================================
 
+# ============================================================
 # Python
+# ============================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -20,22 +23,37 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
+# ============================================================
 # Virtual Environment
+# ============================================================
 venv/
 ENV/
 env/
+.venv/
 .venv
+env.bak/
+venv.bak/
 
+# ============================================================
 # Jupyter Notebook
+# ============================================================
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 */.ipynb_checkpoints/*
+.ipynb_checkpoints/
 
-# PyCharm
+# ============================================================
+# IDEs and Editors
+# ============================================================
+
+# PyCharm / IntelliJ IDEA
 .idea/
 *.iml
 *.iws
@@ -48,51 +66,154 @@ env/
 # Claude Code
 .claude/
 
-# Environment variables
+# Spyder
+.spyderproject
+.spyproject
+
+# ============================================================
+# Environment Variables & Configuration
+# ============================================================
 .env
 .env.local
 .env.*.local
+*.env
 
-# Database
+# Database credentials
+config/database.yaml
+config/secrets.yaml
+credentials.json
+secrets.yaml
+*.key
+*.pem
+
+# ============================================================
+# Database Files
+# ============================================================
 *.db
 *.sqlite
 *.sqlite3
 data/*.db
 
-# Data files (comment out if you want to track data)
+# ============================================================
+# Data Files
+# ============================================================
+
+# Raw data files (uncomment to ignore large data files)
+# Recommendation: Keep data/ tracked in Git for reproducibility
+# unless files are too large (>100MB)
+
+# Uncomment these if data files are too large or sensitive:
 # data/*.csv
 # data/*.zip
 # data/*.xlsx
+# data/*.json
 
-# Model files
+# Specific large data files (>50MB)
+data/olist_geolocation_dataset.csv
+
+# ============================================================
+# Output Files
+# ============================================================
+
+# Large output CSV files (>10MB)
+output/dashboard/user_segments_rfm.csv
+output/08_recommendation_system/data/*.csv
+output/08_recommendation_system/recommendations/*.csv
+
+# Batch processing directories
+output/08_recommendation_system/recommendations/personalized_batches*/
+output/**/personalized_batches*/
+output/**/*batch*/
+
+# Other large output files
+output/**/*.csv.gz
+output/**/*.parquet
+
+# ============================================================
+# Model Files
+# ============================================================
 models/
 *.pkl
 *.joblib
 *.h5
 *.pb
 *.pth
+*.onnx
+*.model
+*.bin
 
-# Logs
+# Model checkpoints
+checkpoints/
+*.ckpt
+
+# ============================================================
+# Logs & Temporary Files
+# ============================================================
 logs/
 *.log
 log/
+*.log.*
 
-# OS
-.DS_Store
-Thumbs.db
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
 *.swp
 *.swo
+*~
 
-# Testing
+# Windows temp files
+nul
+Thumbs.db
+
+# ============================================================
+# OS Specific
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================
+# Testing & Coverage
+# ============================================================
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
 .tox/
 .hypothesis/
+.pytest_cache
+*.cover
+*.py,cover
+coverage.xml
+*.coveragerc
 
-# Documentation
+# ============================================================
+# Documentation Build
+# ============================================================
 docs/_build/
+docs/.build/
 site/
+_build/
+
+# ============================================================
+# ML/AI Frameworks
+# ============================================================
 
 # MLflow
 mlruns/
@@ -100,21 +221,87 @@ mlartifacts/
 
 # Tensorboard
 events.out.tfevents.*
+runs/
 
-# Temporary files
-tmp/
-temp/
-*.tmp
+# Weights & Biases
+wandb/
 
+# ============================================================
 # Archives
+# ============================================================
 *.zip
 *.tar
 *.tar.gz
 *.rar
+*.7z
+*.gz
+*.bz2
 
-# Credentials
-credentials.json
-config.json
-secrets.yaml
-*.key
-*.pem
+# Exception: Keep specific archives if needed
+# !data/brazilian-ecommerce.zip
+
+# ============================================================
+# Project-Specific
+# ============================================================
+
+# Temporary text guides (development notes)
+text/*guide*.txt
+text/*_guide*.txt
+text/next_step*.txt
+text/project_time*.txt
+text/*_issues*.txt
+text/*_diagnosis*.txt
+
+# Keep important documentation
+!text/prompt.txt
+!guide.txt
+!prompt_guide.txt
+
+# Experimental notebooks (optional)
+# *_experimental.ipynb
+# *_draft.ipynb
+# *_test.ipynb
+
+# ============================================================
+# Cache & Build Artifacts
+# ============================================================
+
+# Python cache
+*.pyc
+__pycache__/
+
+# npm (if frontend is added in future)
+node_modules/
+package-lock.json
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Large generated outputs
+output/dashboard/recommendations_personalized.csv
+
+# Optional: ignore all dashboard csv outputs
+output/dashboard/*.csv
+# ============================================================
+# Miscellaneous
+# ============================================================
+
+# Ignore all PDF outputs except final reports
+*.pdf
+!docs/**/*.pdf
+
+# Ignore all Excel files in output
+output/**/*.xlsx
+
+# Ignore visualization exports (regenerate from notebooks)
+# output/**/visualizations/*.png
+# output/**/visualizations/*.jpg
+
+# ============================================================
+# End of .gitignore
+# ============================================================

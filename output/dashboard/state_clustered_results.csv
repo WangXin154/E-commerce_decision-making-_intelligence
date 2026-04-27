@@ -1,0 +1,28 @@
+﻿customer_state,order_count,customer_count,total_gmv,total_revenue,avg_order_value,avg_delivery_days,avg_freight_cost,delay_rate,avg_review_score,bad_review_rate,repeat_rate,state_name,cluster,cluster_name,strategy_direction
+AC,81,81,19669.7,15982.95,242.835802,21.0,45.515432,3.7037,4.075,15.0,1.0,Acre,1,High-AOV Potential Markets,Grow selectively and raise penetration
+AL,413,413,96456.92,80464.78,233.551864,24.4525,38.628357,20.58111,3.764,23.60097,1.0,Alagoas,2,Logistics-Stressed Markets,Repair operations before scaling
+AM,148,148,27918.87,22412.74,188.641014,26.3151,37.203581,2.7027,4.1781,15.06849,1.0,Amazonas,1,High-AOV Potential Markets,Grow selectively and raise penetration
+AP,68,68,16262.8,13474.3,239.158824,27.1791,41.007353,2.94118,4.194,7.46269,1.0,Amapa,1,High-AOV Potential Markets,Grow selectively and raise penetration
+BA,3380,3380,612431.53,512102.99,181.19276,19.2929,29.806459,11.77515,3.8622,18.90756,1.0,Bahia,2,Logistics-Stressed Markets,Repair operations before scaling
+CE,1336,1336,276054.29,227621.6,206.627463,21.2061,36.442957,13.2485,3.858,19.63746,1.0,Ceara,2,Logistics-Stressed Markets,Repair operations before scaling
+DF,2140,2140,354560.9,303650.0,165.682664,12.9115,23.834691,5.51402,4.0693,14.95283,1.0,Distrito Federal,0,Balanced Core Markets,Stabilise and expand efficiently
+ES,2033,2033,325288.44,275388.59,160.004152,15.7266,24.569104,10.52632,4.0394,14.90528,1.0,Espirito Santo,0,Balanced Core Markets,Stabilise and expand efficiently
+GO,2020,2020,350209.8,296776.99,173.371188,15.548,26.49123,6.43564,4.0435,14.78521,1.0,Goias,0,Balanced Core Markets,Stabilise and expand efficiently
+MA,747,747,151419.42,119789.1,202.703373,21.4611,42.57109,16.7336,3.7534,21.95122,1.0,Maranhao,2,Logistics-Stressed Markets,Repair operations before scaling
+MG,11635,11635,1860210.66,1588602.11,159.88059,11.9439,23.45092,4.46927,4.1389,13.2136,1.0,Minas Gerais,0,Balanced Core Markets,Stabilise and expand efficiently
+MS,715,715,136560.11,117285.92,190.993161,15.5417,26.956909,9.51049,4.108,14.58626,1.0,Mato Grosso do Sul,0,Balanced Core Markets,Stabilise and expand efficiently
+MT,907,907,186410.98,156663.43,205.524785,17.9977,32.906582,5.84344,4.1036,13.6971,1.0,Mato Grosso,1,High-AOV Potential Markets,Grow selectively and raise penetration
+PA,975,975,218000.65,179193.87,223.59041,23.7242,39.84269,10.87179,3.8527,19.54023,1.0,Para,2,Logistics-Stressed Markets,Repair operations before scaling
+PB,536,536,140987.81,115268.08,263.036959,20.3888,48.345357,10.07463,4.0133,16.66667,1.0,Paraiba,1,High-AOV Potential Markets,Grow selectively and raise penetration
+PE,1652,1652,322769.11,263162.73,195.380817,18.3794,36.01594,9.2615,4.0086,16.74817,1.0,Pernambuco,1,High-AOV Potential Markets,Grow selectively and raise penetration
+PI,495,495,108213.5,86974.08,218.613131,19.3899,42.994777,13.33333,3.9139,18.44262,1.0,Piaui,2,Logistics-Stressed Markets,Repair operations before scaling
+PR,5045,5045,803460.57,685170.41,159.258785,11.939,23.596681,3.9445,4.1847,12.39009,1.0,Parana,0,Balanced Core Markets,Stabilise and expand efficiently
+RJ,12852,12852,2135055.75,1828425.69,166.126342,15.244,23.94425,11.6869,3.8806,20.58986,1.0,Rio de Janeiro,0,Balanced Core Markets,Stabilise and expand efficiently
+RN,485,485,101942.55,83048.3,210.190825,19.2232,39.11853,9.07216,4.1023,14.19624,1.0,Rio Grande do Norte,1,High-AOV Potential Markets,Grow selectively and raise penetration
+RO,253,253,57558.02,46140.64,227.502055,19.284,46.224211,2.7668,4.0562,15.66265,1.0,Rondonia,1,High-AOV Potential Markets,Grow selectively and raise penetration
+RR,46,46,10064.62,7829.43,218.796087,29.3415,48.591087,10.86957,3.6087,23.91304,1.0,Roraima,2,Logistics-Stressed Markets,Repair operations before scaling
+RS,5466,5466,888633.27,752547.84,162.574693,15.2548,24.951491,5.96414,4.1363,13.27808,1.0,Rio Grande do Sul,0,Balanced Core Markets,Stabilise and expand efficiently
+SC,3637,3637,611253.71,521403.62,168.065359,14.9198,24.827325,8.02859,4.0764,14.55556,1.0,Santa Catarina,0,Balanced Core Markets,Stabilise and expand efficiently
+SE,350,350,73032.32,58920.85,208.663771,21.4627,40.902812,14.57143,3.8006,21.96532,1.0,Sergipe,2,Logistics-Stressed Markets,Repair operations before scaling
+SP,41746,41746,5939079.38,5218070.91,142.267029,8.7033,17.372442,4.36689,4.1756,12.58946,1.0,Sao Paulo,3,Super Core Outlier Market,Protect leadership and deepen value
+TO,280,280,61354.42,49621.74,219.122929,17.5985,42.052616,9.64286,4.1047,13.3574,1.0,Tocantins,1,High-AOV Potential Markets,Grow selectively and raise penetration

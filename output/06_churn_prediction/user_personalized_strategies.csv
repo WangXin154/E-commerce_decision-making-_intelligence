@@ -1,0 +1,831 @@
+unique_user_id,snapshot_id,churn_probability,risk_level,total_gmv,days_since_last_order,avg_rating,avg_delivery_days,personalized_strategy
+015557c9912277312b9073947804a7ba,1,0.7701443260051625,Medium Risk,315.12,35,5.0,13.0,General retention campaign
+02168ea18740a0fdaaa15f11bebba5db,7,0.9230388662064946,High Risk,264.04,54,3.0,22.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+027803eb28cc01fbdf5da72b109fabee,7,0.851687781170217,High Risk,101.43,46,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+031ea691b99fc101dcad357d1a83573f,4,0.8750362566593692,High Risk,73.04,55,4.0,7.5,Long inactivity -> send reactivation offer
+0333b2fc6ba7014702e08ef613850270,7,0.5180611609072582,Low Risk,93.0,26,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+0396c443fdda5498c7e9ed5b34871c5a,1,0.8368754973082073,High Risk,120.84,31,5.0,13.5,General retention campaign
+03dabd77cb0ed7a26fafe19e36b67742,2,0.8918555781671597,High Risk,99.45,51,5.0,19.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+041caba6a63ace5818387698ea85cdb2,7,0.6509152332186332,Low Risk,81.68,15,4.5,10.0,General retention campaign
+043aee247e71edff7045664609f4d806,4,0.7024894917417658,Low Risk,405.41,48,4.5,9.5,High value -> priority retention with stronger incentive
+0451ef5a31cea3e14ce02d768d7c9943,3,0.8808909396341423,High Risk,387.39,47,4.5,21.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0488328f0b499963e32a37fa42a20ca0,6,0.782768819185746,Medium Risk,384.17,56,5.0,8.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+048dbdf8f9bbd1be87b25868d1408311,7,0.7446972517789334,Medium Risk,178.95,26,4.0,11.5,General retention campaign
+04d3c2795b83634312bf3f86f41f7901,5,0.933575838089021,High Risk,596.39,56,3.0,21.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+053b7090271ed4dacbfe0afd6382bbab,6,0.7536772000412743,Medium Risk,115.49,35,4.5,2.5,General retention campaign
+053f7850c3ffd9726cff61c7e42af797,3,0.9118655856538322,High Risk,61.54,36,2.0,5.0,Low satisfaction -> service follow-up and apology coupon
+05669445931c028d97b7c0637b5a2359,7,0.767432523469667,Medium Risk,210.78,56,5.0,10.5,Long inactivity -> send reactivation offer
+05e52c1f96f8b83dd66dcdce679ff58d,4,0.9294592020650327,High Risk,239.16,41,4.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+0621c2a5979d3e887ae519620cbe2926,5,0.8440605553122968,High Risk,514.49,54,1.0,9.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+065dcef61d5f66b30d2ee51b5343d023,7,0.6777011614576812,Low Risk,188.52,2,5.0,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+06a52782a04f0086d16b9c22d0e29438,2,0.8172285441800969,Medium Risk,153.33,60,5.0,11.0,Long inactivity -> send reactivation offer
+07342638d0e0aad32c3cf0efc1a37ba5,6,0.6256123846144147,Low Risk,619.38,36,4.5,13.0,High value -> priority retention with stronger incentive
+0751ebe1c05ef7a632934adae06c6d4a,4,0.8435312907333316,High Risk,188.79,42,4.5,7.5,General retention campaign
+075c38f7a650b0dc822712c7a58e93d4,7,0.8220436286941832,Medium Risk,126.02,44,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+076b7055bea51da430d6a6fa054e5075,3,0.8694474386775861,High Risk,113.96,56,5.0,14.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+07f61caa1c9e850c14e94854cec87545,5,0.8792218900289257,High Risk,99.41,59,5.0,5.0,Long inactivity -> send reactivation offer
+083ca1aa470c280236380973a48f77c6,5,0.7548216631851099,Medium Risk,214.97,48,5.0,9.0,General retention campaign
+08f7cf00ed9ff3e0a08fc136ec272974,5,0.8592420710728796,High Risk,355.84,32,2.5,13.6667,Low satisfaction -> service follow-up and apology coupon
+096e351116755fe4c3c1e48eaf301a41,2,0.8372126408905399,High Risk,217.49,50,4.5,6.5,General retention campaign
+0981a271500799427cdf345e9121e20b,1,0.8818339048617289,High Risk,162.28,49,5.0,12.5,General retention campaign
+09bc7afc3e8d8dccaffd0b16944a91fe,4,0.8126893914515085,Medium Risk,609.87,33,4.0,6.5,High value -> priority retention with stronger incentive
+09d7c538023c2c4fb0553c831c12f084,2,0.8228614310693431,Medium Risk,846.12,44,5.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0a5df23b922b9998bb7378f1ac03c98a,6,0.7724612035823598,Medium Risk,193.83,34,5.0,5.5,General retention campaign
+0a609db8d244100909a15d65eadf8539,7,0.8421728958613544,High Risk,501.16,45,3.0,10.6667,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+0a61b571f594b6919601bcf3380da7f7,5,0.8520643938403518,High Risk,347.73,53,4.0,12.0,Long inactivity -> send reactivation offer
+0aadc1d26d1c8b88a52c39a533ccea93,7,0.8338373145585478,High Risk,1218.7,4,1.0,22.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0abee71cd257861a0944e2a81cea4a50,7,0.42644426026036647,Low Risk,423.86,6,5.0,12.0,High value -> priority retention with stronger incentive
+0ac10a57d07e3d38b11f66283c44672b,2,0.9013377424398853,High Risk,209.66,33,5.0,15.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+0b18593e033697810a62a987e77f4b8c,3,0.8754984683912636,High Risk,127.83,51,5.0,12.5,Long inactivity -> send reactivation offer
+0b3dc7efaafb0cf78a4796d42fa8d74c,4,0.7070667438267975,Low Risk,620.06,37,5.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0b402d6dd50694a118c642448e2cb086,7,0.6327578278401702,Low Risk,230.84,6,5.0,10.0,General retention campaign
+0bc9c245cd69735af23eefdd89d74e7e,6,0.9059765490993927,High Risk,210.8,50,4.0,8.0,General retention campaign
+0c4c416f1f9844e6805b074f8f96f52c,5,0.8425386545556129,High Risk,174.48,52,5.0,13.5,Long inactivity -> send reactivation offer
+0c8ac932c65f67489929f9164a86606d,7,0.8975754614458651,High Risk,306.54,44,4.0,8.0,General retention campaign
+0cbcf91ef2dd6dfcce9ee63c8772dc97,5,0.8509678968896894,High Risk,196.18,49,4.0,12.0,General retention campaign
+0cc2ee1112a11a1094eff52fa2e87150,7,0.8402216694987185,High Risk,839.62,60,5.0,16.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0cf46588cd3f5a23002166b5a1945820,7,0.8154324897452319,Medium Risk,273.0,44,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+0cfd915db480acd7d9a954409cabfb1c,5,0.8367804142499766,High Risk,118.15,41,5.0,8.0,General retention campaign
+0d4644eff058d75937ca1eec574bf87d,7,0.6658864490633282,Low Risk,230.75,2,5.0,10.0,General retention campaign
+0dd933d1e0253343083013791bf5d5e9,7,0.7528639704157546,Medium Risk,204.9,8,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+0e06af8004ffd01a3461e768f9f659aa,7,0.6718848909620162,Low Risk,495.53,13,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+0e37a80826485260170d428b06df0ab6,6,0.8983544815079225,High Risk,344.09,51,3.0,13.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+0e3c753956e35026b965d9ac3590c5af,5,0.7937129062030512,Medium Risk,314.12,56,5.0,6.0,Long inactivity -> send reactivation offer
+0ea353565cdde00e1d8352a08290a352,5,0.7165745485650084,Low Risk,292.76,39,5.0,10.5,General retention campaign
+0f0e48a91c9c285404572b095bcb373c,4,0.8672434180008454,High Risk,204.54,45,4.0,22.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+0ffc908947e1f0c9f17647058b9a58c2,3,0.6959995226115584,Low Risk,477.68,33,4.5,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+100f480d33281b45b97c07395968e56c,6,0.7618250321821607,Medium Risk,175.28,39,5.0,13.0,General retention campaign
+1015173479527a15ccb63606a74f404e,6,0.7790345000992375,Medium Risk,371.85,58,5.0,11.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+1118bbd6c82a824ebc677b12e525864f,7,0.8022810100800187,Medium Risk,537.72,35,5.0,15.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+11395124061744bf276aefd8073f3105,7,0.851751871997297,High Risk,125.75,55,5.0,4.6667,Long inactivity -> send reactivation offer
+118be57d1b7de439453a0c6625ad7934,5,0.8924107286704506,High Risk,87.38,45,4.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+1197ba886110324a1519fff17dd8d1d2,5,0.7246060548209314,Low Risk,118.1,43,4.5,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+121b5a0ae9d09a2ca5e8090fd2a00a58,1,0.7740485661361483,Medium Risk,146.27,44,5.0,7.5,General retention campaign
+125740359669fa63858476105a5d523d,4,0.708878221108798,Low Risk,584.56,41,5.0,23.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+1291474366a550ebc251d9187e763d62,3,0.7217976484827963,Low Risk,156.85,33,4.0,11.0,General retention campaign
+12c54f6dfd4b723a6c76c4c989494422,6,0.829132835370101,High Risk,322.49,42,4.5,18.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+131b8a51429529f4e57e8faa1b87ff4f,1,0.8649919435879576,High Risk,141.71,59,4.0,11.0,Long inactivity -> send reactivation offer
+133e20311ec257bda38f1798250d38c5,2,0.7681984642624817,Medium Risk,782.43,58,4.5,16.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+13abc50b97af7425b5066e405d7cd760,2,0.8439613563142775,High Risk,148.31,59,5.0,14.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+1477c54a1abe3610e3e9ab411801cecb,7,0.8466482209276956,High Risk,258.67,49,5.0,8.5,General retention campaign
+149c19901ddcd1057deaabc003004a12,5,0.8789401437156246,High Risk,439.44,36,2.5,5.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+1590457b4be348b165ff7030a6f94dce,4,0.8605207375383919,High Risk,177.75,60,3.5,4.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+15eb6c5aa4aa23cbdb42e119220d23ec,7,0.8486487028909366,High Risk,436.88,44,5.0,17.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+161b2eb506dd664bb5d23dc701a14b59,4,0.8309922751074843,High Risk,314.39,46,3.0,17.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+1647c6dc2941bd075dc5dd3448807bed,5,0.8620657227522512,High Risk,239.62,44,4.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+164ba50c15bd1157975375a75bbde58e,2,0.8396115679380521,High Risk,95.1,45,5.0,11.0,General retention campaign
+165d93a9d1da194b47da42c9cf810ebd,6,0.8614684635771143,High Risk,604.79,60,4.5,12.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+177c725937ae5f96171bb8b43f196dfa,1,0.8049619848065568,Medium Risk,220.33,38,5.0,12.5,General retention campaign
+178a58ded2b9be43b90300e0e0e8e66c,7,0.7361986925270553,Medium Risk,163.85,22,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+17e873c00e3fef97c9f1347c6681bd1a,6,0.7069520785184997,Low Risk,794.6,40,5.0,8.5,High value -> priority retention with stronger incentive
+1803287d1e7138aec6ea9d3c963ed87d,6,0.8425736743594613,High Risk,129.64,54,5.0,5.0,Long inactivity -> send reactivation offer
+186e4b97d2704e8b76235b8d7c5d38ab,3,0.8743262067575143,High Risk,126.96,50,3.0,9.3333,Low satisfaction -> service follow-up and apology coupon
+18e3d276253780b44b5b7bf83f6785ec,7,0.6782279488863427,Low Risk,168.85,4,5.0,6.0,General retention campaign
+18f17efd50fd7e9595cc1a40205c937c,5,0.8128565738082408,Medium Risk,162.85,32,4.0,8.5,General retention campaign
+191e0f453bea7f50ce1fcd514af38835,7,0.8852883036464514,High Risk,110.93,20,2.0,10.5,Low satisfaction -> service follow-up and apology coupon
+194be31520cde5c527bad17720119e85,5,0.7139669435832239,Low Risk,277.25,50,5.0,10.0,General retention campaign
+19da55454167240f3a4a39430007d074,6,0.7286888252356448,Medium Risk,263.28,39,5.0,10.0,General retention campaign
+1a15eecd72a08e1134ba406c7a7998e6,3,0.8538008769039585,High Risk,415.79,46,4.0,8.0,High value -> priority retention with stronger incentive
+1a68c22c23a52a35f499dbd3c5a020a6,6,0.7841007248515174,Medium Risk,250.57,60,5.0,11.0,Long inactivity -> send reactivation offer
+1ae30e98d81bdf991fa25b52b8142308,3,0.7364768095930332,Medium Risk,228.56,32,5.0,9.0,General retention campaign
+1b2db8ab2d8e7b84b5455736fc9713f2,2,0.8354960077163883,High Risk,196.48,48,5.0,13.5,General retention campaign
+1b5720c7b0ee7183c2eafe3dba65111b,7,0.7151673412984101,Low Risk,66.01,8,4.0,3.0,General retention campaign
+1b7733821d1e0ec8907bbb441271f80b,7,0.8638512686188601,High Risk,147.01,57,2.5,11.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+1b95e3fe033836c787689ae4b9516aa3,2,0.8166771707702097,Medium Risk,393.61,53,5.0,2.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+1bbf6de8bbe287cb474e57d437d72969,7,0.8748545606225892,High Risk,377.76,59,4.0,18.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+1c4531b533d17f3b316de441268e513c,6,0.7701091154532812,Medium Risk,85.71,38,5.0,4.0,General retention campaign
+1cc48564488184883cc7923b82c7b3f9,4,0.7489305478118365,Medium Risk,338.86,44,5.0,9.0,General retention campaign
+1d627d8a6e1e33ea8eeeb7a17d998660,5,0.7967978866263002,Medium Risk,254.35,31,5.0,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+1d72aaec15863f7532b2dbf4a5c4247d,5,0.7709059689332733,Medium Risk,479.56,33,5.0,7.5,High value -> priority retention with stronger incentive
+1da09dd64e235e7c2f29a4faff33535c,4,0.22189485922253946,Low Risk,1333.76,45,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+1e6dc17adde78e52b6fa5e634f4454e0,4,0.9054685123340995,High Risk,226.67,60,5.0,7.0,Long inactivity -> send reactivation offer
+1ed1f7f1679bee0089061c9db1bd783a,4,0.8431593593515226,High Risk,108.03,34,5.0,7.0,General retention campaign
+204fa49efb5913a76287284d6e096f69,5,0.8824980690557286,High Risk,114.8,49,4.0,9.5,General retention campaign
+21560f93adbd9ada040a40909ac8619d,7,0.4353716534021879,Low Risk,434.27,16,5.0,11.0,High value -> priority retention with stronger incentive
+21c3cb2e65b7575d9e079f7be7987d3c,7,0.7263550287349136,Medium Risk,123.99,45,5.0,12.5,General retention campaign
+21c8aa0cb27943cbf33d75985e28da67,7,0.7713893528261857,Medium Risk,209.18,34,4.5,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+21d3f0a4bf0cccf65dcfe93b8325d250,2,0.7863212777894104,Medium Risk,147.19,44,4.0,5.5,General retention campaign
+2280ecb8db2591c39d1c7d3e9caa115c,5,0.783124054405864,Medium Risk,107.2,37,5.0,4.5,General retention campaign
+233c8f191c45cef30af148a82ac70020,3,0.7185353992247184,Low Risk,215.31,42,5.0,13.0,General retention campaign
+23dc3a062c6c097bcb3940a909e7730f,1,0.8570179798207531,High Risk,93.84,56,5.0,7.5,Long inactivity -> send reactivation offer
+2410195f6521688005612363835a2671,6,0.8552385375649385,High Risk,166.01,57,5.0,9.0,Long inactivity -> send reactivation offer
+24cad6db9c734bd4f0edc6a314735880,6,0.8291973497525557,High Risk,187.36,54,3.0,8.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+24d27f115e367d9129a0e7a7a5d36866,7,0.6885267063793731,Low Risk,754.23,17,5.0,10.5,High value -> priority retention with stronger incentive
+24fb2954f8c6cdb4b900ed8db6dc88e2,7,0.5499162523412942,Low Risk,223.81,7,5.0,13.0,General retention campaign
+256b3e7a939dddf3e40608cac69e88c7,1,0.8416354524745311,High Risk,174.68,47,3.0,14.3333,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+25a560b9a6006157838aab1bdbd68624,1,0.713454990197729,Low Risk,131.8,57,4.0,13.25,Long inactivity -> send reactivation offer
+26d1b63e9b8478f84f87188c4877049e,5,0.8276240735770922,High Risk,597.22,56,5.0,7.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+27259fad9054fce994a70f1d117bc402,7,0.6349926052017807,Low Risk,334.74,8,5.0,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+27517ed34c0406fe07b3a806e33cbc10,7,0.8441095128077587,High Risk,182.8,46,5.0,16.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+27e86d2ae0db33b8d242c9251067d97e,4,0.8221722051956996,Medium Risk,125.53,51,5.0,14.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+281e1e72207e518c29b249a1361a775d,4,0.7876085932500885,Medium Risk,437.67,38,5.0,8.0,High value -> priority retention with stronger incentive
+28c7e3fb75d7ce1e496dc539443b71da,4,0.7174668496359904,Low Risk,345.09,37,5.0,15.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+28da99e178f274876e3052c1740c6c87,5,0.805270847433367,Medium Risk,67.0,33,5.0,13.0,General retention campaign
+294e0922aa06792eea5094656727c0bd,2,0.873203775534605,High Risk,374.15,46,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+2a3f4536e732a04cfad59b6e50c2e925,7,0.773098436342749,Medium Risk,103.5,21,5.0,8.0,General retention campaign
+2ac6f6d09c75bb721defa2eb7a4f52a1,7,0.8078653855269605,Medium Risk,78.51,32,4.0,11.0,General retention campaign
+2b100d3737ff053e5003640064ee6ad8,7,0.8707385852394115,High Risk,110.85,38,4.0,12.6667,General retention campaign
+2b174670dbec666bbc68b6e2a4062740,4,0.8464389467315516,High Risk,331.94,55,5.0,16.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+2b19910e856b2ba3e7257e63a093a3df,6,0.6926905450501499,Low Risk,262.96,37,4.0,2.5,General retention campaign
+2b4871f788b44ee004ec2c7fc7cd420b,7,0.9096564391797047,High Risk,289.84,32,3.5,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+2b5c14b7e1a3d88ff7e0c46e15851f5f,4,0.8880873731921599,High Risk,121.06,48,2.0,36.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+2b775b75afa0be08220fb73a7e68df3b,7,0.7782233505715047,Medium Risk,126.72,33,5.0,13.0,General retention campaign
+2b952792a20f6076f6e7a9c6a27ade02,7,0.5387536469379544,Low Risk,130.14,7,5.0,8.0,General retention campaign
+2bd9d2f3cc5d99b1b3d9ff5acd81bd5e,7,0.8047429754016955,Medium Risk,103.11,26,5.0,11.0,General retention campaign
+2cf396c9e24e7627ff042cccb209b9e6,6,0.9405032681462611,High Risk,429.3,45,3.5,10.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+2d7c6bd64b139f0f40968dd19c629532,4,0.6142580782752234,Low Risk,232.76,33,5.0,8.5,General retention campaign
+2ddc001b620bd90d0f4378cfde1db887,7,0.2621492046074435,Low Risk,378.46,16,5.0,7.3333,High value -> priority retention with stronger incentive
+2e0a2166aa23da2472c6a60c4af6f7a6,7,0.6661910374885975,Low Risk,299.53,34,5.0,13.0,General retention campaign
+2e366b0c6451864364bab2e7917ca1bb,2,0.881589935613441,High Risk,113.56,35,1.0,24.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+2f41863e0922b8d1fbb756691b5c315b,1,0.909874239482344,High Risk,272.64,60,4.0,8.5,Long inactivity -> send reactivation offer
+2f7c8c8386941ce0ef458ca7ff304123,5,0.8814920406883768,High Risk,247.93,45,4.5,21.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+2fe074ea3cc24b8fd57d29effc995f8b,7,0.6849130818552353,Low Risk,1043.06,1,5.0,11.0,High value -> priority retention with stronger incentive
+2ff1b818fb048c44dc6629f013cceae6,5,0.8827414728842945,High Risk,289.92,60,5.0,24.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+301a6d74a3eb7cd8e3508a045b8fa2e1,5,0.7562052020388128,Medium Risk,591.17,41,5.0,4.0,High value -> priority retention with stronger incentive
+30a81e307f19e822e7199139fe52b1b0,7,0.5623013950228307,Low Risk,75.09,31,5.0,8.5,General retention campaign
+310647380793836bfa5b7b6b3f518423,7,0.5907306208037547,Low Risk,385.24,45,5.0,12.0,High value -> priority retention with stronger incentive
+3110339155d740dc64b31e1666952100,3,0.8926201263537369,High Risk,116.9,58,5.0,5.0,Long inactivity -> send reactivation offer
+3170ebd8b32a5e2102c9d75e0a7f6d74,5,0.7763587689165273,Medium Risk,276.48,39,5.0,6.0,General retention campaign
+31aa2034dc4b34b06487e22a53b4a07a,6,0.7528946638819091,Medium Risk,379.28,34,5.0,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+31bfa97f1ea0663a50ebc5c811ebdf4d,7,0.830957232964067,High Risk,937.36,30,2.5,16.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+31d958dffbf0b744375b5ff0393e6fb3,6,0.923753287686585,High Risk,213.74,43,3.0,6.5,Low satisfaction -> service follow-up and apology coupon
+31e0eb64c5eb715aab04433200ea4ed5,6,0.8740382200614816,High Risk,200.06,43,3.0,6.0,Low satisfaction -> service follow-up and apology coupon
+31f49e069c399db9c3a0bdf8653e4e8f,6,0.82558172411207,Medium Risk,528.77,55,5.0,10.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+32ea3bdedab835c3aa6cb68ce66565ef,6,0.7364423101705357,Medium Risk,102.24,36,4.5,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+334293c291f43a6aa85020f8597a171f,7,0.8116081076523268,Medium Risk,295.38,57,5.0,5.5,Long inactivity -> send reactivation offer
+335be0ca4b7aa8578e364a76efd4da52,3,0.9249885151153769,High Risk,293.7,46,1.0,14.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+336421b86cc4259a58106da261e0e000,2,0.6532586471739421,Low Risk,562.82,57,5.0,13.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+339c527109c4c03e8e09bd4b593dab5f,6,0.7940673981953467,Medium Risk,403.99,36,5.0,6.5,High value -> priority retention with stronger incentive
+33aa371b7512b6a9fede4f231e212226,6,0.8834044272880351,High Risk,303.12,47,2.5,10.0,Low satisfaction -> service follow-up and apology coupon
+33b239671c1c878914ed922a0dacd607,3,0.8532222646299537,High Risk,115.94,59,3.0,6.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+3443f8095ad309eebbdc8caa8b2bf936,3,0.8547503169744585,High Risk,164.9,52,5.0,4.0,Long inactivity -> send reactivation offer
+346534c8088852932d947f4b8fea3959,4,0.9151170931225299,High Risk,540.82,39,2.5,21.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+355ae139c8a163fb77c065a2d1403ed9,2,0.848181588533342,High Risk,330.55,57,5.0,6.5,Long inactivity -> send reactivation offer
+359bacb2b5c52b4287667a7bc6c7bc63,2,0.8615125249481904,High Risk,580.9,51,3.0,16.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+35de25c73544f00e8adde226a4d1bdcc,6,0.922663874865965,High Risk,347.38,32,3.0,8.5,Low satisfaction -> service follow-up and apology coupon
+35e9d2caa31b87cc3d1ad10d72271140,4,0.9017609575099228,High Risk,89.99,54,4.0,6.5,Long inactivity -> send reactivation offer
+35ecdf6858edc6427223b64804cf028e,7,0.17623247736125489,Low Risk,514.96,17,4.6667,10.5,High value -> priority retention with stronger incentive
+362928c8cd61df2e6951751dffb4be85,7,0.7724584525214546,Medium Risk,494.75,39,5.0,7.0,High value -> priority retention with stronger incentive
+36445bb429c8bb13c3f8cd6794723647,2,0.8265242916941176,Medium Risk,193.66,50,5.0,11.0,General retention campaign
+367f4686d7112d69feed92b02a1775ed,2,0.8151116530046469,Medium Risk,205.5,47,5.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+3724bfc68569cc4df876284536b8add9,5,0.8092858420318073,Medium Risk,647.07,36,4.0,7.0,High value -> priority retention with stronger incentive
+37545efd489b0b7c9aa20690f344271d,6,0.866732818804924,High Risk,897.68,45,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+37f8e7062a53c1a0fca4f59f4c6b1429,7,0.8192832068081679,Medium Risk,164.87,47,5.0,11.0,General retention campaign
+382ad79426068e4ba6ed73491d4441cb,2,0.8603479496133342,High Risk,149.18,31,5.0,6.5,General retention campaign
+3871b0ab0166a2f441fa762f5206cacc,6,0.8174606632287529,Medium Risk,333.15,53,4.5,3.0,Long inactivity -> send reactivation offer
+38dd3f4e8a4cc5e32dd0a4426a1961fa,5,0.8266024117430468,Medium Risk,97.98,34,5.0,9.0,General retention campaign
+38e74ef4e3bcf3019fd22b84649bf90d,4,0.8062992664067636,Medium Risk,168.49,55,3.5,13.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+39104edef5e46d7b8c61848cc95e6d97,6,0.6860080156008579,Low Risk,126.27,32,4.6667,4.3333,General retention campaign
+39ae2ab725be4a0db66896735a49dac7,4,0.8641980770962039,High Risk,125.64,55,4.0,4.0,Long inactivity -> send reactivation offer
+39ce02a045b8e7b0329984df3109957b,6,0.7652021946842145,Medium Risk,113.56,36,5.0,3.5,General retention campaign
+39d28c99c5382bfc238c047203595443,7,0.6576476765153688,Low Risk,56.0,12,5.0,11.5,General retention campaign
+3a2d236fc85fdf338f179ca0cd725433,4,0.8206969695979505,Medium Risk,89.63,34,4.5,16.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+3a649b3c6b379a427fa6f4a5f646a43d,5,0.8640708915493285,High Risk,183.56,53,4.0,12.0,Long inactivity -> send reactivation offer
+3ae522de6b23a3699ef105d4c4b3b82d,7,0.847514279423588,High Risk,82.19,60,4.0,9.5,Long inactivity -> send reactivation offer
+3b6f5d22fb32e6ac2fbbb944b18cf1bb,4,0.8208735224419883,Medium Risk,263.96,41,1.0,14.6667,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+3bab949ef05da8e9b3cfd541b6af0ffd,3,0.7522995067395403,Medium Risk,746.28,54,5.0,11.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+3bfda42ef722cb59c430e6be0b68628c,4,0.8785623137075095,High Risk,189.08,43,4.0,9.0,General retention campaign
+3c25f47ab68536a1d3d6b29b9c8b7e63,7,0.7545462409698022,Medium Risk,117.14,4,5.0,5.0,General retention campaign
+3d71bc3ae0c9f857ffe17636e0d59aab,3,0.8381329047352999,High Risk,99.56,56,5.0,10.5,Long inactivity -> send reactivation offer
+3d740e7cbf7e5b18027f204bd01b0be4,5,0.6933973489827254,Low Risk,116.92,52,3.0,14.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+3db6e5afa8e8178a29afc729855315e2,7,0.7588439979176479,Medium Risk,779.34,8,1.0,25.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+3e43e6105506432c953e165fb2acf44c,7,0.4483805660249405,Low Risk,643.41,1,2.0,4.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+3e5306add1209e5ba184092dd1587282,7,0.4520622178035281,Low Risk,109.45,17,5.0,11.0,General retention campaign
+3ea4185126195c34ed9949d8e406d570,5,0.7109411257198333,Low Risk,726.36,35,5.0,7.0,High value -> priority retention with stronger incentive
+3f36fa15a16c4850992aa0f33561906e,2,0.653801978117552,Low Risk,204.82,34,5.0,9.0,General retention campaign
+3f5534bf8c9378ee05b7dd684cb20e8a,7,0.7735068079021448,Medium Risk,146.3,25,4.5,10.5,General retention campaign
+3f6ac9a49767899814866524054ba779,1,0.9074426299762134,High Risk,186.39,59,4.0,9.5,Long inactivity -> send reactivation offer
+4067ba7df47a2bcb753ae5f7530fc7cc,2,0.8030769299627945,Medium Risk,176.21,36,1.0,5.0,Low satisfaction -> service follow-up and apology coupon
+40730ca1af9742bd0bdbcef270ff4c76,7,0.7503462448699437,Medium Risk,179.98,4,5.0,2.0,General retention campaign
+407a6773db6e845737d04a6e27e653b4,6,0.8192464755506083,Medium Risk,244.78,46,5.0,6.5,General retention campaign
+4127cb95c20254485869d698037a3dfd,3,0.8181530272161162,Medium Risk,160.58,56,4.0,14.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+418ee6e3b8f19158d67d5039f19783b9,2,0.8808559068400306,High Risk,84.22,51,5.0,9.0,Long inactivity -> send reactivation offer
+4191bcfd448dc07138d2951ea4d10008,7,0.7907267781658247,Medium Risk,178.01,26,4.5,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+41b3ab6b1f95cbd2afb361e852a56917,6,0.8693032983106889,High Risk,131.12,50,2.0,4.5,Low satisfaction -> service follow-up and apology coupon
+42398dee8f2098eec5579129cc1a6f5e,7,0.7331516452524086,Medium Risk,292.73,4,4.0,8.0,General retention campaign
+425634deb94b1080fc7d283f3a644941,7,0.781240661489266,Medium Risk,145.35,50,3.0,32.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+434825743a3426c100c479f571816a81,4,0.8442052254056989,High Risk,74.5,47,3.0,9.3333,Low satisfaction -> service follow-up and apology coupon
+43c73f9043398f0dd2163fc5f825e61a,7,0.7041190316967962,Low Risk,243.37,23,5.0,8.0,General retention campaign
+44b6bbfea26596437062a38c8e6bcec1,2,0.7729717151487764,Medium Risk,346.87,43,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+44ed2c2de63bfe22f6596547584d7372,6,0.8227956795164928,Medium Risk,145.31,47,5.0,9.0,General retention campaign
+455c17b35969ca198c17f2fc9e8eba1b,6,0.8502226057502345,High Risk,446.38,49,2.0,24.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+459759c02362af7a218dd2fe035b3c07,5,0.8395253328804634,High Risk,781.19,48,2.5,9.6667,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+4666e7be827bb14bf746a56f740e62c5,2,0.9020244490463271,High Risk,152.33,45,5.0,19.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+46958f708ade6b6a88b2e5aca1e66de5,5,0.696505562464472,Low Risk,156.03,34,5.0,8.25,General retention campaign
+4702945c3b363dd3a5d1cbe913cc95d2,7,0.8430796596471964,High Risk,105.99,52,1.0,20.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+4757b4d81eaab4d270e585126410dc5c,1,0.9061973879330903,High Risk,91.72,35,4.0,7.5,General retention campaign
+475cab480951109dec3ad6f770167fa5,4,0.852698621035353,High Risk,170.9,34,3.5,2.5,Low satisfaction -> service follow-up and apology coupon
+479085be6190cd4a8e610b4fcce5f29c,4,0.8911668746255598,High Risk,186.14,44,5.0,5.0,General retention campaign
+47a71b49f98984efd3c62cb213f977e8,7,0.7752756132716851,Medium Risk,146.68,27,3.5,12.0,Low satisfaction -> service follow-up and apology coupon
+47c1a3033b8b77b3ab6e109eb4d5fdf3,7,0.4009363241220571,Low Risk,883.49,5,5.0,7.5,High value -> priority retention with stronger incentive
+4897a3c64a635a703a71dd2d9189bffa,6,0.7808845171854945,Medium Risk,419.47,34,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+48fd7dec70f2b104a1d5e8c5c639102b,5,0.5651114508929342,Low Risk,166.29,31,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+4962136f755981b83b03f476e66eea7d,7,0.5824169479421933,Low Risk,208.02,21,4.5,13.0,General retention campaign
+49cee01774f85ef576192e1038cf9cc6,6,0.807646390205777,Medium Risk,225.51,58,4.0,12.5,Long inactivity -> send reactivation offer
+4a2ef0b951aa7bdda04470d961d5e755,7,0.8236166021670083,Medium Risk,170.69,55,3.0,16.3333,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+4b384b778ebc0449d0244902bfce7beb,7,0.7820899232661873,Medium Risk,187.4,13,4.0,11.0,General retention campaign
+4b979b432abe14a88cd0cde893952677,7,0.7990104156255202,Medium Risk,293.36,59,5.0,8.0,Long inactivity -> send reactivation offer
+4bbaf6f7a10a7e26a8777aa5cb6d5864,7,0.4642643340279285,Low Risk,504.9,18,4.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+4c112bdeac93a04155c340b65b35c232,3,0.8418020839836963,High Risk,86.25,59,5.0,9.0,Long inactivity -> send reactivation offer
+4c116f8ddec984371284ab7bc860001a,4,0.9080674614253746,High Risk,70.18,40,3.0,9.5,Low satisfaction -> service follow-up and apology coupon
+4c3d123168c78dcca6cde5a7274430a5,3,0.9126954934692295,High Risk,40.56,53,2.5,5.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+4c45ebf94ecf4107850d91bc326851c3,6,0.8687286135732092,High Risk,529.56,59,1.0,7.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+4c5ae17e8984ca0916543b159eac0f2c,5,0.8294876034463744,High Risk,577.96,44,3.0,7.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+4c93744516667ad3b8f1fb645a3116a4,7,0.8510776002071748,High Risk,565.88,48,5.0,12.0,High value -> priority retention with stronger incentive
+4ced1b9f8668a9792e5484da6d97b229,7,0.7145779919489189,Low Risk,59.4,45,5.0,16.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+4d98a16aebfef3772cc4d547bcae8761,7,0.5092012883998975,Low Risk,382.59,15,5.0,12.5,High value -> priority retention with stronger incentive
+4e39429218dac10ad4e57dafee3d92d4,7,0.7626614518561791,Medium Risk,190.24,7,5.0,5.5,General retention campaign
+4e65032f1f574189fb793bac5a867bbc,4,0.6145960274408412,Low Risk,438.75,49,5.0,7.0,High value -> priority retention with stronger incentive
+4eda116add853323e439c104b7d0824c,7,0.5334404821571556,Low Risk,135.78,9,5.0,7.0,General retention campaign
+4f011f45db425dcd3be79d4c11e9ad05,3,0.8839141892694932,High Risk,218.0,54,3.0,18.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+4f2029f4e7aea8455f5c1cb9de0b7ccd,6,0.7594712451091148,Medium Risk,491.63,42,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+4ffd7cf05f22d7a320750a2f9e73f665,7,0.7857373959089782,Medium Risk,276.23,31,5.0,7.0,General retention campaign
+5036f4227f2e546879f581d8fd3e6ec6,4,0.8396220112356393,High Risk,173.8,36,4.0,10.0,General retention campaign
+507dc9becd4fc65635d90682dfa9d3a3,7,0.7549155798220178,Medium Risk,204.46,8,5.0,12.0,General retention campaign
+50a662e7d7e7e2a94112a4f15a37464e,3,0.7653400878821587,Medium Risk,448.38,38,4.0,9.5,High value -> priority retention with stronger incentive
+50ad9fb3ba7f8cf336529fe94a182996,6,0.5284408343085745,Low Risk,391.17,32,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+518199e5f36305bffce18e38aa2642aa,7,0.8046349695857903,Medium Risk,148.06,57,4.5,7.5,Long inactivity -> send reactivation offer
+51838d41add414a0b1b989b7d251d9ee,2,0.867696112201635,High Risk,310.86,31,2.3333,18.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+51c2f039f08424330a6bbba4c9949d98,3,0.8551025182144976,High Risk,312.02,40,5.0,5.6667,General retention campaign
+51d121ddc025c1b70f8f62a1b727aecf,5,0.6845133776433109,Low Risk,391.23,34,5.0,20.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+51d91326ffc0688da14a001de38c264b,5,0.8034372667270551,Medium Risk,735.72,38,4.0,13.5,High value -> priority retention with stronger incentive
+51dc56123336c573f2977f5da81b17b9,6,0.7436317344023861,Medium Risk,769.24,35,4.5,9.5,High value -> priority retention with stronger incentive
+523730e4b2ef7654c243699b81763112,2,0.7770154668814517,Medium Risk,229.83,59,5.0,12.5,Long inactivity -> send reactivation offer
+52597838f6c178b19b961b068d048c71,5,0.34599504560391287,Low Risk,425.54,34,5.0,10.5,High value -> priority retention with stronger incentive
+52e05f52b2ccd1945aafaae6ceff7ba1,7,0.8196038736976734,Medium Risk,242.7,8,3.0,4.0,Low satisfaction -> service follow-up and apology coupon
+53b30ca78efb2b7efcd3f9e461587eb2,6,0.7316707468714722,Medium Risk,300.47,55,5.0,7.5,Long inactivity -> send reactivation offer
+53c84ac43bbfafb7a6b5d9076ab423c7,5,0.8240708115400268,Medium Risk,144.6,41,1.0,25.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+53f34954c078f5034197993c0e109b95,1,0.8500732400513521,High Risk,158.19,35,4.0,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+5416f8ad5bc33953624084ebc8738307,7,0.5411768931795669,Low Risk,402.74,8,5.0,8.0,High value -> priority retention with stronger incentive
+544bd839b4e7f92a077c7bf2410f8b02,5,0.9357499738008289,High Risk,188.3,43,2.0,18.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+5461338ea772177374bcf3f23665178f,7,0.8565843378175131,High Risk,278.38,40,3.5,4.5,Low satisfaction -> service follow-up and apology coupon
+54c7b4f48fb9e911bf328bf9884ca61d,4,0.7412855085549956,Medium Risk,184.74,33,4.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+552fc05a13d28356a38e8b13f64cbe4f,7,0.7532470364134133,Medium Risk,180.31,33,5.0,9.0,General retention campaign
+565448508b44312e8489ca1bc1f5d09e,1,0.8683426099554277,High Risk,210.16,46,3.0,7.0,Low satisfaction -> service follow-up and apology coupon
+56b088f218c6c02cd6e86bb9814271cb,5,0.7480125598150622,Medium Risk,159.08,34,4.5,11.0,General retention campaign
+57017bffe1b59c7da66267b6d3fcd44d,7,0.8318725771563188,High Risk,196.36,52,5.0,12.0,Long inactivity -> send reactivation offer
+570eb70ff97166b85ea96be3bfb65fef,7,0.695190495468734,Low Risk,224.58,23,4.0,13.0,General retention campaign
+5735fac0e3e12fee0b0545828a977acd,3,0.832147971949536,High Risk,380.76,35,3.5,13.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+578035514ad8238fa724f24b4aabc1df,4,0.8204924821897251,Medium Risk,154.7,43,5.0,7.5,General retention campaign
+57b5d9f9fa4f1ff41befbfbf0fcbc3ca,7,0.9016754241471174,High Risk,234.07,36,4.5,10.5,General retention campaign
+58075e17e770fc08571c3e0f452f6a11,4,0.8074245548438642,Medium Risk,227.27,60,5.0,9.5,Long inactivity -> send reactivation offer
+582183483d33018384b309d31c45f353,1,0.8130152683307851,Medium Risk,216.83,43,5.0,13.5,General retention campaign
+58498d9dec038f925f6406ebdfdc36bb,7,0.5563149997782412,Low Risk,419.17,16,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+58812bfc80ed972fa2e7f3614c0cd22e,3,0.9211914612055733,High Risk,111.56,46,5.0,23.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+5908f8630bbd5a8d5984b25f85588168,5,0.8625673076583297,High Risk,291.32,35,4.5,6.0,General retention campaign
+593cb774409e5239a1946d1c88e0813d,4,0.7337336935918376,Medium Risk,265.5,60,5.0,9.3333,Long inactivity -> send reactivation offer
+59bba92de9b8f6be0808e4d9d64b4b43,3,0.8885746899503126,High Risk,213.15,41,5.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+59d66d72939bc9497e19d89c61a96d5f,5,0.8361743123221386,High Risk,3559.99,54,5.0,16.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+5a21363c92f912e70cb482c96bc03af3,3,0.8665970414900925,High Risk,246.57,54,5.0,7.0,Long inactivity -> send reactivation offer
+5a2e847dd085d36e3ba8916b75e794ed,2,0.8801837811227137,High Risk,237.86,59,5.0,10.0,Long inactivity -> send reactivation offer
+5ad31e19d737a51f803e6986bbd119ff,4,0.8409521720807428,High Risk,451.34,54,4.0,9.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+5ad96d7a95788923e8ff455366a90015,3,0.8354657209946874,High Risk,626.18,48,5.0,8.0,High value -> priority retention with stronger incentive
+5b07d855f3356e33b1434dfb5a035cd7,5,0.7003299093610788,Low Risk,307.8,37,5.0,4.5,General retention campaign
+5b09c620db60411b0be6f1817c6cbe71,5,0.5693596544894812,Low Risk,123.31,42,3.0,13.5,Low satisfaction -> service follow-up and apology coupon
+5b1ae94194ff6e974356063557746e47,2,0.8693540334898495,High Risk,185.87,46,5.0,17.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+5b2c2b2a8d9e890debe309928d321f20,3,0.8507382786368167,High Risk,179.49,39,3.5,16.6667,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+5b3186d7cf904f2f9369aec26faba4d2,7,0.4678683114695098,Low Risk,418.21,8,5.0,11.0,High value -> priority retention with stronger incentive
+5b52858bcdab75cfc4593b13ea32db62,4,0.7820311703239005,Medium Risk,92.5,44,5.0,3.0,General retention campaign
+5b65c2693d8103d23aa910cd33d68daa,7,0.802021302471893,Medium Risk,420.48,32,1.0,10.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+5b71ca52f13f79c2be72b2aad8755c0a,5,0.7795522871226007,Medium Risk,199.4,60,5.0,4.5,Long inactivity -> send reactivation offer
+5b8a75e77489899ad9e6d57273aafd7f,4,0.8034973469589565,Medium Risk,432.93,47,5.0,8.0,High value -> priority retention with stronger incentive
+5c117c579cb98a9c6c50e1301a349f3a,2,0.8649231524854406,High Risk,153.76,33,1.0,17.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+5c4b7aa014e584d78525c38717510f01,2,0.8377393024513821,High Risk,433.44,56,5.0,13.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+5c8b41ba21631ca0432de4a10a56fcf1,1,0.8044289344998877,Medium Risk,254.84,56,5.0,7.5,Long inactivity -> send reactivation offer
+5e24610c5a55f0b6ffdaf9e846d02362,5,0.912343128215171,High Risk,244.22,48,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+5e3e9e897d07a80fc2af58088a84812a,7,0.825861845208569,Medium Risk,91.35,29,5.0,17.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+5e492797fbeb54fb3e96629a55cdd480,3,0.9002468332795809,High Risk,148.41,59,4.0,13.0,Long inactivity -> send reactivation offer
+5e8f38a9a1c023f3db718edcf926a2db,6,0.8024058480153347,Medium Risk,823.72,34,5.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+5ec4c90f549177a8cbbbc7419353e66a,4,0.9066717275228041,High Risk,322.01,31,3.0,8.0,Low satisfaction -> service follow-up and apology coupon
+5edb5e94dde197f8fd914eec2975b891,2,0.8271481395463309,High Risk,49.36,42,5.0,2.5,General retention campaign
+5ee1a7e84a17bcddc784977557a7a186,7,0.8056765702463987,Medium Risk,192.69,59,5.0,11.0,Long inactivity -> send reactivation offer
+5efcc46e1fee22373a28eb2b0f26a6fc,2,0.8174769193234426,Medium Risk,150.78,50,4.5,6.6667,General retention campaign
+5f2a213343d506264f78cb82dd914434,3,0.7748253968368494,Medium Risk,430.13,57,5.0,6.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+5f45aa4ef9b8fb99b95d33a970bb64a7,6,0.8462064656845764,High Risk,117.56,45,5.0,5.0,General retention campaign
+5f66ee1b2e030748fdb83ab9b01a7064,6,0.7196333890611245,Low Risk,243.86,43,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+5f7f2f316d856064acee6f1db7c9f63f,5,0.8641677755882146,High Risk,249.04,37,2.0,9.5,Low satisfaction -> service follow-up and apology coupon
+5fb5bf48cd408d971f873069e5178898,7,0.7595063654499584,Medium Risk,237.71,39,5.0,9.0,General retention campaign
+5ffbc70da7ad1808b6899421caa84fbe,1,0.8742765197061685,High Risk,77.06,35,4.5,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+606441378b517f9eeb89f9154a1c4d4f,3,0.9089728879460165,High Risk,207.61,55,5.0,9.0,Long inactivity -> send reactivation offer
+608646d3514cc48a27d666e313cfe0cc,4,0.8902587733960052,High Risk,469.37,51,1.0,10.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+615922c430abddd368735199c38e735d,7,0.612444898630895,Low Risk,383.99,48,4.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+61b6a01709e3d754942803765b85eea6,5,0.9202744792614314,High Risk,257.8,47,4.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+6204c4e582a95b6a350adf6988623bfb,7,0.8731482698387778,High Risk,212.03,45,3.0,9.0,Low satisfaction -> service follow-up and apology coupon
+6292600f71fe592f716a3e542f184d18,5,0.8465835683314817,High Risk,109.4,54,4.5,15.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+630331e73a79ae9a2ba821bd326ea298,4,0.84536455855891,High Risk,233.07,60,5.0,10.0,Long inactivity -> send reactivation offer
+636f22218f8430a8463c5ddc5f68fc62,4,0.8597934011362778,High Risk,204.36,56,5.0,7.5,Long inactivity -> send reactivation offer
+63cfc61cee11cbe306bff5857d00bfe4,7,0.3242835487802306,Low Risk,620.98,46,4.25,10.0,High value -> priority retention with stronger incentive
+63df651d5e8adb6a0e4baeb66a0eea37,5,0.7258807821805756,Low Risk,337.22,32,5.0,11.6667,General retention campaign
+641584b3ec3027aaf8fa9c088f1a1a00,7,0.8180212688345099,Medium Risk,61.73,27,5.0,5.5,General retention campaign
+6419a1be8feac26ec793667b71cbaeb4,4,0.18078740832785095,Low Risk,494.62,35,5.0,13.0,High value -> priority retention with stronger incentive
+6469f99c1f9dfae7733b25662e7f1782,7,0.4142915883987246,Low Risk,477.93,17,5.0,5.0,High value -> priority retention with stronger incentive
+64a5301ff6bdaf1baa00058672402d7a,5,0.9253266189218408,High Risk,160.21,60,4.5,11.0,Long inactivity -> send reactivation offer
+64e9a736591627c469dae6f3d1592a61,3,0.8942502803242818,High Risk,603.16,57,4.0,21.6667,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+65663adf8c7a498b79e57ff84ab2b654,7,0.787731261001516,Medium Risk,200.07,8,4.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+6576977872dd65f5b680e944afe3a724,6,0.8195889089415836,Medium Risk,188.78,55,4.0,13.0,Long inactivity -> send reactivation offer
+65ab3020e6a929e4e9a4b61e643da832,4,0.7838133327224261,Medium Risk,159.49,49,5.0,11.5,General retention campaign
+65e2735427dedd6a787e5b065b3cc41e,7,0.7369003793317136,Medium Risk,145.46,11,5.0,12.5,General retention campaign
+664fe7916cb8709c6b848383c6361dcc,7,0.8047037302220765,Medium Risk,409.33,38,5.0,5.5,High value -> priority retention with stronger incentive
+6668e1ae499e2e9be475b7f708580232,3,0.8084950068670044,Medium Risk,281.18,54,5.0,15.3333,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+668ddbdd3ee99d4339eadfef21531d45,4,0.8252191049818065,Medium Risk,222.84,36,1.0,11.0,Low satisfaction -> service follow-up and apology coupon
+67466b5877fad6f2279c1fb634c9aa5c,6,0.7254717169526366,Low Risk,636.53,54,5.0,5.6667,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+67fcfe4915b93624867d350b8191ff7b,3,0.8888212634678357,High Risk,106.24,40,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+6814507660c72078cbada9b3660683dd,4,0.7807310376170397,Medium Risk,105.65,38,3.5,5.0,Low satisfaction -> service follow-up and apology coupon
+6856178ce177496369e3a83fd143e621,7,0.7128363682697533,Low Risk,134.66,7,5.0,9.0,General retention campaign
+693b3203dcd4cef5288c5fd8d53f0efe,6,0.8536030325611315,High Risk,81.34,41,4.5,10.0,General retention campaign
+6940e424e41600ef36c79b6d8b4a2ecd,5,0.8331090814139768,High Risk,82.45,36,4.5,2.0,General retention campaign
+69e333213f390c27d001d415de206697,7,0.881137098579588,High Risk,109.23,54,5.0,11.5,Long inactivity -> send reactivation offer
+6a56e8e6c20175d122a962a5e5dfcf5e,6,0.8451800484714554,High Risk,303.93,59,5.0,12.0,Long inactivity -> send reactivation offer
+6a64e2cf94a5779760698c1e25a2852a,6,0.8141067717393842,Medium Risk,113.49,37,5.0,5.0,General retention campaign
+6a80a86f478a93a5f4c7ba8db6441a6b,4,0.7328166430733835,Medium Risk,342.75,39,4.5,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+6abc999251612920bec93b3be616fa1d,3,0.8861867521333393,High Risk,139.07,53,4.0,6.5,Long inactivity -> send reactivation offer
+6b1b676621a55a12546f8eeeaa12d4a7,7,0.7749152471892313,Medium Risk,324.8,29,4.0,13.0,General retention campaign
+6bb535b0906b43e0041916897667aeed,6,0.8408433808812201,High Risk,1195.23,46,3.6667,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+6c2f6983a60ac0dc8a9ee65579959538,7,0.7997111034810167,Medium Risk,251.49,46,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+6c45a9350eb05fba53a297c2491a32c5,2,0.8509277279733671,High Risk,150.92,60,5.0,11.0,Long inactivity -> send reactivation offer
+6c70bee45f245a4ebeddb2ece21b567d,3,0.9101902704606843,High Risk,586.37,32,3.0,18.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+6c722fdc0ca8a586dcfa980f2f1278eb,5,0.8594861826541328,High Risk,238.04,32,4.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+6d3d5771a12f5e7d00729f940bb28fd2,4,0.6217066031657397,Low Risk,347.77,39,5.0,8.0,General retention campaign
+6d97028799b1d0a91160e11d45cfeb7b,2,0.8907040952710598,High Risk,134.7,38,2.0,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+6e0d94e83bae00a64c12c9497158ee1c,6,0.7916199196402476,Medium Risk,80.4,39,5.0,13.0,General retention campaign
+6e1550b8966f327f29bc06b18972dbec,2,0.8064502016822063,Medium Risk,1039.88,36,5.0,9.0,High value -> priority retention with stronger incentive
+6e968652933d10e7a77047574d87e54a,3,0.9208418347546876,High Risk,144.25,54,5.0,22.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+6ee2f345f4f2fbd1cafb6447a6b37642,3,0.8362106266432927,High Risk,387.59,57,3.5,12.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+6f22857001b77949eb8110295fced3ff,7,0.7791612740284275,Medium Risk,109.24,12,4.0,8.0,General retention campaign
+6faa792efdf7c9c6eb7cfdf68aa5e581,7,0.8720368071835736,High Risk,296.43,54,3.6667,15.6667,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+6fc92189a4d83f8f8eb046b050ce8687,4,0.82681159873004,High Risk,308.49,57,5.0,11.5,Long inactivity -> send reactivation offer
+7063b55fee699193fd5e44253a7e4a98,2,0.6950739833664098,Low Risk,789.24,47,5.0,10.0,High value -> priority retention with stronger incentive
+706cdc310c7f626d1d2bc95c396202e5,6,0.9292313777122119,High Risk,163.32,51,4.5,15.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+70755e5b9df5988f592f3dec6279f1be,6,0.6184176755966658,Low Risk,144.46,41,5.0,12.0,General retention campaign
+70ffda7e4167ce87ac620ab2c572ac4f,6,0.7367904775822706,Medium Risk,118.36,41,5.0,10.6667,General retention campaign
+718d5855edf637b8e2f213db87dab93d,7,0.8273225150826781,High Risk,79.09,47,4.5,12.0,General retention campaign
+71d2dbb6d2f52d568ca9d69c815a4331,3,0.8380096986329942,High Risk,386.59,48,5.0,5.0,High value -> priority retention with stronger incentive
+71df425cb9aec3337bc969df451d663a,6,0.6416759917129524,Low Risk,861.81,34,5.0,6.0,High value -> priority retention with stronger incentive
+71f5d6c0cf885d0b2b52836a4c469bc3,1,0.7653593116946503,Medium Risk,81.9,55,5.0,5.5,Long inactivity -> send reactivation offer
+7305430719d715992b00be82af4a6aa8,7,0.6426013470253464,Low Risk,281.88,9,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+730e4b7ede33b484516435d39ab4dc49,3,0.8415945740014056,High Risk,413.97,58,1.0,9.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+73601b1eec55943e90ce8d61253d5c09,7,0.710332588640446,Low Risk,2068.68,31,4.5,7.5,High value -> priority retention with stronger incentive
+738ffcf1017b584e9d2684b36e07469c,7,0.4289950422500671,Low Risk,401.06,31,4.5,11.0,High value -> priority retention with stronger incentive
+7395a64f37a30f9827ca4d8292b484e8,6,0.8761919185183099,High Risk,153.37,58,4.5,7.5,Long inactivity -> send reactivation offer
+73fa628b0fc190639f48da2667eb1381,7,0.7410364821314673,Medium Risk,201.08,39,5.0,13.0,General retention campaign
+7441ce776af8da3b9df3d3f3c1e13ab1,4,0.8706435542456581,High Risk,93.55,50,4.5,9.0,General retention campaign
+74cb1ad7e6d5674325c1f99b5ea30d82,5,0.6770664746997478,Low Risk,221.36,36,5.0,2.25,General retention campaign
+754f0aa37a9a58685e42e70973bc511c,5,0.9083642482255307,High Risk,122.2,49,5.0,11.0,General retention campaign
+7588c20c457369de8caad958afc1cc06,6,0.36349576864842914,Low Risk,172.14,46,1.5,27.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+75a398e43d9757a4f7d6f622aeb22c47,6,0.7701450064374756,Medium Risk,77.2,45,5.0,11.0,General retention campaign
+75b45ab225bf88fdd7f432507030a4b8,6,0.739866996528603,Medium Risk,161.2,50,5.0,13.5,General retention campaign
+75e750a6279d55f7137bb9e9bb8662cf,7,0.7074619794507863,Low Risk,138.8,2,5.0,11.0,General retention campaign
+75ff587e87e047a7e00f75bbcab17c00,7,0.7045152427635508,Low Risk,284.8,31,5.0,21.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+76d1df67cfa34a2c4606537d54aea0f8,7,0.7444323215889649,Medium Risk,558.34,35,5.0,8.5,High value -> priority retention with stronger incentive
+770c6c524fc389b4cab878d19703745d,5,0.90586927939306,High Risk,521.07,54,5.0,30.6667,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+771f344c1ac13d8ccdf2d14c48e2c6c3,4,0.7863830117188719,Medium Risk,93.55,46,5.0,6.5,General retention campaign
+77479db0fa60ddc453f3743abc02be23,2,0.669657555705432,Low Risk,131.18,36,4.0,6.5,General retention campaign
+7779fdf670bfe673e064b9aa5447674e,4,0.6195634831791297,Low Risk,159.57,31,4.6667,1.6667,General retention campaign
+7784447c90f683e4775f7c1f02c04fbf,4,0.8147062338266041,Medium Risk,160.02,41,4.5,7.0,General retention campaign
+78c5f76b60a3a2588635aadc70e34df7,7,0.8155880015800895,Medium Risk,145.47,52,4.5,8.0,Long inactivity -> send reactivation offer
+78d665ab97fb0bfd754a20a48476c4e7,4,0.8277767340166926,High Risk,677.83,59,4.5,9.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+78fb70b5aa609b4b55c6ef3d0cb51faf,7,0.7360620691939345,Medium Risk,63.63,4,5.0,6.0,General retention campaign
+78fcceb499ec9008fcecbaad21efefc6,6,0.8708585565505597,High Risk,222.27,47,3.0,23.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+793c14202ef7966472e9246fd83b0ae8,6,0.7720584383273696,Medium Risk,109.4,32,4.0,7.0,General retention campaign
+794307f7c4fd6c8325655fb3f7b89895,7,0.812416667837453,Medium Risk,132.08,42,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+7973a6ba9c81ecaeb3d628c33c7c7c48,6,0.848938109373465,High Risk,115.74,44,5.0,21.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+79b9e9b310f3094c2cad708eb17508c2,5,0.76030209725964,Medium Risk,67.8,32,4.5,11.5,General retention campaign
+79c3ef46b89f10777f5604a5e1ee22b5,5,0.819820542994994,Medium Risk,266.91,48,5.0,8.0,General retention campaign
+7a1751f98e25f665fc0130c7b001e18f,4,0.869013855567972,High Risk,165.11,46,2.0,11.0,Low satisfaction -> service follow-up and apology coupon
+7a443ff6dbc48349835cb18a9355ea1b,4,0.8266814844550922,Medium Risk,68.6,40,2.0,11.5,Low satisfaction -> service follow-up and apology coupon
+7a6b4947e01039432cac229435d058ee,6,0.8164651549968568,Medium Risk,452.24,46,3.0,8.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+7acf19ddc75a0935581845e1c89edb3c,2,0.8501378957116559,High Risk,390.97,44,5.0,7.0,High value -> priority retention with stronger incentive
+7afc250f9d980ea3ee0ce3b0245f1b04,7,0.7446960727815576,Medium Risk,136.57,7,1.0,20.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+7b32049d8495d56c8b27eae575921a60,6,0.8645992802313627,High Risk,121.42,54,5.0,9.0,Long inactivity -> send reactivation offer
+7bada66424f46ce9a766b94974849e09,7,0.5869198601750237,Low Risk,277.81,33,5.0,12.5,General retention campaign
+7bf1c59401206e31a78523077f3a1144,7,0.7943542064574701,Medium Risk,231.02,44,5.0,8.0,General retention campaign
+7c1cfb3c097e0f1caa90bb17675a63e5,7,0.7771158382648803,Medium Risk,129.6,35,4.5,8.0,General retention campaign
+7c396fd4830fd04220f754e42b4e5bff,6,0.864958522658906,High Risk,82.82,31,4.5,4.5,General retention campaign
+7c4b40bb2b820e20b226a5a615e357aa,7,0.6647884068107434,Low Risk,120.2,3,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+7c67f115342d01560cd438fad6346a3c,2,0.7994377519861101,Medium Risk,223.99,37,5.0,11.0,General retention campaign
+7c763d069eb3926fc65593030d5c99a3,7,0.8761374624342486,High Risk,133.2,22,3.0,9.0,Low satisfaction -> service follow-up and apology coupon
+7cc23ec3506e4e1e67d0702da04a734c,4,0.7693976730584454,Medium Risk,248.91,60,4.0,13.5,Long inactivity -> send reactivation offer
+7d3d94b4740895a17760e976797f9f0e,5,0.6414521294740476,Low Risk,131.61,41,5.0,10.5,General retention campaign
+7e75aeef30d7e9d4ac860fcc8eaa8812,4,0.7693283449940621,Medium Risk,86.63,33,5.0,9.0,General retention campaign
+7e91ec540af718ab375b1d13271e9543,2,0.8785495069511171,High Risk,321.52,54,5.0,15.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+7ec0077665fe9020e7dfdb05b2be0162,7,0.6171633452713343,Low Risk,219.27,21,5.0,8.0,General retention campaign
+7ed57df0e6ae22a4f9e0250d52608ad5,5,0.862800855569406,High Risk,365.12,55,3.5,10.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+7ee9e6c80bf1b7ec4a52639eab6c128c,1,0.9104788482159815,High Risk,373.67,37,3.0,11.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+7f50c43baa66aae590aa1a067427cce5,7,0.8610755203348767,High Risk,83.1,44,5.0,8.0,General retention campaign
+809ea1c56f165109936fe5c51003fbfb,6,0.8081363355350147,Medium Risk,227.24,39,5.0,3.5,General retention campaign
+81865792a5df52436b4e759b4ba21412,4,0.7189619068014469,Low Risk,1069.77,47,5.0,4.0,High value -> priority retention with stronger incentive
+818a54422350b38d3fb1cb3a1553889f,3,0.8565647280127856,High Risk,70.93,50,3.0,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+81b133c3f4e30a14a6585a2f20ff150f,3,0.8734139028216302,High Risk,170.36,42,5.0,6.0,General retention campaign
+821e4e781313d2eb18711efe7a50d66a,6,0.7207696863397336,Low Risk,273.25,36,3.5,9.5,Low satisfaction -> service follow-up and apology coupon
+822d25972056ef51050804f1e0446f40,2,0.817719728154207,Medium Risk,77.89,53,1.0,8.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+8241424764e0bfa6bfcb3c6cda391ac8,2,0.8386478682932252,High Risk,525.17,44,4.0,5.3333,High value -> priority retention with stronger incentive
+82c173abf4679049bd8628bfe89a9f2c,6,0.7752170184506478,Medium Risk,218.82,58,4.0,8.5,Long inactivity -> send reactivation offer
+82fb46292a999e7db9e2391c407f76e4,2,0.777776702825174,Medium Risk,143.34,33,5.0,10.5,General retention campaign
+8329519e31cb1b89bd44c3c6ae417ad6,1,0.7608927826868743,Medium Risk,134.16,56,5.0,8.5,Long inactivity -> send reactivation offer
+83424549593093baf504ac260d4615e7,2,0.8651020647735009,High Risk,254.88,47,4.0,8.5,General retention campaign
+83935d750c83951d7d0211a3c60e78fd,4,0.8168365027270271,Medium Risk,252.44,50,5.0,8.5,General retention campaign
+84514f009b40220330a5e42b102437bd,7,0.7099208837448228,Low Risk,295.03,47,5.0,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+846e4612bebdefeb3a65aa63fee59e3a,4,0.8542517986976104,High Risk,550.86,31,4.0,11.0,High value -> priority retention with stronger incentive
+84af029e54a6f659f7ace6f7cf0daa68,4,0.8916021185269772,High Risk,177.64,40,5.0,5.5,General retention campaign
+851eefea71a07755f017e75fae31f2fd,7,0.9108568531115891,High Risk,79.45,25,3.5,2.5,Low satisfaction -> service follow-up and apology coupon
+857104e1bfb81cb14e88ff07d1b22c70,7,0.7086938399190763,Low Risk,360.21,0,5.0,9.0,General retention campaign
+8597b390850fe72e108d53f42ca64846,3,0.8428940361383332,High Risk,431.97,43,4.0,17.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+85b33fdcff5e20584ac9ec8e3c559ea3,6,0.8950703871042852,High Risk,235.16,53,4.5,19.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+85ed7212fe192ab02ab44c95ba87868e,7,0.7965940543862225,Medium Risk,174.43,2,3.0,11.0,Low satisfaction -> service follow-up and apology coupon
+8689b3e15d4b16cfd05ecf597a523453,7,0.3628802901392188,Low Risk,199.37,2,5.0,8.0,General retention campaign
+869be6f00b4c49e72f9a1e2033baa9f0,2,0.8597880701119792,High Risk,173.52,42,5.0,8.0,General retention campaign
+86a78c9e5114f4ed30887d4fd8153d9e,2,0.7928938385321505,Medium Risk,223.23,42,4.5,12.0,General retention campaign
+86df00dc5fd68f4dd5d5945ca19f3ed6,7,0.5196725654628332,Low Risk,2400.48,50,5.0,12.0,High value -> priority retention with stronger incentive
+87315ceb47e77d03a1c90474e228db6c,1,0.8824636949096877,High Risk,244.29,43,5.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+87603dde65ee7120467ddda1a883bb24,6,0.8546379274805647,High Risk,118.86,39,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+876a8881e182fb3a64af97b737cfe889,1,0.8543167973067134,High Risk,78.84,46,5.0,13.5,General retention campaign
+87a7c3090f96d9da963125a0d7f8193a,3,0.8085613714971173,Medium Risk,250.46,53,4.0,16.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+87ae4c644c15d9c6b6f826dfec33b340,7,0.686088942525791,Low Risk,180.03,18,5.0,9.5,General retention campaign
+8816ea7c1592bcab312eae9352996067,2,0.8235514634655476,Medium Risk,91.06,40,4.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+88a8f123107a063acbdd1c90f3d8adea,7,0.895159453145575,High Risk,198.95,10,4.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+88ecb91d6d5e47ebdc2129cd046b0935,2,0.8798464616629443,High Risk,266.56,47,3.0,11.3333,Low satisfaction -> service follow-up and apology coupon
+894382535eef1ce243ec19088626be0e,7,0.3088386705584659,Low Risk,200.99,37,5.0,12.5,General retention campaign
+8a3e2983c35b5d2fb78686794986f7da,6,0.8156993549346325,Medium Risk,259.35,45,1.0,6.0,Low satisfaction -> service follow-up and apology coupon
+8ac0c45f8e89a3d25738b3700ee9e132,4,0.8170828743459917,Medium Risk,167.29,40,4.5,8.0,General retention campaign
+8b160faff469868625c7c82cbd310636,4,0.8750567429714918,High Risk,871.53,52,1.0,8.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+8ba03ea7a871bdaebd65e7a4ced27c2d,7,0.8521319171795027,High Risk,173.59,55,5.0,17.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+8bab3162259edfaadd1ea2e1fe7f58dc,7,0.7177895317319101,Low Risk,281.64,34,5.0,8.0,General retention campaign
+8bc85b1061383d0dcd4e995a726da763,7,0.43507836661557775,Low Risk,332.5,13,5.0,10.0,General retention campaign
+8c21dd8c37144807c601f99f2a209dfb,2,0.7918276994636622,Medium Risk,752.68,56,5.0,12.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+8c532c86e424b28e85997dd891e26d5d,7,0.6735457251645742,Low Risk,118.09,29,5.0,13.0,General retention campaign
+8d50f5eadf50201ccdcedfb9e2ac8455,7,0.21080144878400675,Low Risk,455.18,10,5.0,4.625,High value -> priority retention with stronger incentive
+8d6512fa0e1c5cdbd789b956de79fe2f,2,0.9406669162365172,High Risk,446.49,33,3.0,26.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+8dfbc9064378d19ac99a21ac353072d7,7,0.6048104261206668,Low Risk,584.68,43,5.0,9.5,High value -> priority retention with stronger incentive
+8e2055281d566229b5926cb77be54f81,4,0.8323199909167125,High Risk,102.38,55,5.0,4.5,Long inactivity -> send reactivation offer
+8e2c92b2442298bd653b0e9aadf4c313,6,0.8634024995875613,High Risk,254.61,50,3.0,9.0,Low satisfaction -> service follow-up and apology coupon
+8e78f2e8305481c8b0f285670de4829b,7,0.6525628114654545,Low Risk,611.54,8,5.0,24.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+8ef9add628931053f28350c0ad4bc7f7,5,0.7520830997826755,Medium Risk,142.46,34,5.0,7.5,General retention campaign
+8f24365a46f82ddd0cef7893319a40d5,7,0.816644344509148,Medium Risk,311.27,60,5.0,7.0,Long inactivity -> send reactivation offer
+8f3dca4306d5a89e4ae2c65c110603a2,7,0.5111882131528125,Low Risk,58.44,4,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+8f42e9cb526d4a8ea42877dac8c86453,7,0.7997447234081793,Medium Risk,146.68,15,1.0,15.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+8f710f0d7e8dab5c8c1135e63b44de7a,7,0.798475089011812,Medium Risk,132.65,54,4.0,8.0,Long inactivity -> send reactivation offer
+8f891a5f40cb72bf5fabda4997b4a625,6,0.784381201740997,Medium Risk,266.1,33,5.0,11.5,General retention campaign
+8f9c0dc510c12654a35d2add7a6c5d34,7,0.7092418378035412,Low Risk,133.58,23,5.0,6.0,General retention campaign
+8f9f1a0464f6ab0e25650be9849b086d,3,0.7261192458985295,Medium Risk,433.84,38,5.0,27.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+9066d003674f53303ec2ac527e940a5d,3,0.7681128967603844,Medium Risk,63.88,31,5.0,9.5,General retention campaign
+9077449283dc1319d5e51fb3159b28e2,4,0.5626741186336397,Low Risk,299.43,31,5.0,12.0,General retention campaign
+90c205b0bed658a20ba141d2960d6811,7,0.8129764136783494,Medium Risk,97.62,40,5.0,11.0,General retention campaign
+90f323e9f0948ddd96c6f6a8ecc75830,3,0.7795076827332409,Medium Risk,245.2,60,3.3333,12.6667,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+911be3f21248d465d1e6d9993bca60a8,7,0.8324974609454031,High Risk,118.0,40,5.0,10.0,General retention campaign
+9146de9c43fa373c4ce8af26c8db8336,5,0.7213319027909877,Low Risk,931.19,41,5.0,10.0,High value -> priority retention with stronger incentive
+917de9fb824d070a7f1f4db097cbea8d,2,0.8376492373116811,High Risk,139.73,47,3.5,8.5,Low satisfaction -> service follow-up and apology coupon
+91ffaf5eb7f4bd6a48b07f3546fb7a99,6,0.8083888071445454,Medium Risk,473.55,59,5.0,15.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+928616c185852cc998407c716a6f69bc,6,0.85556610981133,High Risk,335.52,49,3.0,14.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+929b8bad532f969fc414b7831ff3360d,5,0.7852595084518612,Medium Risk,277.97,59,5.0,20.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+92fc4892f11581ee802e8e2fa4296433,3,0.8998497986107092,High Risk,140.46,49,5.0,12.0,General retention campaign
+93360190b9375a40b65720ee99387a4a,6,0.3484108907446833,Low Risk,44.1,39,5.0,9.5,General retention campaign
+93dabd0fb48bfbc6e14aca0432ed0717,4,0.6989688221939058,Low Risk,124.02,37,5.0,7.0,General retention campaign
+9475b70c3d9add279a65672fca348944,7,0.7531514186117705,Medium Risk,291.55,16,3.5,6.0,Low satisfaction -> service follow-up and apology coupon
+947c249c7f31f3eae2bd05454e1b2040,2,0.9096597667139869,High Risk,465.07,54,2.5,15.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+947e93a9bb28256adebe49f78cff07ad,2,0.8254989426691628,Medium Risk,195.0,35,5.0,8.0,General retention campaign
+94a19681bf6faa3c6ce3e2df1c2d97cb,6,0.7001741309663639,Low Risk,201.72,39,4.3333,5.3333,General retention campaign
+94b27f5cb0276a9d149375e24de840d2,5,0.8204902724037632,Medium Risk,186.4,39,2.0,17.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+95160caf14611a705759de6bf13555b6,4,0.8860828652799002,High Risk,251.65,49,5.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+95a3ac562ffc17755618fb67ce57ef9a,2,0.8652163829916067,High Risk,103.52,37,4.0,11.6667,General retention campaign
+95cfb39a7e263160308a934e42cfc4e0,7,0.9020139162094851,High Risk,122.05,13,2.5,5.0,Low satisfaction -> service follow-up and apology coupon
+95d47153b9bc4d0fe3b9c714c4b19c3b,5,0.9069934879656438,High Risk,114.21,60,3.0,10.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+95ec7fc6a1605502060075958c3f9852,6,0.779649832139488,Medium Risk,150.91,51,5.0,10.0,Long inactivity -> send reactivation offer
+9620e26af0dfec5a16a52cd2afa81717,5,0.7525084681932394,Medium Risk,274.65,57,5.0,8.0,Long inactivity -> send reactivation offer
+967ee07cb69460a7e1d42c7747142572,7,0.7034635087191254,Low Risk,222.63,6,1.0,12.0,Low satisfaction -> service follow-up and apology coupon
+969e62a47aec03c735127e6f11ad6564,3,0.7844204476900132,Medium Risk,446.32,32,5.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+970e5961383615662043afa2d9c68802,3,0.9036396926543434,High Risk,239.94,47,5.0,4.6667,General retention campaign
+971e2252d557c5f6b2de810f6fcd52eb,4,0.8115968994730759,Medium Risk,446.28,54,5.0,5.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+974148f722b785f187ae13ec0040abcf,4,0.8331553343000757,High Risk,413.01,48,5.0,11.5,High value -> priority retention with stronger incentive
+97981245c3257ea9b14befffd560177b,6,0.8959430919704446,High Risk,246.99,49,3.5,18.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+97bc08e526795b17e1d4f642f77ae304,5,0.8132212239537013,Medium Risk,269.97,57,3.6667,4.3333,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+97c0d90b4d37062c75b5f836ce3ab957,6,0.8873018996993927,High Risk,604.06,56,5.0,15.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+97f0fce3f9d7aad1b12499a4e4b10d07,4,0.8397321362817253,High Risk,636.14,55,5.0,10.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+9832ae2f7d3e5fa4c7a1a06e9551bc61,4,0.7490311341958082,Medium Risk,526.59,44,2.0,13.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+984503860d8d8dea530666eec07de95c,7,0.7134310073402099,Low Risk,128.73,19,5.0,9.0,General retention campaign
+98758d88bf4b8eef1372ddee45d63178,6,0.8459188894805252,High Risk,997.96,46,3.0,38.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+987fadd385777d8f27edac709bc9fb61,7,0.8013133948697481,Medium Risk,502.25,9,3.0,6.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+98b69c34f0422d2e025280b55531166e,5,0.8087079175557961,Medium Risk,211.88,44,5.0,6.0,General retention campaign
+98d2fc070f4afbd02c5788eacc6949c5,1,0.7852236925247232,Medium Risk,623.98,33,4.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+9910e92c18776a14048773cef6592b91,4,0.9116489351729615,High Risk,266.16,39,3.5,6.0,Low satisfaction -> service follow-up and apology coupon
+9947c0ed8bf41cd508a78da36abc1d41,7,0.6875588040497127,Low Risk,191.33,38,4.6667,7.0,General retention campaign
+996fdddf8cd5bbb99b221fcaf5ba1359,4,0.8268867482468873,High Risk,194.09,45,5.0,12.5,General retention campaign
+999bf1d2709dc80fcf55a92805ecc34f,2,0.9100636003198673,High Risk,108.42,41,4.0,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+99b026061fefe9ff09cdd0e745a9233e,6,0.8256118231355482,Medium Risk,361.09,38,5.0,10.0,General retention campaign
+9a736b248f67d166d2fbb006bcb877c3,5,0.8147113183231247,Medium Risk,233.49,56,5.0,5.5,Long inactivity -> send reactivation offer
+9ab9e6724cc65e59593099f18081fd35,7,0.8467309652242846,High Risk,198.82,41,2.0,9.0,Low satisfaction -> service follow-up and apology coupon
+9afb61455d41afffa3ea550d1cfd832c,2,0.9125792075008788,High Risk,65.54,55,5.0,12.0,Long inactivity -> send reactivation offer
+9b76c588a7a8d495bce4f71d2559d3ee,1,0.8061080118779493,Medium Risk,250.01,53,4.0,13.5,Long inactivity -> send reactivation offer
+9bc158770d28e135f48b0c3fb2c21d27,6,0.7562622225737001,Medium Risk,92.02,49,5.0,23.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+9bff551dd73fdb455a7c2ceb6bed2d39,5,0.7777592647219044,Medium Risk,163.44,46,5.0,8.0,General retention campaign
+9c760a39c48113c1450dd5b65958d7fa,6,0.7792934539362124,Medium Risk,152.21,59,5.0,24.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+9d31457a03125fc870787a251760315a,5,0.6776019815379444,Low Risk,320.17,34,5.0,6.6667,General retention campaign
+9d8130e675ce6c1f24cd519444f7642b,4,0.883839923828928,High Risk,233.6,53,5.0,12.0,Long inactivity -> send reactivation offer
+9dc44558922ff57d14d99f20d37f440f,3,0.7322251810451196,Medium Risk,176.24,47,4.5,11.5,General retention campaign
+9e174aadbc877e3c42ca03babfd157f8,4,0.8920521185057917,High Risk,181.94,34,2.5,18.3333,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+9e527c9bc89a4228e5d8e136712ec63e,7,0.6874304724448903,Low Risk,312.18,54,5.0,11.0,Long inactivity -> send reactivation offer
+9ff6787921b9aecefdb9c8212ebd8679,7,0.7637032108152041,Medium Risk,126.84,46,3.0,11.0,Low satisfaction -> service follow-up and apology coupon
+a00a13ac36037d575bb016caf8f50d53,1,0.8139439005561271,Medium Risk,116.14,59,5.0,10.0,Long inactivity -> send reactivation offer
+a0e0770d529c5da6dd71d5be8620aa3b,3,0.9358001908008036,High Risk,149.34,58,3.0,11.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+a10fe3c477989c968aa284bd448b1d5b,1,0.7368581928695805,Medium Risk,332.65,37,5.0,12.0,General retention campaign
+a124666e823bbd5fb77a72afc8c1360c,1,0.8775758831660234,High Risk,71.44,32,5.0,6.0,General retention campaign
+a1bb96820529725c3c79a77c69e7e792,3,0.9164304979739264,High Risk,79.69,57,3.0,7.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+a2370b590b2453d5a748d4c4c35f900b,7,0.7478240167631051,Medium Risk,76.46,19,5.0,8.0,General retention campaign
+a3021c629bd1d99347a8e75a9ab035d8,7,0.6846163573526284,Low Risk,277.4,24,3.3333,10.0,Low satisfaction -> service follow-up and apology coupon
+a38b86dce31f7c014a0c958b548f6a64,3,0.865332744217028,High Risk,180.66,53,5.0,10.5,Long inactivity -> send reactivation offer
+a40096fc0a3862e9e12bc55b5f8e6ab2,7,0.7877863512848811,Medium Risk,457.19,52,1.0,11.6667,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+a43931660f8bbcc1c64db8ddf4b10dff,7,0.8251293807667771,Medium Risk,128.73,57,5.0,7.0,Long inactivity -> send reactivation offer
+a44636f3316d0114566918bd02ef58bd,7,0.8008322899778073,Medium Risk,118.92,41,5.0,3.0,General retention campaign
+a484d6a80277ccf24d9980cf34c47546,6,0.8888649420795907,High Risk,124.04,48,5.0,6.6667,General retention campaign
+a4e71a98a7a1490fff07e7a65cf06be2,7,0.8877724055873283,High Risk,301.94,53,2.5,13.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+a518c60e2e7f3a2820b4ef5cf5107189,7,0.8408068038601064,High Risk,232.69,47,4.5,6.5,General retention campaign
+a5c62e7e896b7e6ed95d39714f51304a,3,0.8297767652841039,High Risk,92.68,31,4.0,11.0,General retention campaign
+a5c806ebe5b25d0ab1e7f0da0e17d6bc,1,0.8737524056656361,High Risk,257.24,53,4.0,7.5,Long inactivity -> send reactivation offer
+a5c9660af607788526f45b6774ac2594,4,0.8699519659322568,High Risk,273.25,43,4.5,13.0,General retention campaign
+a72a2d4e19868dba726c0e6f49198c7e,7,0.885072375787862,High Risk,447.1,18,2.5,13.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+a7657330b1c135f3acd420326e335b2c,7,0.453370711968929,Low Risk,667.12,25,4.5,10.25,High value -> priority retention with stronger incentive
+a79f018f214e99a7551fd6efea6e2c4d,7,0.7773831946179816,Medium Risk,296.76,38,5.0,13.5,General retention campaign
+a7d9a3e447614288937ad2bba991676c,5,0.8455719652345849,High Risk,344.11,53,1.5,11.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+a82d9e16794b2921f600796767322a9f,2,0.8328954703673865,High Risk,387.54,49,5.0,11.0,High value -> priority retention with stronger incentive
+a8cb771f0d1d230407948d4ce2af5c3e,4,0.8610595174314223,High Risk,349.28,53,5.0,22.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+a8df4001abe77cf8473902c2b7efe418,7,0.8789928260927556,High Risk,62.61,44,4.5,5.5,General retention campaign
+a944a93bfa1d65b1523c45f9ccb01ec0,7,0.770209933114448,Medium Risk,138.16,3,3.0,10.0,Low satisfaction -> service follow-up and apology coupon
+aa2630ebac79aa0c7749370b705121bc,7,0.9116951209984219,High Risk,432.6,60,3.0,13.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+aaad6d68de5490cba508e4203ddc87de,3,0.731689063409109,Medium Risk,351.16,36,5.0,8.0,General retention campaign
+aaf97f99c731d8d84810ff16e6ded10d,6,0.8608812199033474,High Risk,381.53,56,4.0,13.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+ab0f956f72812ae4636be4e15b58031e,3,0.8126798064932721,Medium Risk,123.35,38,5.0,11.5,General retention campaign
+ab744045d2445f5bae53b57a4b99bfbf,7,0.5517649687654378,Low Risk,149.63,42,4.0,4.5,General retention campaign
+abfe742e782fb10f5c824fcb849e5cd1,5,0.8476383620028726,High Risk,147.73,46,5.0,14.3333,Delivery friction -> logistics reassurance / fast-shipping incentive
+ac64c33e439eba6713e1743e070ef50e,2,0.8530195175323912,High Risk,73.34,59,4.0,12.0,Long inactivity -> send reactivation offer
+ac987d464574ee0f743f9b630f937a27,6,0.6382759756725094,Low Risk,515.37,32,5.0,15.3333,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+acea6bd29b8c1e3c6a8b266a8fb4475e,6,0.8741382880298456,High Risk,289.3,42,2.5,17.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+ad7072317d373de9bdc9b4ed5b6c5a85,7,0.8690856677589675,High Risk,195.1,51,5.0,13.0,Long inactivity -> send reactivation offer
+ae207cf8119fd10e3b9ac24570089fad,6,0.8360417615449799,High Risk,281.5,60,5.0,7.0,Long inactivity -> send reactivation offer
+ae20947231d4d44dde1680a7ab14d90a,6,0.7416036262395355,Medium Risk,335.15,52,5.0,9.3333,Long inactivity -> send reactivation offer
+ae52fa61f27bd494a25bc4c101fa29d0,3,0.906317411221249,High Risk,123.28,59,5.0,11.5,Long inactivity -> send reactivation offer
+ae53a87a257f8e54795af6ff434e443b,6,0.9009623838019627,High Risk,1019.41,49,4.0,19.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+ae74c314b9c383e5d7bcd99d54ffbc71,3,0.8984639963316511,High Risk,177.77,58,3.5,11.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+ae7b79796d47ab59f417a154efcdbb77,6,0.7148657693558828,Low Risk,232.23,40,5.0,9.0,General retention campaign
+aef5b3dd086be507c3dd70e07aa6bb94,5,0.8744063567253079,High Risk,118.91,54,5.0,13.3333,Long inactivity -> send reactivation offer
+b045295488236fa73d8d9c37dc4b03e7,6,0.8266616956424439,Medium Risk,1247.13,50,3.5,9.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+b088bc1ec6539752bf408ac1d9c694da,7,0.8417155995098665,High Risk,111.64,52,5.0,14.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+b08fab27d47a1eb6deda07bfd965ad43,6,0.6752137656852708,Low Risk,477.34,44,4.5,12.25,High value -> priority retention with stronger incentive
+b09f1bff1aff13c997af071602bc048b,3,0.7864180862828086,Medium Risk,352.88,50,5.0,11.0,General retention campaign
+b0b057559c54c99e41a21c40c08f7780,3,0.914238136550441,High Risk,257.09,60,3.5,8.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+b0f47d39f0e55621071ec1e93ca6b74d,3,0.8774495486140864,High Risk,135.19,55,4.5,14.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+b157d45094580a4a5a90af5331351c13,5,0.8013517322867539,Medium Risk,233.1,37,5.0,3.0,General retention campaign
+b197f4af65829575f2f333bd0e9fd204,7,0.8495343456015723,High Risk,227.78,49,5.0,22.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+b2664990a1ac9e250d98ff5c615c3276,5,0.8412744727371769,High Risk,146.39,42,4.0,21.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+b26fa76ddf33e534491e4ec46f51bc64,5,0.7579292157281963,Medium Risk,278.72,50,5.0,8.5,General retention campaign
+b2a35fdfe13998540dc5fdda95e35ceb,4,0.8931641479319825,High Risk,154.71,60,5.0,10.5,Long inactivity -> send reactivation offer
+b3806e7118d02476c96b3dd8578dd07f,1,0.8755197414493792,High Risk,183.71,40,4.0,6.5,General retention campaign
+b39dde6dd619943190a8cc9aa6db38a4,3,0.7098899675523973,Low Risk,719.13,44,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+b3ccfe9606744e8b2757954a125ea1a6,3,0.9017917544065691,High Risk,140.23,51,4.0,9.5,Long inactivity -> send reactivation offer
+b4afb55d2d38d9bbe0b83ec108c3e77e,7,0.7809750868997195,Medium Risk,373.35,40,5.0,2.0,High value -> priority retention with stronger incentive
+b530945168f12f82a3f9be3a5e243afa,7,0.8268034884166483,Medium Risk,81.37,50,3.5,8.5,Low satisfaction -> service follow-up and apology coupon
+b56c60ed244eed72ff5640a41bf254d5,7,0.6289094722105812,Low Risk,154.88,11,4.5,12.5,General retention campaign
+b5b46581465f851df3529a30d2503f59,7,0.7117721445858728,Low Risk,496.38,60,5.0,13.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+b62777d3969196b3329205b4d8e1ba0a,5,0.7858543598032169,Medium Risk,87.2,54,5.0,13.5,Long inactivity -> send reactivation offer
+b64ebaf3d11b7209fe566364cc359a51,4,0.8151110075519412,Medium Risk,198.14,48,4.3333,3.8,General retention campaign
+b68a98377d20140feaa17eeb61687459,3,0.7110287028006235,Low Risk,69.51,36,5.0,8.0,General retention campaign
+b6aa5a87f6c08e2510324edca009810f,7,0.865808566949842,High Risk,101.1,53,5.0,7.0,Long inactivity -> send reactivation offer
+b6bb8e4780df00a25fa34335d3dc1330,6,0.7555800205174633,Medium Risk,105.56,48,5.0,3.5,General retention campaign
+b6c083700ca8c135ba9f0f132930d4e8,7,0.8004884395081083,Medium Risk,156.95,5,4.0,5.0,General retention campaign
+b7b162291adff744d6f3c6450557ffee,4,0.8205999095470227,Medium Risk,200.05,42,5.0,14.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+b7d4cab5dd11b238da97b01eaf657293,5,0.8175525183185536,Medium Risk,119.93,48,5.0,2.0,General retention campaign
+b7d8524e14913b79fe082a5fc2efffd7,5,0.8453140042847036,High Risk,189.41,36,5.0,6.5,General retention campaign
+b824f6981f2ee1c30533c4138572428c,4,0.725530172753136,Low Risk,223.64,39,5.0,31.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+b896655e2083a1d76b7b85df8fc86e40,7,0.7521325791031255,Medium Risk,218.16,20,5.0,10.0,General retention campaign
+b8b3c435a58aebd788a477bed8342910,5,0.4998072217167717,Low Risk,807.45,40,5.0,13.6667,High value -> priority retention with stronger incentive
+b8f9ecc7915ce653a1d7ee6dbfe8f54d,5,0.754894062911988,Medium Risk,119.36,54,5.0,6.0,Long inactivity -> send reactivation offer
+b918da4934c7eabcda6e45b4e18aba53,2,0.9171519392820435,High Risk,215.67,58,3.0,12.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+ba54ee5be417c0558c060a3186451248,4,0.8948672889927068,High Risk,401.27,34,4.0,13.5,High value -> priority retention with stronger incentive
+ba77e9b6506636dcbd03e463d4786f24,3,0.7201791546132241,Low Risk,269.64,33,4.3333,12.0,General retention campaign
+bb4d84a2b45b22ed710ac8c0dec63d1a,4,0.8095067005339088,Medium Risk,133.05,35,3.0,4.0,Low satisfaction -> service follow-up and apology coupon
+bb58670190dba4e9b320f84cb98317a3,3,0.7479602693160392,Medium Risk,126.33,51,4.0,10.5,Long inactivity -> send reactivation offer
+bb656eab01a34ac497457c5a92f5bd07,6,0.8602449704162134,High Risk,373.09,57,5.0,9.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+bb9de7a757d93065939c7da2a3cd8ce4,5,0.8679497076587791,High Risk,125.06,50,5.0,14.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+bbe8686a830c0caaf68452997d73d396,5,0.7637638481994815,Medium Risk,605.83,31,4.5,18.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+bc0d7bb032bbf422fc74bb279c47de1e,6,0.818071126175484,Medium Risk,144.46,50,5.0,5.0,General retention campaign
+bc27afa44f5b67b080ab4ba3851a162d,5,0.9096122671489075,High Risk,213.34,50,1.0,22.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+bc7b9e0d078c0c01f622b38cfcd7ee9c,7,0.766595875462451,Medium Risk,384.31,26,3.5,8.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+bcc9a08b533971412be737fd5bd918b3,7,0.8517221402333536,High Risk,404.2,4,1.0,23.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+bcf0a5f0f3ec8639f940749aab360d8f,7,0.8746081034983733,High Risk,451.72,59,3.0,8.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+bd0512ab6c631a62fdc974a682600f56,6,0.8480113817988136,High Risk,357.76,38,4.5,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+bdde9ce1c27b88a7fe3ef13ad6a80b5f,7,0.5571221850464039,Low Risk,102.3,7,5.0,11.0,General retention campaign
+bf59acdae64e9900fd93e4847baa1978,7,0.8309119869755622,High Risk,142.98,56,5.0,10.0,Long inactivity -> send reactivation offer
+bf6504419e536f7c4c2461ebb0689d48,3,0.7345127777900609,Medium Risk,257.58,36,5.0,4.5,General retention campaign
+bf6656ef50e6fd00e7517b01d615b4f3,5,0.5719444963046795,Low Risk,294.83,38,4.3333,11.0,General retention campaign
+bf79e2be560481b2e6014798b4331a18,1,0.856666482734341,High Risk,99.32,57,5.0,13.5,Long inactivity -> send reactivation offer
+bfb33fedf91eb21f6d32ad5345989a6e,7,0.8872299390155117,High Risk,260.49,45,4.5,12.5,General retention campaign
+bfc84496b1100cbbd83a6f8087526168,3,0.78740548746758,Medium Risk,320.87,45,4.5,11.0,General retention campaign
+bfca7a9e3e07df51447510ede80822ec,6,0.6923185243974449,Low Risk,572.72,32,4.5,13.0,High value -> priority retention with stronger incentive
+bfe1ecef0f01ad67e5e0cf1860e94e60,6,0.7779824707574288,Medium Risk,209.62,44,4.0,6.5,General retention campaign
+c0118e2c0a037c31aeca71d0b81f66a1,5,0.7260874904871473,Medium Risk,114.8,57,5.0,5.5,Long inactivity -> send reactivation offer
+c0378e9280a6e9401f2b0fd4a288496b,5,0.8244611604584431,Medium Risk,200.98,43,5.0,7.5,General retention campaign
+c0ab0c71f36879a7e904700157a6d88c,1,0.9156034534373206,High Risk,169.76,46,4.0,23.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+c0fc2e3595c750de75d36e7db9399e83,6,0.7762648429143831,Medium Risk,426.5,55,5.0,11.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+c0fcb07a9959ae14f01bad208e445cc4,7,0.770922044247163,Medium Risk,372.52,48,5.0,11.0,High value -> priority retention with stronger incentive
+c130bf40aa6d3bdb444b04a8d78adf5a,2,0.861792018952423,High Risk,170.68,34,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+c169c9937db997a267f749cdd64c161f,2,0.6130345816054162,Low Risk,1675.68,57,5.0,13.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+c17db1418a98b4a6d1dcad61cc579c70,2,0.9168560348098189,High Risk,262.67,50,5.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+c1a57f5222ef4a8987b8477784809637,6,0.8967760379059108,High Risk,141.29,51,1.0,11.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+c1d43ef6f70aff50201a1b882176a346,1,0.8977963768208875,High Risk,484.3,37,2.0,18.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c2551ea089b7ebbc67a2ea8757152514,2,0.8894000327216478,High Risk,168.22,39,4.0,11.5,General retention campaign
+c25d2fb6d22e04ce43c3652e3cacadad,6,0.8928017405773679,High Risk,178.56,58,3.0,13.6667,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+c2919fbdb45366551c1e80d5cb35cd3f,7,0.44915678563949885,Low Risk,128.07,31,5.0,9.5,General retention campaign
+c2e9a50bcf76b5783bc96f906f95bceb,6,0.8932240163228806,High Risk,328.78,48,2.5,9.0,Low satisfaction -> service follow-up and apology coupon
+c2f7ac13c2e0937f956659002e5d5783,7,0.8614825731890515,High Risk,175.27,46,5.0,8.5,General retention campaign
+c35ffdd9679e194c3673533720b5e00c,5,0.7711961679173943,Medium Risk,450.7,47,5.0,6.5,High value -> priority retention with stronger incentive
+c3733cbdb41f37b5477b2c01c523e220,6,0.8116311261529098,Medium Risk,399.6,47,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c37449d8b51eefa148cd87b2c605a1c1,1,0.8055134340145529,Medium Risk,136.51,32,4.0,6.5,General retention campaign
+c37cc6c1a59d81460a3059744f7ada1c,5,0.7757522823938092,Medium Risk,505.91,35,3.6667,20.3333,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c3a1aa867de7bbc426695e756107ed38,4,0.8179008306107082,Medium Risk,301.28,48,5.0,13.0,General retention campaign
+c3efecdc2ca34416d845120af0bfca09,7,0.767880324837441,Medium Risk,93.78,37,4.0,9.0,General retention campaign
+c40b4a21d854ab194280dadc8998061f,3,0.7833170406753693,Medium Risk,255.84,36,5.0,12.5,General retention campaign
+c4536b58064f144d0538c9cc69c2765d,7,0.8417959904535011,High Risk,607.55,44,3.0,13.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+c45ece361aab055ea6c55b61eb2d99c0,6,0.7282562689383755,Medium Risk,459.05,31,4.0,10.0,High value -> priority retention with stronger incentive
+c4d9ec8c227594222eedd980cb28a6f4,3,0.8173947712495433,Medium Risk,247.21,40,5.0,10.0,General retention campaign
+c4fe9fc8b5e1b4f9992db983d0429854,2,0.7898326545030372,Medium Risk,364.86,60,5.0,11.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+c55821f6a2a59a93d4cde13a2ec14661,5,0.7806348947815803,Medium Risk,400.95,48,5.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c5b58e89d4e287e453b4a0bffcf7a025,4,0.8705384519096652,High Risk,264.28,37,5.0,9.0,General retention campaign
+c5f6047fb345ffd234cf5b26268988be,3,0.7850835060930412,Medium Risk,383.45,59,4.0,9.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+c731a46dd44dfe456ccfa8968206943d,4,0.7401488958218532,Medium Risk,158.98,41,5.0,7.0,General retention campaign
+c7c19110042036e6266adc998cbf1289,7,0.5937051403468039,Low Risk,372.51,7,5.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c803385049057260f738c18c12749747,2,0.7950333893731234,Medium Risk,195.36,41,4.0,19.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+c90610b4cd15ff318841445c558c41fb,2,0.8332409379173781,High Risk,183.73,47,2.5,13.3333,Low satisfaction -> service follow-up and apology coupon
+c957b57bcaff0ed3a494d95c865de4a1,7,0.7487105428873615,Medium Risk,262.5,16,4.0,13.5,General retention campaign
+c968cdb924339d7a42e0c448153b72cc,7,0.7469810208070767,Medium Risk,788.16,47,5.0,15.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+c9b3b24308b1a4587ffa3e60fafc2b1f,7,0.6503510074239984,Low Risk,553.15,27,5.0,10.0,High value -> priority retention with stronger incentive
+c9c6d353f4101827b3dbc83b093b2fe6,1,0.8623273316174939,High Risk,182.95,60,5.0,12.0,Long inactivity -> send reactivation offer
+ca0cd77819a2427d6ca0e0d0e92de58b,7,0.7965199890328009,Medium Risk,197.65,32,4.0,12.5,General retention campaign
+ca6d9bc2e717c2a0aa19d77a3bfa5398,4,0.8552248825786849,High Risk,1237.39,59,1.0,32.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+ca994abc57b0bd7981d91d0061b3d8d6,5,0.9111390010009276,High Risk,586.3,43,3.0,50.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+cb5c545d96f39390b7f372aaa88c4a7e,7,0.7133126105325353,Low Risk,108.2,31,5.0,13.0,General retention campaign
+cbd08b04b3f301152b7570da5e9c8cc4,6,0.7158198756796975,Low Risk,1249.87,47,4.6667,13.0,High value -> priority retention with stronger incentive
+cbebce165db72a2bfba9e81a3411bdf7,2,0.7049718164746349,Low Risk,388.35,57,5.0,12.5,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+cc14ea7099959d91a17c9d7c3a46721d,2,0.7829340877109361,Medium Risk,242.0,47,5.0,13.3333,General retention campaign
+ccac5680eab564a88f301f59030b448b,2,0.880607691752597,High Risk,187.64,48,1.0,34.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+cd04cd9aa9eb0b51b40a2b124f3a93f3,7,0.8248158860520883,Medium Risk,249.16,46,5.0,10.0,General retention campaign
+cd11a0920c498edb1da9ecd2d31aa599,7,0.7958851036807518,Medium Risk,146.72,41,5.0,14.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+ce60a50b73f7934a7d4caa92f2f05bbf,5,0.8101994836433238,Medium Risk,200.29,32,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+cecc19ff12c206e6368dd1e9c22a848d,1,0.779001130925614,Medium Risk,713.93,60,5.0,9.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+cee4e6509d99d45518c65d26971c1cbb,4,0.9337781979567592,High Risk,221.8,47,3.0,5.5,Low satisfaction -> service follow-up and apology coupon
+cef29e793e232d30250331804cdb7000,2,0.7380157384336421,Medium Risk,1846.86,40,5.0,12.0,High value -> priority retention with stronger incentive
+cf32aeb4e8a323e6499a573ac5c90326,5,0.8241253813035502,Medium Risk,224.57,49,5.0,5.5,General retention campaign
+cf7d5df4ee5ebe39ed41f0c5c1584b1c,4,0.7970836946091363,Medium Risk,199.7,37,5.0,9.0,General retention campaign
+cfe96f24bd8c36325e0d92e44324cf66,6,0.8604378809390922,High Risk,158.87,36,5.0,18.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+d045537cf9bd29e415334af5a6cb8ff5,4,0.7903709621265537,Medium Risk,231.55,43,4.5,12.5,General retention campaign
+d059a0ec4c911c7abb10602099670325,4,0.7990745506609136,Medium Risk,276.82,35,3.0,7.0,Low satisfaction -> service follow-up and apology coupon
+d0813c57df04369487ff42ab24dd0ac7,7,0.7118761067081177,Low Risk,106.43,11,1.0,16.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+d0af5dec42f3bf160195f5bcb704fd01,5,0.8587284545409015,High Risk,39.34,33,1.5,9.5,Low satisfaction -> service follow-up and apology coupon
+d1085381045ea6f88be5cc3e14c61e55,2,0.8274055577587889,High Risk,132.07,45,4.5,15.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+d2560fea402745a0f20f542f829c6109,3,0.8985453425792701,High Risk,58.16,53,5.0,14.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+d270eb25f6d487d94778d358b01c651f,5,0.8893690928197109,High Risk,53.6,44,5.0,4.0,General retention campaign
+d2787622df9fd933c164f7cf696a4e2a,6,0.7018003192216558,Low Risk,342.61,36,5.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+d2d3ed262b31f2bb50932fd0b1ab5df7,1,0.8495926190210332,High Risk,309.17,32,5.0,19.3333,Delivery friction -> logistics reassurance / fast-shipping incentive
+d2f38262a9f66d15aa9fc2b60ea873d9,2,0.6605180178960359,Low Risk,170.47,33,5.0,6.0,General retention campaign
+d3359a56d96666ac0c21bb01e7a61c95,5,0.8487221078208532,High Risk,149.58,40,5.0,7.5,General retention campaign
+d375c3a3a6bff030c08c6d4109b3f226,7,0.7274393197931317,Medium Risk,166.84,21,5.0,12.5,General retention campaign
+d3efd0ae3bee9c35f302e336aef87b99,1,0.8370360432712401,High Risk,190.93,57,5.0,19.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+d44ccec15f5f86d14d6a2cfa67da1975,7,0.5110984128718072,Low Risk,352.35,22,5.0,14.6667,Delivery friction -> logistics reassurance / fast-shipping incentive
+d4bfdb188411b1d1fdd0a66e8017e8b4,3,0.8950545803720017,High Risk,301.35,39,4.0,9.0,General retention campaign
+d56ded4569dd9821b2f83710a56afbde,5,0.8296545685153572,High Risk,189.99,47,5.0,9.0,General retention campaign
+d5f79f616536f08c3946ee6ac810a43a,7,0.8271252548156195,High Risk,168.12,60,5.0,9.0,Long inactivity -> send reactivation offer
+d66f438b3fcdcf22e7224aaeaf525443,7,0.7405344355311968,Medium Risk,170.34,8,4.5,3.5,General retention campaign
+d77aa95864ae5b42160937615628723a,5,0.7631651875091734,Medium Risk,2450.1,35,5.0,7.0,High value -> priority retention with stronger incentive
+d7b402c756be57180fa0df36f58d8b7f,4,0.8594976892678778,High Risk,131.17,55,5.0,15.3333,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+d7c6335139cb055ed0ce1125ddc788d8,7,0.6509337815269842,Low Risk,378.96,4,5.0,7.0,High value -> priority retention with stronger incentive
+d7c6bdf20c4ec9c9cda815dde58e778a,3,0.8869913867795767,High Risk,110.25,50,5.0,11.0,General retention campaign
+d8079e13179a4ba20a2d06c42e713ff9,7,0.7208862634215303,Low Risk,191.01,34,5.0,10.5,General retention campaign
+d815021b4d2400e191b912e96d494b2a,4,0.9091600994575871,High Risk,159.22,37,5.0,20.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+d8a89dc47bde7dc0b83a3434cc017ee1,7,0.6987961793727795,Low Risk,504.5,26,5.0,12.0,High value -> priority retention with stronger incentive
+d8e4bf349af9df104faeef494ad2c6de,7,0.8915027394838879,High Risk,154.49,60,5.0,6.5,Long inactivity -> send reactivation offer
+d8f979fcfc0ce686f6abf5af5f5217d4,7,0.8060656742061717,Medium Risk,372.62,44,5.0,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+d927267e54f07b9e0fd408d2f840024c,2,0.9045106468784504,High Risk,276.73,51,2.0,12.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+d97b3cfb22b0d6b25ac9ed4e9c2d481b,7,0.8121714750646675,Medium Risk,1044.12,46,1.0,9.0,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+d9d038353abdad5717e9d11c1748736d,5,0.9038481493650443,High Risk,148.14,58,1.5,20.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+da0440138fea4368af70b5cb01126a9c,5,0.7757077646418479,Medium Risk,184.94,40,5.0,5.5,General retention campaign
+da1e7179b9c5a1494d78528cbcf05aa0,7,0.821708591931806,Medium Risk,1467.87,23,3.0,13.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+da29b8a3970adddb9ed2dc8a492065af,6,0.8626512986657496,High Risk,145.42,45,4.5,18.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+da2b78576894a7f95d45bfd20250cc54,2,0.5938550665428041,Low Risk,108.58,44,3.5,6.5,Low satisfaction -> service follow-up and apology coupon
+da5bbfd583efb762f6fda762f1aaf4a9,1,0.8235725642872459,Medium Risk,133.72,41,2.5,40.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+da938ecdfde4d90f6c247bfa5233c66a,4,0.7751888807135302,Medium Risk,235.07,51,5.0,9.0,Long inactivity -> send reactivation offer
+daa7bbf7016cc30bf64f97d1db63e5e6,4,0.8997129607516502,High Risk,83.21,51,3.5,8.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+daf8072197465eabacb942e6f644585a,5,0.899144262576511,High Risk,60.51,52,4.0,4.0,Long inactivity -> send reactivation offer
+db03954a9a1cc5e71f6e0f73e81a628c,7,0.7391305169192249,Medium Risk,575.94,58,4.6667,12.6667,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+dbdfcd1e9de47452f3c9b0229bc0edc3,7,0.8929885931425104,High Risk,287.8,54,4.0,13.0,Long inactivity -> send reactivation offer
+dc1dac999319e4de0009df7ad0d02104,2,0.8750306417842127,High Risk,125.14,42,5.0,8.0,General retention campaign
+dc48b0a1b0e6abb6586f322c189f6b93,7,0.7300666682636987,Medium Risk,193.77,4,5.0,5.0,General retention campaign
+dc813062e0fc23409cd255f7f53c7074,7,0.579447206891502,Low Risk,911.54,7,4.3333,14.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+dcae10a371a35e87b7e88b8724a7bbea,7,0.8688271373284098,High Risk,142.66,45,3.0,14.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+dcc9c0fd8dbf091ca2965710ef45c16c,4,0.7552123842347491,Medium Risk,120.51,43,3.5,6.0,Low satisfaction -> service follow-up and apology coupon
+dd6e665621eca3de5e37b072f7d50f0c,6,0.8618600416102642,High Risk,193.96,36,3.5,6.0,Low satisfaction -> service follow-up and apology coupon
+dd8c586651f9232e473ad86cf89c143f,1,0.8906638571571832,High Risk,111.97,46,5.0,9.5,General retention campaign
+de7cad0a39eabfa2285ef0b891ef404a,4,0.8332620021021276,High Risk,76.58,34,5.0,5.6667,General retention campaign
+df1f61c43368a8ed99dc76b43594fc4b,7,0.8887968917289485,High Risk,241.56,37,2.5,17.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+df946ef265626b1e0a425292815ddead,4,0.7197558777058138,Low Risk,152.41,33,5.0,6.6667,General retention campaign
+df9bd60da4a8f8945d2b862aebd3d418,4,0.8794306756869378,High Risk,94.49,59,4.5,6.0,Long inactivity -> send reactivation offer
+dff41d762e4e7b68b73af7203a429072,5,0.8040769186849993,Medium Risk,114.0,39,3.0,11.0,Low satisfaction -> service follow-up and apology coupon
+dff5ff8f411dd1d77875f7e17a3eb512,6,0.7657489581788927,Medium Risk,144.46,36,5.0,7.5,General retention campaign
+e031118eb65330b4c180522f2743cf51,2,0.896710145214538,High Risk,280.33,34,4.0,9.5,General retention campaign
+e06e62694cd8ce637a1c3f4a624c647e,5,0.7758456151547761,Medium Risk,663.88,34,4.5,11.5,High value -> priority retention with stronger incentive
+e079b18794454de9d2be5c12b4392294,3,0.7876318224969044,Medium Risk,437.78,51,5.0,16.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e0a435b6106cae0bc42a2cef0565b622,7,0.9087471373838825,High Risk,103.24,53,5.0,8.5,Long inactivity -> send reactivation offer
+e0c99ffdcd8891130985ac90cd2d8eec,6,0.687096884997727,Low Risk,588.71,37,5.0,15.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e0ec2e3c3f6e06839e8fb986be65c7c5,7,0.8009159239817812,Medium Risk,131.2,34,1.0,8.0,Low satisfaction -> service follow-up and apology coupon
+e12f7f1e96f1f9f6361572028a1fad5a,7,0.8103807628431073,Medium Risk,729.74,33,4.3333,17.6667,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e14705d2e06ab8ee7c665f21c72f874f,7,0.7021848400531396,Low Risk,307.43,15,5.0,7.0,General retention campaign
+e2226f481eef03f2876d1a27f0f4b1b0,5,0.8156825569434434,Medium Risk,711.89,36,5.0,6.5,High value -> priority retention with stronger incentive
+e2889baccec81ed3bed4d66c1c675cb2,7,0.7733723874946441,Medium Risk,221.61,5,4.0,8.0,General retention campaign
+e2af42f42a86805055a8e71af58ee71e,7,0.824054405325057,Medium Risk,108.09,28,3.0,7.5,Low satisfaction -> service follow-up and apology coupon
+e2ce734f0bd635b4b82317b5e5fcd152,7,0.8010912727769902,Medium Risk,160.3,31,4.0,9.0,General retention campaign
+e30b83af13d6ff0b0f427b2a67c43b39,7,0.5508052879647878,Low Risk,841.15,4,5.0,3.5,High value -> priority retention with stronger incentive
+e3301490c373db9263c15a73172d0c6f,1,0.8340879938273935,High Risk,443.51,46,4.0,24.75,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e395de53a61a2f8fa96ea1ca399c3ff5,6,0.8573025792312675,High Risk,438.92,46,5.0,13.5,High value -> priority retention with stronger incentive
+e3cf594a99e810f58af53ed4820f25e5,6,0.8768933707637352,High Risk,191.61,46,5.0,16.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+e424731f7e9ccc9f3384b8b71378cbf7,5,0.8014339593152168,Medium Risk,169.98,39,5.0,14.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+e44110c2ff342e5bbda6c2224d94bbe6,2,0.7790259163453586,Medium Risk,617.97,53,5.0,11.0,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+e4419ca71e493f57fce5809d2039e9ba,7,0.7834712433422025,Medium Risk,116.83,59,3.5,6.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+e4b98eebb8983cade8610c0def59f705,1,0.8400802655831093,High Risk,760.01,34,1.6667,16.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e53821a413d5b137cd9005b41f09dfe0,7,0.8414551624908223,High Risk,195.25,43,3.5,11.5,Low satisfaction -> service follow-up and apology coupon
+e5bdbd18812e42788e7cbad7058fc0ab,1,0.83613167007208,High Risk,242.5,41,5.0,10.5,General retention campaign
+e64ab18890c89066fe47f8abbbf180de,3,0.8305872131085396,High Risk,177.91,55,5.0,16.0,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+e65862da4f9f183565831cf7e1cbb7a5,1,0.8080447583608853,Medium Risk,166.25,49,5.0,8.5,General retention campaign
+e67af1efd445becc5019902668fe3218,3,0.8063257087773537,Medium Risk,156.07,46,3.5,12.5,Low satisfaction -> service follow-up and apology coupon
+e68365f0fec5a377bd6f49cb444e453c,7,0.8757617789441664,High Risk,361.02,59,5.0,7.0,Long inactivity -> send reactivation offer
+e68856e8450afe7390b02d1b2bcefb29,7,0.565127867893355,Low Risk,191.47,8,5.0,8.0,General retention campaign
+e702e8b7b2a4233b4a1c21f457a1030e,2,0.9002393975318009,High Risk,315.44,48,3.0,16.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+e7039843c54c69530bbf70d926baaab6,7,0.6305730589668118,Low Risk,388.37,16,4.0,9.5,High value -> priority retention with stronger incentive
+e7688fef5438be571d0c39bbb3e8e998,7,0.8116521312558554,Medium Risk,72.01,35,5.0,3.5,General retention campaign
+e7aa3fbe88423a0132e45578023bac50,3,0.86460471203167,High Risk,102.1,36,5.0,24.5,Delivery friction -> logistics reassurance / fast-shipping incentive
+e7e84072c5730f21d38aea4e37d531f0,7,0.8119560300877994,Medium Risk,73.01,8,4.0,19.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+e8569c57efe3adf347b3e92ec04d1f91,7,0.6968213303167158,Low Risk,124.74,38,5.0,8.3333,General retention campaign
+e87c2e2e5985c5996ec20651a3d50fe7,6,0.8068517139451079,Medium Risk,375.87,42,5.0,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e89bf89e2621b5aeb4c181e69a8c6952,4,0.9172967901719907,High Risk,418.51,48,3.0,15.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+e8bab621313ad2a3c0ce8e3a023ff9bb,6,0.8062725353474752,Medium Risk,492.26,43,5.0,10.0,High value -> priority retention with stronger incentive
+e8fee231a8a4901e2b0b5a2324eb1405,6,0.878902961542985,High Risk,115.74,53,3.5,12.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+e9b87dccd9c326a3325385087eb0150c,7,0.6632090087765344,Low Risk,451.83,58,5.0,12.6667,Long inactivity -> send reactivation offer | High value -> priority retention with stronger incentive
+ea2a4a14c49ad9a9d64d2b7f91f0c293,7,0.8844737227181994,High Risk,152.48,55,4.0,9.0,Long inactivity -> send reactivation offer
+ea4dce18a6994b1e69f0bc8093cfe869,3,0.80156500245236,Medium Risk,137.98,43,5.0,9.0,General retention campaign
+eac6dbc8ecd0a2f08ed8e53d18f0e0d0,6,0.7745238889208041,Medium Risk,257.52,51,4.0,3.5,Long inactivity -> send reactivation offer
+eb28e67c4c0b83846050ddfb8a35d051,6,0.8302367978395084,High Risk,284.56,45,4.5,11.5,General retention campaign
+eb8367e178d144706a4ff3da62d284cb,7,0.8105009794880683,Medium Risk,112.88,51,2.5,11.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+eb8ace0670e08632f5fe8977b669530e,7,0.7389996984836892,Medium Risk,75.92,10,4.0,8.0,General retention campaign
+ebad8517c448bbd20ca1910bf1a33819,7,0.7061791891363547,Low Risk,271.54,35,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+ec7f1811826ab04a27a92197bc40c888,7,0.37955390158716157,Low Risk,495.93,12,5.0,4.0,High value -> priority retention with stronger incentive
+ec99f30f38afadbfbae32d5883734ded,4,0.8270862680040113,High Risk,125.64,46,3.0,6.0,Low satisfaction -> service follow-up and apology coupon
+ecb43665c8c390857cabf385d918da87,5,0.8480648828748515,High Risk,207.48,39,1.0,37.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+ecdbc4bf2201c807294c7d8c4b777032,7,0.8054622806704695,Medium Risk,1294.09,46,5.0,6.5,High value -> priority retention with stronger incentive
+ed2e7c127faf8aacf910fb4ecb881966,6,0.7800090296544008,Medium Risk,159.49,40,5.0,6.5,General retention campaign
+ed873efbae1f165689d2e836f7a45a20,2,0.8992983508744449,High Risk,40.7,33,3.5,11.5,Low satisfaction -> service follow-up and apology coupon
+eddc1407b097ef7952deb24806c9059b,7,0.7772563464162646,Medium Risk,276.72,58,5.0,6.0,Long inactivity -> send reactivation offer
+ee2e40e31211c5c36ebf28b78316542e,2,0.918834447423863,High Risk,210.43,54,5.0,10.0,Long inactivity -> send reactivation offer
+ee9d97a7d28183a3d93aefb807e48524,5,0.8268693679864841,High Risk,137.96,50,5.0,4.0,General retention campaign
+ef1d0f1922417f396a0aa0a03296c572,7,0.7359416616614026,Medium Risk,190.75,8,5.0,2.0,General retention campaign
+ef7ccf8e6acbf1ac71af305967e708c3,4,0.8654848620842953,High Risk,294.72,41,3.5,13.5,Low satisfaction -> service follow-up and apology coupon
+f043529722a354cd3f185270e0c6aa15,6,0.7787729061338502,Medium Risk,66.97,31,5.0,8.5,General retention campaign
+f0996ee6e59d10ac46fd0b9c632e759d,3,0.819386799532611,Medium Risk,228.0,31,2.0,17.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+f0daba1cfcc18d5a3229e1a911313e3e,2,0.7463868340812544,Medium Risk,1398.18,55,4.5,16.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+f0e310a6839dce9de1638e0fe5ab282a,7,0.3186252550037607,Low Risk,445.07,50,5.0,14.25,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+f11821d908830e74ad782532ebed897a,5,0.6512152844007313,Low Risk,191.1,43,3.3333,13.0,Low satisfaction -> service follow-up and apology coupon
+f1a325803dd4c341c5a946ac84c71973,5,0.9374479351975028,High Risk,351.07,32,2.0,21.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+f216de65ece42736f341247dcba60ccb,7,0.5158325668748135,Low Risk,294.41,5,5.0,1.0,General retention campaign
+f2655a0ca53cad79e713d1a21b2328b7,2,0.8818798320122843,High Risk,192.22,51,1.0,9.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+f34cd7fd85a1f8baff886edf09567be3,6,0.6599214188021999,Low Risk,1236.76,40,5.0,13.25,High value -> priority retention with stronger incentive
+f37bd405972a0229ec900f3743f5bca6,7,0.7589642711330103,Medium Risk,94.41,44,3.0,18.0,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+f3d176999f9c1273045f770712608944,5,0.8856313159487443,High Risk,221.58,57,3.5,5.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+f46971f1ac7b376b668114a027c98e78,2,0.7941451670415609,Medium Risk,337.85,42,5.0,8.5,General retention campaign
+f4af0b3f627879bf6801db96949b1e71,5,0.8558620770769038,High Risk,342.23,43,3.0,10.0,Low satisfaction -> service follow-up and apology coupon
+f50ca6544a0ed8a52cc964e15cbe9cf9,7,0.8799992748547705,High Risk,320.64,53,5.0,18.5,Long inactivity -> send reactivation offer | Delivery friction -> logistics reassurance / fast-shipping incentive
+f526077dd7bdfdb1a6e10cd6b194b548,6,0.7705835626875749,Medium Risk,62.0,39,4.5,15.3333,Delivery friction -> logistics reassurance / fast-shipping incentive
+f5344c7feb209d1e8a9de5d60ed79331,4,0.7881551681742212,Medium Risk,244.58,34,5.0,7.5,General retention campaign
+f565c1cbc438d2561d40d780f1da28c5,7,0.7223277637330158,Low Risk,107.38,6,5.0,22.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+f596242db91986b554f25768577cd5be,3,0.8600135202755382,High Risk,731.08,47,5.0,17.5,Delivery friction -> logistics reassurance / fast-shipping incentive | High value -> priority retention with stronger incentive
+f62d6572c9c25b3796d058d7b833f8b7,3,0.8417136317321178,High Risk,193.94,55,1.5,8.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+f63e56138ee7885ffc3b7e56933446e6,6,0.8653541829533553,High Risk,261.1,53,5.0,6.5,Long inactivity -> send reactivation offer
+f64ec6d8dd29940264cd0bbb5ecade8a,7,0.5102434194544508,Low Risk,359.0,11,5.0,18.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+f79c969a1665f477201e86ae6e036c30,3,0.9131534493294678,High Risk,290.0,60,3.0,22.0,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+f7ac7452ae241a5a36aaf9542c2428d5,4,0.7946531079974875,Medium Risk,659.2,39,5.0,12.0,High value -> priority retention with stronger incentive
+f7d2fc6f0a2778f53d2a6bfc27bd0e8c,7,0.915014169164962,High Risk,370.19,44,3.5,9.5,Low satisfaction -> service follow-up and apology coupon | High value -> priority retention with stronger incentive
+f804ed90360900357b6db9d7635d275d,2,0.8423697952558836,High Risk,630.37,46,5.0,7.5,High value -> priority retention with stronger incentive
+f8308de7370e6293120c537a031f4cff,7,0.6926811064636064,Low Risk,225.63,41,3.5,12.0,Low satisfaction -> service follow-up and apology coupon
+f87108f2ff59f6cbc898ca230483c0ab,7,0.8035915057135655,Medium Risk,120.43,17,4.0,8.0,General retention campaign
+f8777c0c5c96632fe9ded01856cb8c82,7,0.7478382838520224,Medium Risk,435.56,50,5.0,11.6667,High value -> priority retention with stronger incentive
+f93ea08ded32a5b926f9dd98c1dbd61d,2,0.7928474682792668,Medium Risk,934.66,39,5.0,8.0,High value -> priority retention with stronger incentive
+f944ee56d8467517955c2ddc7b0d486a,7,0.757027139272625,Medium Risk,307.7,31,5.0,9.0,General retention campaign
+fa0cf5b25732a933725b83d2f716000a,6,0.859980355044147,High Risk,113.49,50,5.0,5.0,General retention campaign
+fafbc4ecb15933633821dfd530c9263b,2,0.8205767454859018,Medium Risk,364.21,45,4.0,13.5,High value -> priority retention with stronger incentive
+fb4accbcbcd54672a8a8b195d9ff0ec8,5,0.7685270365343452,Medium Risk,173.62,48,3.0,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+fb5e89c121d9569d1a58e0afb54da971,6,0.8611317936446213,High Risk,142.46,51,3.0,8.5,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+fbdd85f919749a8e7a1290c6452024e3,3,0.7664119849983718,Medium Risk,160.34,45,4.5,5.5,General retention campaign
+fc685f5d020dbc22ef7dae7822f336dc,6,0.8313574081025694,High Risk,145.75,55,5.0,8.0,Long inactivity -> send reactivation offer
+fd47af963b760f05fbc357474509905e,7,0.8883677809470673,High Risk,142.28,60,4.5,13.5,Long inactivity -> send reactivation offer
+fda3a3eb3370c1295a4fc3f6cd3d7604,6,0.90779843561711,High Risk,113.74,59,3.0,7.6667,Long inactivity -> send reactivation offer | Low satisfaction -> service follow-up and apology coupon
+fdb1f3e0dd15b657acc64314ce89688f,5,0.7927197200664385,Medium Risk,184.33,49,4.0,7.0,General retention campaign
+fdb2f8a871f180fefdf3ba06bf7ab179,3,0.8795048552738977,High Risk,322.43,59,5.0,13.0,Long inactivity -> send reactivation offer
+fe59d5878cd80080edbd29b5a0a4e1cf,5,0.89588070526996,High Risk,185.09,42,3.3333,11.3333,Low satisfaction -> service follow-up and apology coupon
+fe81bb32c243a86b2f86fbf053fe6140,7,0.7053688563709429,Low Risk,127.56,32,3.0,2.5,Low satisfaction -> service follow-up and apology coupon
+fed2005ccab4fcf1a40ebdaff032a148,3,0.8704943379213202,High Risk,101.1,48,1.0,14.5,Low satisfaction -> service follow-up and apology coupon | Delivery friction -> logistics reassurance / fast-shipping incentive
+ff44401d0d8f5b9c54a47374eb48c1b8,2,0.891709266153545,High Risk,68.0,47,3.0,12.5,Low satisfaction -> service follow-up and apology coupon
+ff8892f7c26aa0446da53d01b18df463,7,0.7118303455267103,Low Risk,330.14,6,5.0,16.0,Delivery friction -> logistics reassurance / fast-shipping incentive
+ff922bdd6bafcdf99cb90d7f39cea5b3,6,0.7460849896811145,Medium Risk,139.6,49,4.3333,17.0,Delivery friction -> logistics reassurance / fast-shipping incentive

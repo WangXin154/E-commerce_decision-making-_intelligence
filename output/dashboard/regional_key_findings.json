@@ -1,0 +1,96 @@
+{
+  "sales_concentration": {
+    "gini_coefficient": 0.7032,
+    "core_states_count": 7,
+    "core_states": [
+      "SP",
+      "RJ",
+      "MG",
+      "RS",
+      "PR",
+      "BA",
+      "SC"
+    ]
+  },
+  "priority_problem_regions": [
+    "RJ",
+    "BA",
+    "ES",
+    "GO",
+    "PE",
+    "CE",
+    "PA"
+  ],
+  "market_type_strategy": [
+    {
+      "cluster_name": "Super Core Outlier Market",
+      "strategic_goal": "Protect leadership and deepen value",
+      "main_focus": "Service stability, premium assortment, retention",
+      "risk_note": "Service deterioration in the core market would have outsized business impact"
+    },
+    {
+      "cluster_name": "Balanced Core Markets",
+      "strategic_goal": "Stabilise and expand efficiently",
+      "main_focus": "Assortment optimisation, warehouse support, efficiency gains",
+      "risk_note": "Underinvestment may weaken the broader regional business base"
+    },
+    {
+      "cluster_name": "High-AOV Potential Markets",
+      "strategic_goal": "Grow selectively and raise penetration",
+      "main_focus": "Targeted category expansion, controlled acquisition, local demand testing",
+      "risk_note": "Overexpansion may raise cost before scale is proven"
+    },
+    {
+      "cluster_name": "Logistics-Stressed Markets",
+      "strategic_goal": "Repair operations before scaling",
+      "main_focus": "Delay reduction, route reliability, customer-experience recovery",
+      "risk_note": "Growth without service repair may deepen dissatisfaction"
+    }
+  ],
+  "final_conclusion": [
+    {
+      "strategic_theme": "Protect the core",
+      "target_regions": "Super Core Outlier Market + Balanced Core Markets",
+      "main_goal": "Defend value, sustain service quality, deepen retention",
+      "execution_logic": "Keep core markets stable before wider expansion"
+    },
+    {
+      "strategic_theme": "Expand selectively",
+      "target_regions": "High-AOV Potential Markets",
+      "main_goal": "Raise penetration in promising markets with controlled growth",
+      "execution_logic": "Invest where purchasing power is visible and service risk is manageable"
+    },
+    {
+      "strategic_theme": "Repair before scaling",
+      "target_regions": "Logistics-Stressed Markets + Priority Problem Regions",
+      "main_goal": "Reduce delay, improve reliability, stabilise customer experience",
+      "execution_logic": "Service recovery should come before aggressive commercial expansion"
+    }
+  ],
+  "statistical_validation": [
+    {
+      "test_name": "ANOVA",
+      "research_question": "Do satisfaction levels differ across regional clusters?",
+      "main_statistic": "F = 32.4459",
+      "p_value": "0.000000",
+      "effect_or_support": "eta_squared = 0.7383",
+      "conclusion": "Cluster-level satisfaction differences are statistically significant."
+    },
+    {
+      "test_name": "Chi-square",
+      "research_question": "Is satisfaction-level composition associated with state?",
+      "main_statistic": "chi2 = 683.0632",
+      "p_value": "0.000000",
+      "effect_or_support": "dof = 18",
+      "conclusion": "State and satisfaction-level composition are significantly associated."
+    },
+    {
+      "test_name": "Correlation",
+      "research_question": "Is satisfaction linked to logistics performance?",
+      "main_statistic": "r(review, delay) = -0.805",
+      "p_value": "Descriptive",
+      "effect_or_support": "r(bad_review, delay) = 0.808",
+      "conclusion": "Delay rate shows a strong relationship with customer satisfaction."
+    }
+  ]
+}

@@ -39,39 +39,6 @@ def load_csv(filename: str) -> pd.DataFrame:
 
 
 @st.cache_data(show_spinner=False)
-def load_first_available_csv(filenames: tuple[str, ...]) -> pd.DataFrame:
-    """
-    Load the first existing, non-empty CSV from output/dashboard or project-relative paths.
-    """
-    checked_paths = []
-
-    for filename in filenames:
-        file_path = Path(filename)
-        if not file_path.is_absolute():
-            dashboard_path = DASHBOARD_DATA_DIR / filename
-            project_path = PROJECT_ROOT / filename
-
-            if dashboard_path.exists():
-                file_path = dashboard_path
-            else:
-                file_path = project_path
-
-        checked_paths.append(str(file_path))
-
-        if not file_path.exists() or file_path.stat().st_size <= 2:
-            continue
-
-        try:
-            return pd.read_csv(file_path, encoding="utf-8-sig")
-        except UnicodeDecodeError:
-            return pd.read_csv(file_path)
-
-    raise FileNotFoundError(
-        "No usable CSV file found. Checked: " + ", ".join(checked_paths)
-    )
-
-
-@st.cache_data(show_spinner=False)
 def load_json(filename: str) -> dict:
     """
     Load a JSON file from output/dashboard with caching.
@@ -202,15 +169,7 @@ def load_recommendations_hybrid() -> pd.DataFrame:
 
 
 def load_recommendations_personalized() -> pd.DataFrame:
-    return load_first_available_csv(
-        (
-            "recommendations_personalized.csv",
-            "recommendations_personalized_v2.csv",
-            "recommendations_personalized_debug_500users.csv",
-            "output/08_recommendation_system/recommendations/recommendations_personalized_v2.csv",
-            "output/08_recommendation_system/recommendations/recommendations_personalized_debug_500users.csv",
-        )
-    )
+    return load_csv("recommendations_personalized.csv")
 
 
 def load_evaluation_summary() -> pd.DataFrame:

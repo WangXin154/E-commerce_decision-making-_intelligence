@@ -1,0 +1,5 @@
+strategy_quadrant,customer_count,budget_sum,budget_mean,predicted_clv_sum,predicted_clv_mean,actual_gmv_sum,actual_gmv_mean,backtest_gmv_per_budget
+Protect,269,827769.24,3077.21,18195.14,67.64,32528.06,120.92,0.04
+Retain,43,170648.65,3968.57,3000.81,69.79,5862.66,136.34,0.03
+Nurture,8936,1387.04,0.16,45.73,0.01,0.0,0.0,0.0
+Low Priority,4515,195.08,0.04,17.15,0.0,0.0,0.0,0.0

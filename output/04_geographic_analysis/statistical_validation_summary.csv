@@ -1,0 +1,4 @@
+﻿test_name,research_question,main_statistic,p_value,effect_or_support,conclusion
+ANOVA,Do satisfaction levels differ across regional clusters?,F = 32.4459,0.000000,eta_squared = 0.7383,Cluster-level satisfaction differences are statistically significant.
+Chi-square,Is satisfaction-level composition associated with state?,chi2 = 683.0632,0.000000,dof = 18,State and satisfaction-level composition are significantly associated.
+Correlation,Is satisfaction linked to logistics performance?,"r(review, delay) = -0.805",Descriptive,"r(bad_review, delay) = 0.808",Delay rate shows a strong relationship with customer satisfaction.

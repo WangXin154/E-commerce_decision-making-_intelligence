@@ -1,0 +1,4 @@
+Risk Level,Intervention Intensity,Suggested Action,Main Channel,Business Objective
+Low Risk,Low,"Routine engagement: email reminders, product recommendations",Email / App push,Maintain activity
+Medium Risk,Medium,"Active retention: coupons, loyalty points, personalised offers",Email + App push + Coupon,Prevent disengagement
+High Risk,High,"Urgent retention: high-value coupon, service outreach, priority support",Email + App push + Direct support,Recover likely churn

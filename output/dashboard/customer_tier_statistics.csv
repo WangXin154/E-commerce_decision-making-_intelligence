@@ -1,0 +1,5 @@
+value_tier,customer_count,predicted_clv_mean,predicted_clv_median,predicted_clv_sum,actual_gmv_mean,actual_gmv_median,actual_gmv_sum
+Platinum,125,146.29,113.99,18286.61,198.1,133.18,24762.12
+Gold,187,15.56,5.67,2909.35,72.88,22.78,13628.6
+Silver,311,0.2,0.1,62.88,0.0,0.0,0.0
+Bronze,13140,0.0,0.0,0.0,0.0,0.0,0.0
