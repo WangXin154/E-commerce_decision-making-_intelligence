@@ -64,6 +64,7 @@ with st.sidebar:
     st.page_link("pages/2_Recommendation_System.py", label="Recommendation System")
     st.page_link("pages/3_Product_Performance.py", label="Product Performance")
     st.page_link("pages/4_Geographic_Analysis.py", label="Geographic Analysis")
+    st.page_link("pages/5_Nasdaq_Monitor.py", label="Nasdaq Monitor")
 
     st.markdown("---")
     st.header("Navigation")

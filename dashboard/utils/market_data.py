@@ -14,6 +14,7 @@ import pandas as pd
 try:
     import streamlit as st
 except ModuleNotFoundError:
+    # 允许在命令行单独测试本模块；没有 Streamlit 运行时也不影响纯函数导入。
     class _StreamlitFallback:
         @staticmethod
         def cache_data(**_kwargs):
@@ -53,6 +54,7 @@ def _as_float(value: Any) -> float | None:
 
 
 def _fetch_yahoo_chart(symbol: str, range_value: str, interval: str) -> dict:
+    # Yahoo chart 接口可以直接返回分钟级价格序列，适合做低成本准实时看盘。
     encoded_symbol = quote(symbol, safe="")
     url = (
         "https://query1.finance.yahoo.com/v8/finance/chart/"
@@ -81,6 +83,9 @@ def _fetch_yahoo_chart(symbol: str, range_value: str, interval: str) -> dict:
 
 
 def _parse_chart_payload(payload: dict, symbol: str) -> tuple[pd.DataFrame, dict]:
+    # 将外部接口的嵌套 JSON 统一整理成页面容易消费的两类数据：
+    # 1. price_df：用于画分时线和成交量柱；
+    # 2. summary：用于顶部 KPI、涨跌幅和数据源说明。
     chart = payload.get("chart", {})
     error = chart.get("error")
     if error:
@@ -108,6 +113,7 @@ def _parse_chart_payload(payload: dict, symbol: str) -> tuple[pd.DataFrame, dict
         if close is None:
             continue
 
+        # 分钟级行情中偶尔会出现空成交量，页面展示时按 0 处理。
         volume = _as_float(volume_values[index] if index < len(volume_values) else None)
         rows.append(
             {
@@ -151,11 +157,13 @@ def _parse_chart_payload(payload: dict, symbol: str) -> tuple[pd.DataFrame, dict
 
 @st.cache_data(ttl=30, show_spinner=False)
 def load_market_chart(symbol: str, range_value: str = "1d", interval: str = "1m") -> tuple[pd.DataFrame, dict]:
+    # 缓存 30 秒，避免自动刷新时过度请求免费行情源。
     payload = _fetch_yahoo_chart(symbol, range_value, interval)
     return _parse_chart_payload(payload, symbol)
 
 
 def build_demo_chart(symbol: str, points: int = 240) -> tuple[pd.DataFrame, dict]:
+    # 网络不可用或行情源限流时，使用可复现的模拟曲线保证页面仍能展示完整交互。
     seed = sum(ord(char) for char in symbol)
     random.seed(seed)
 

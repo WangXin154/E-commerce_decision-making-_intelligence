@@ -49,6 +49,7 @@ st.set_page_config(
 # Helpers
 # =========================================================
 def build_intraday_chart(price_df: pd.DataFrame, summary: dict) -> go.Figure:
+    # 根据当日涨跌决定主线颜色，让用户扫一眼就能判断市场方向。
     line_color = "#16a34a" if (summary.get("change") or 0) >= 0 else "#dc2626"
 
     fig = go.Figure()
@@ -65,6 +66,7 @@ def build_intraday_chart(price_df: pd.DataFrame, summary: dict) -> go.Figure:
 
     previous_close = summary.get("previous_close")
     if previous_close is not None:
+        # 昨收线是看盘时的重要参考基准，用于快速识别当前价格是否翻红/翻绿。
         fig.add_hline(
             y=previous_close,
             line_dash="dash",
@@ -110,6 +112,7 @@ def inject_auto_refresh(enabled: bool, seconds: int) -> None:
     if not enabled:
         return
 
+    # Streamlit 没有内置页面级定时刷新，这里注入极小的 JS 定时重新加载页面。
     components.html(
         f"""
         <script>
@@ -174,6 +177,7 @@ with control_col4:
 use_demo_fallback = st.checkbox("Use demo data when live source is unavailable", value=True)
 manual_refresh = st.button("Refresh now", type="primary")
 if manual_refresh:
+    # 手动刷新时清掉缓存，确保下一次加载会重新请求行情源。
     load_market_chart.clear()
 
 selected = INDEX_OPTIONS[index_name]
@@ -189,6 +193,7 @@ try:
 except Exception as exc:
     load_error = exc
     if use_demo_fallback:
+        # 免费行情接口可能被网络环境或频率限制影响，兜底数据用于保留页面可用性。
         price_df, summary = build_demo_chart(symbol)
     else:
         st.error("Unable to load live Nasdaq market data.")

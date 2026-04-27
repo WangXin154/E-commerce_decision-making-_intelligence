@@ -39,6 +39,44 @@ def load_csv(filename: str) -> pd.DataFrame:
 
 
 @st.cache_data(show_spinner=False)
+def load_first_available_csv(filenames: tuple[str, ...]) -> pd.DataFrame:
+    """
+    按候选顺序读取第一个存在且非空的 CSV。
+
+    部分 notebook 输出文件会落在 output/dashboard 之外，或带有 debug/v2 后缀。
+    Dashboard 页面不应因为标准文件名缺失就整体不可用，所以这里做集中兜底。
+    """
+    checked_paths = []
+
+    for filename in filenames:
+        file_path = Path(filename)
+        if not file_path.is_absolute():
+            dashboard_path = DASHBOARD_DATA_DIR / filename
+            project_path = PROJECT_ROOT / filename
+
+            # 优先读取 dashboard 汇总目录；不存在时再尝试项目相对路径。
+            if dashboard_path.exists():
+                file_path = dashboard_path
+            else:
+                file_path = project_path
+
+        checked_paths.append(str(file_path))
+
+        # 只有表头或空文件没有展示价值，直接跳过继续找下一份候选文件。
+        if not file_path.exists() or file_path.stat().st_size <= 2:
+            continue
+
+        try:
+            return pd.read_csv(file_path, encoding="utf-8-sig")
+        except UnicodeDecodeError:
+            return pd.read_csv(file_path)
+
+    raise FileNotFoundError(
+        "No usable CSV file found. Checked: " + ", ".join(checked_paths)
+    )
+
+
+@st.cache_data(show_spinner=False)
 def load_json(filename: str) -> dict:
     """
     Load a JSON file from output/dashboard with caching.
@@ -169,7 +207,16 @@ def load_recommendations_hybrid() -> pd.DataFrame:
 
 
 def load_recommendations_personalized() -> pd.DataFrame:
-    return load_csv("recommendations_personalized.csv")
+    # 个性化推荐结果在当前仓库中可用文件名是 debug_500users，标准文件缺失时自动回落。
+    return load_first_available_csv(
+        (
+            "recommendations_personalized.csv",
+            "recommendations_personalized_v2.csv",
+            "recommendations_personalized_debug_500users.csv",
+            "output/08_recommendation_system/recommendations/recommendations_personalized_v2.csv",
+            "output/08_recommendation_system/recommendations/recommendations_personalized_debug_500users.csv",
+        )
+    )
 
 
 def load_evaluation_summary() -> pd.DataFrame:
